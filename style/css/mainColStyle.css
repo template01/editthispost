@@ -1,0 +1,18 @@
+.padded {
+  padding: 50px; }
+
+.paddedNotBottom {
+  padding-bottom: 0 !important; }
+
+.paddedBottom {
+  padding-bottom: 50px; }
+
+.colFull {
+  width: 100%;
+  display: inline-block;
+  clear: both; }
+
+.colHalf {
+  width: 50%;
+  display: inline-block;
+  float: left; }

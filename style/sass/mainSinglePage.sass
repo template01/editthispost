@@ -1,0 +1,46 @@
+@import 'mainGlobalVariables'
+
+
+#singlePad
+  overflow-x:hidden
+
+  iframe
+    width: 100%
+    height: 100vh
+    overflow-x: hidden
+    border: 0
+    background: white
+
+  #singlePadRead
+    padding: $globalPadding
+    font-size: $globalTextSize/1.5
+    font-family: $globalTextFamMono
+    line-height: $globalTextSize*1.1
+    letter-spacing: -0.1vw
+    color: $globalBlack
+
+    width: 75%
+
+    & > *
+      margin-top: 0
+
+    #singlePadReadMetadata
+      font-weight: bold
+      
+      ul
+        padding: 0
+        margin: 0
+      li
+        list-style: none
+        span
+          float: right
+
+        span:first-of-type
+          float: left
+
+        span:nth-last-of-type(1)
+          padding-right: 40px
+        // display: -webkit-flex
+        // -webkit-justify-content: space-around
+        // display: flex
+        // justify-content: space-around

@@ -1,0 +1,67 @@
+@import mainGlobalVariables
+
+#appHeader
+  padding: $globalPadding
+  font-size: $globalTextSize
+  font-family: $globalTextFam
+  line-height: $globalTextSize*1.1
+  letter-spacing: -0.1vw
+  color: $globalBlack
+  border-bottom: 0.28vw solid $globalBlack
+
+  p:first-of-type
+    margin-top: -0.5vw
+    margin-bottom: 0
+
+  #appIndex
+    width: 20vw
+    display: inline-block
+    text-decoration: none
+    color: inherit
+
+    .t-caret
+      padding-left: 0.2vw
+      // font-weight: bold
+
+    del
+      text-decoration: none
+
+    .animatedBorderBlack
+      padding: 0vw 1vw 0.2vw 1vw
+      border-radius: 1vw
+      border: 0.25vw solid $globalBlack
+      background: $globalBlack
+      color: $globalRose
+
+
+
+
+  #padTitle
+    // float:
+    clear: none
+    margin-left: $globalPadding
+    padding: 0vw 1vw 0.2vw 1vw
+    border-radius: 1vw
+    // cursor: pointer
+    border: 0.25vw solid $globalBlack
+
+  .padActions
+    clear: none
+    float: right
+
+    .padActionRead,.padActionWrite,.padActionPrint
+      width: 50%
+      padding: 0vw 1vw 0.2vw 1vw
+      border-radius: 1vw
+      cursor: pointer
+      border: 0.25vw solid $globalBlack
+      background: $globalBlack
+      color: $globalRose
+
+      &:hover
+        background: none
+        color: $globalBlack
+
+    .activeAction
+      background: none
+      color: $globalBlack
