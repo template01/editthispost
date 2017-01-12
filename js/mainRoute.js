@@ -37,12 +37,22 @@ var mainRoute = (function() {
 
 
                 },
+
+                'admin/': function() {
+                  mainAdmin.init()
+
+                  mainIndex.gohide()
+                  mainHeader.gohide()
+                  mainSingle.gohide()
+
+
+                },
                 '*': function() {
                     if (!ranIndex) {
                         // alert('hey')
                         if($('#singlePad').length===0){
-                          
-                          mainIndex.playSplash()
+
+                          // mainIndex.playSplash()
 
                         }
                         mainIndex.initIndex()

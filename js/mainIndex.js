@@ -27,17 +27,19 @@ var mainIndex = (function() {
             mistype: 0,
             blink: true,
 
-            typing:function(elem,chars_total,chars_left,char){
-              console.log(char)
-              if(char.match('shiftCaret')){
-                // alert('hey')
-                $('#indexSplashInner').addClass('shiftCaretColor')
-              }
+            typing: function(elem, chars_total, chars_left, char) {
+                console.log(char)
+                if (char.match('shiftCaret')) {
+                    // alert('hey')
+                    $('#indexSplashInner').addClass('shiftCaretColor')
+                }
             },
 
-            fin:function(){
-              $('#indexSplash').fadeOut(200)
-              setTimeout(function(){$('#indexSplash').remove()},200)
+            fin: function() {
+                $('#indexSplash').fadeOut(200)
+                setTimeout(function() {
+                    $('#indexSplash').remove()
+                }, 200)
             }
 
 
@@ -46,19 +48,16 @@ var mainIndex = (function() {
     }
 
     var initIndex = function() {
-        // alert('init')
-        console.log('init')
-        $(app).append(this.indexTemplate)
-        console.log(document.getElementById('indexPadList'))
 
-        mainAjaxGetters.getParts('http://editthispost.com:9001/p/index/export/html')
+        $(app).append(this.indexTemplate)
+
+        mainAjaxGetters.getParts(indexJsonSource)
             .success(function(data) {
                 console.log('success')
-                mainGetPad.appendContent(data, '#indexPadList')
-                mainIndex.formatIndexEvents()
+                indexItems = data.data.text.split('\n').slice(0, -1)
+                mainIndex.formatIndexEvents(indexItems)
                 mainIndex.attachReadWriteActionsList()
                 mainIndex.padAction()
-
             })
             .error(function() {
                 console.log('error')
@@ -76,54 +75,86 @@ var mainIndex = (function() {
     }
 
 
-        var attachReadWriteActionsList = function() {
-            $('#indexPadList li').each(function() {
-                $(this).addClass('targetPad').wrap('<div class="targetPadWrapper"></div>').parent().append('<div class="padActions"><span class="padActionRead hvr-float"></span><span class="padActionWrite hvr-float"></span></div>')
-                if ($(this).attr('data-status') === 'locked') {
-                    $(this).parents('.targetPadWrapper').find('.padActionWrite').addClass('locked')
+    var attachReadWriteActionsList = function() {
+        $('#indexPadList li').each(function() {
+            $(this).addClass('targetPad').wrap('<div class="targetPadWrapper"></div>').parent().append('<div class="padActions"><span class="padActionRead hvr-float"></span><span class="padActionWrite hvr-float"></span></div>')
+            if ($(this).attr('data-status') === 'locked') {
+                $(this).parents('.targetPadWrapper').find('.padActionWrite').addClass('locked')
+            }
+        })
+    }
+
+    var formatIndexEvents = function(arrayParam) {
+        arrayParam.forEach(function(entry) {
+            var textInfo = entry.split('|')
+            console.log(textInfo)
+                // $('#indexPadList').append('<li></li>')
+            listItem = $('<div class="targetPadWrapper"><li></li></div>')
+
+            textInfo.forEach(function(entrySingle) {
+                if (entrySingle.trim() === 'unlocked') {
+                    // savedThis
+                    listItem.find('li').attr('data-status', 'unlocked')
+
+
+                } else if (entrySingle.trim() === 'locked') {
+                    // savedThis.attr('data-status', 'locked')
+                    listItem.find('li').attr('data-status', 'locked')
+                } else {
+                    listItem.find('li').append('<span data-link="' + entrySingle.trim() + '">' + entrySingle.replace(/_/g, " ").trim() + '</span>')
                 }
-            })
-        }
-
-        var formatIndexEvents = function() {
-            $('#indexPadList li').each(function() {
-
-                var textInfo = $(this).text().split('|')
-
-                $(this).empty()
-
-                savedThis = $(this)
-
-                textInfo.forEach(function(entry) {
-                    if (entry.trim() === 'unlocked') {
-                        savedThis.attr('data-status', 'unlocked')
-
-                    } else if (entry.trim() === 'locked') {
-                        savedThis.attr('data-status', 'locked')
-                    } else {
-                        savedThis.append('<span data-link="' + entry.trim() + '">' + entry.replace(/_/g, " ").trim() + '</span>')
-
-                    }
-
-                });
-            })
-        }
 
 
-        var padAction = function() {
-            $(document).on('click', '#indexPadList .padActionRead', function() {
+
+            });
+
+            $('#indexPadList').append(listItem)
+
+        });
+        // })
+    }
+
+
+    // var formatIndexEvents = function() {
+    //     $('#indexPadList li').each(function() {
+    //
+    //         var textInfo = $(this).text().split('|')
+    //
+    //         $(this).empty()
+    //
+    //         savedThis = $(this)
+    //
+    //         textInfo.forEach(function(entry) {
+    //             if (entry.trim() === 'unlocked') {
+    //                 savedThis.attr('data-status', 'unlocked')
+    //
+    //             } else if (entry.trim() === 'locked') {
+    //                 savedThis.attr('data-status', 'locked')
+    //             } else {
+    //                 savedThis.append('<span data-link="' + entry.trim() + '">' + entry.replace(/_/g, " ").trim() + '</span>')
+    //
+    //             }
+    //
+    //         });
+    //     })
+    // }
+
+
+
+    var padAction = function() {
+        $(document).on('click', '#indexPadList .padActionRead', function() {
+            target = $(this).parents('.targetPadWrapper').find('.targetPad span').first().attr('data-link')
+            mainRoute.router.navigate('/events/' + target + '/read');
+        })
+
+        $(document).on('click', '#indexPadList .padActionWrite', function() {
+            if (!$(this).hasClass('locked')) {
                 target = $(this).parents('.targetPadWrapper').find('.targetPad span').first().attr('data-link')
-                mainRoute.router.navigate('/events/' + target + '/read');
-            })
+                mainRoute.router.navigate('/events/' + target + '/write');
+            }
+        })
 
-            $(document).on('click', '#indexPadList .padActionWrite', function() {
-                if (!$(this).hasClass('locked')) {
-                    target = $(this).parents('.targetPadWrapper').find('.targetPad span').first().attr('data-link')
-                    mainRoute.router.navigate('/events/' + target + '/write');
-                }
-            })
-
-        }
+    }
 
 
 

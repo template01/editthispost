@@ -46,25 +46,18 @@ var mainSingle = (function() {
         mainAjaxGetters.getParts('http://editthispost.com:9001/p/' + 'index' + '/export/html')
             .success(function(data) {
                 console.log('success')
-                $('#singlePadRead').prepend('<div class="paddedBottom" id="singlePadReadMetadata"></div>')
-                mainGetPad.appendContent(data, '#singlePadReadMetadata')
-                $('#singlePadReadMetadata').find('li').each(function() {
-                    regex = new RegExp('^' + target + '$');
-                    if (!$(this).text().split('|')[0].trim().match(regex)) {
-                        $(this).remove()
-                    } else {
-                        var textInfo = $(this).text().split('|')
+                mainAjaxGetters.getParts(indexJsonSource)
+                    .success(function(data) {
+                        console.log(data)
+                        console.log('success')
+                        indexItems = data.data.text.split('\n').slice(0, -1)
+                        mainSingle.formatsinglePadReadMetadata(indexItems, target)
 
-                        $(this).empty()
+                    })
+                    .error(function() {
+                        console.log('error')
+                    });
 
-                        savedThis = $(this)
-
-                        textInfo.forEach(function(entry) {
-                            console.log(entry);
-                            savedThis.append('<span data-link="' + entry.trim() + '">' + entry.replace(/_/g, " ").trim() + '</span>')
-                        });
-                    }
-                })
             })
             .error(function() {
                 console.log('error')
@@ -72,12 +65,25 @@ var mainSingle = (function() {
 
     }
 
-    // var readPad = function(){
-    //   $(document).on('click','#indexPadList li',function () {
-    //     console.log(this.innerHTML)
-    //     // mainGetPad.getPad('http://editthispost.com:9001/p/'+this.innerHTML+'/export/html','#indexPadList')
-    //   })
-    // }
+
+    var formatsinglePadReadMetadata = function(arrayParam, include) {
+        arrayParam.forEach(function(entry) {
+
+            regex = new RegExp('^' + include + '$');
+            if (entry.split('|')[0].trim().match(regex)) {
+
+                var textInfo = entry.split('|')
+
+                metadata = $('<div class="paddedBottom" id="singlePadReadMetadata"><p><span>' + textInfo[0].replace(/_/g, " ").trim() + '</span><span>' + textInfo[1].trim() + '</span><span>' + textInfo[2].trim() + '</span></p></div>')
+
+                $('#singlePadRead').prepend(metadata)
+
+            }
+
+        });
+        // })
+    }
+
 
     var remove = function() {
         $('#singlePad').remove()
@@ -98,6 +104,7 @@ var mainSingle = (function() {
         initSingle: initSingle,
         initSingleWrite: initSingleWrite,
         setSingleWriteHeight: setSingleWriteHeight,
+        formatsinglePadReadMetadata: formatsinglePadReadMetadata,
         getMetaDataRead: getMetaDataRead,
         goshow: goshow,
         gohide: gohide,

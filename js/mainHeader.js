@@ -41,84 +41,84 @@ var mainHeader = (function() {
 
     }
 
-    var headerActiveAction = function(activeTarget){
-      $('#appHeader')
-        .find('.activeAction').removeClass('activeAction').end()
-        .find(activeTarget).addClass('activeAction')
+    var headerActiveAction = function(activeTarget) {
+        $('#appHeader')
+            .find('.activeAction').removeClass('activeAction').end()
+            .find(activeTarget).addClass('activeAction')
     }
 
 
-        var initAnimateReadHeader = function() {
-            var fin = !1;
+    var initAnimateReadHeader = function() {
+        var fin = !1;
 
-            $(function() {
-
-
-
-                $('#animateTitle').t('<del class="animatedBorderBlack">edit thi</del><span class="animatedBorderBlack">read</span>this post', {
-
-                    speed: 60,
-                    speed_vary: true,
-                    mistype: 0,
-                    blink:true
-
-                    // fin: function() {
-                    //
-                    //     if (fin == !1) {
-                    //         fin = !!1; //avoids triggering after 'add' cmd
-                    //         window.setTimeout(function() {
-                    //             $('#t').t('add', 'Still here?');
-                    //         }, 2e4);
-                    //         window.setInterval(function() {
-                    //             $('#t').find('.t-caret').toggle();
-                    //         }, 5e2);
-                    //     }
-                    //
-                    // }
-
-                });
+        $(function() {
 
 
+
+            $('#animateTitle').t('<del class="animatedBorderBlack">edit thi</del><span class="animatedBorderBlack">read</span>this post', {
+
+                speed: 60,
+                speed_vary: true,
+                mistype: 0,
+                blink: true
+
+                // fin: function() {
+                //
+                //     if (fin == !1) {
+                //         fin = !!1; //avoids triggering after 'add' cmd
+                //         window.setTimeout(function() {
+                //             $('#t').t('add', 'Still here?');
+                //         }, 2e4);
+                //         window.setInterval(function() {
+                //             $('#t').find('.t-caret').toggle();
+                //         }, 5e2);
+                //     }
+                //
+                // }
 
             });
-        }
-
-
-            var initAnimateWriteHeader = function() {
-                var fin = !1;
-
-                $(function() {
 
 
 
-                    $('#animateTitle').t('<del class="animatedBorderBlack">edit this</del><span class="animatedBorderBlack">write</span>this post', {
-
-                        speed: 60,
-                        speed_vary: true,
-                        mistype: 0,
-                        blink:true
+        });
+    }
 
 
-                        // fin: function() {
-                        //
-                        //     if (fin == !1) {
-                        //         fin = !!1; //avoids triggering after 'add' cmd
-                        //         window.setTimeout(function() {
-                        //             $('#t').t('add', 'Still here?');
-                        //         }, 2e4);
-                        //         window.setInterval(function() {
-                        //             $('#t').find('.t-caret').toggle();
-                        //         }, 5e2);
-                        //     }
-                        //
-                        // }
+    var initAnimateWriteHeader = function() {
+        var fin = !1;
 
-                    });
+        $(function() {
 
 
 
-                });
-            }
+            $('#animateTitle').t('<del class="animatedBorderBlack">edit this</del><span class="animatedBorderBlack">write</span>this post', {
+
+                speed: 60,
+                speed_vary: true,
+                mistype: 0,
+                blink: true
+
+
+                // fin: function() {
+                //
+                //     if (fin == !1) {
+                //         fin = !!1; //avoids triggering after 'add' cmd
+                //         window.setTimeout(function() {
+                //             $('#t').t('add', 'Still here?');
+                //         }, 2e4);
+                //         window.setInterval(function() {
+                //             $('#t').find('.t-caret').toggle();
+                //         }, 5e2);
+                //     }
+                //
+                // }
+
+            });
+
+
+
+        });
+    }
 
 
     var goshow = function() {
@@ -136,8 +136,8 @@ var mainHeader = (function() {
         goshow: goshow,
         updateHeaderSingle: updateHeaderSingle,
         headerActiveAction: headerActiveAction,
-        initAnimateReadHeader:initAnimateReadHeader,
-        initAnimateWriteHeader:initAnimateWriteHeader,
+        initAnimateReadHeader: initAnimateReadHeader,
+        initAnimateWriteHeader: initAnimateWriteHeader,
         headerTemplate: headerTemplate,
         initHeader: initHeader,
         padAction: padAction

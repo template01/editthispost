@@ -17,14 +17,9 @@
     margin-top: 0; }
   #singlePad #singlePadRead #singlePadReadMetadata {
     font-weight: bold; }
-    #singlePad #singlePadRead #singlePadReadMetadata ul {
-      padding: 0;
-      margin: 0; }
-    #singlePad #singlePadRead #singlePadReadMetadata li {
-      list-style: none; }
-      #singlePad #singlePadRead #singlePadReadMetadata li span {
-        float: right; }
-      #singlePad #singlePadRead #singlePadReadMetadata li span:first-of-type {
-        float: left; }
-      #singlePad #singlePadRead #singlePadReadMetadata li span:nth-last-of-type(1) {
-        padding-right: 40px; }
+    #singlePad #singlePadRead #singlePadReadMetadata span {
+      float: right; }
+    #singlePad #singlePadRead #singlePadReadMetadata span:first-of-type {
+      float: left; }
+    #singlePad #singlePadRead #singlePadReadMetadata span:nth-last-of-type(1) {
+      padding-right: 40px; }
