@@ -6,12 +6,56 @@
   top: 0;
   left: 0; }
   #indexSplash #indexSplashInner {
-    font-size: 38vw;
-    padding-left: 5vw;
+    font-size: 40vw;
+    font-weight: bold;
+    letter-spacing: -2vw;
     line-height: 100vh;
+    width: 100vw;
+    display: inherit;
     color: #3bdc7b; }
+    #indexSplash #indexSplashInner.shiftCaretColor {
+      color: #fff3f3; }
+    #indexSplash #indexSplashInner .normalTight {
+      margin-left: 11.5vw; }
+    #indexSplash #indexSplashInner .extraTight {
+      margin-left: 3.5vw; }
+    #indexSplash #indexSplashInner .noneBack {
+      background: #fff3f3;
+      border-radius: 10vh;
+      padding-right: 15vw;
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+      color: #3bdc7b; }
+    #indexSplash #indexSplashInner .redBack {
+      background: #ff0000;
+      border-radius: 10vh;
+      padding-right: 15vw;
+      padding-top: 5vh;
+      padding-bottom: 5vh;
+      padding-left: 1.5vw;
+      color: #fff3f3; }
+      #indexSplash #indexSplashInner .redBack .t-caret {
+        color: #fff3f3; }
     #indexSplash #indexSplashInner del {
       text-decoration: none; }
+    #indexSplash #indexSplashInner del:empty {
+      display: none; }
+    #indexSplash #indexSplashInner .t-caret {
+      margin-left: -20vw;
+      -ms-transform: scale(1, 0.5);
+      -webkit-transform: scale(1, 0.5);
+      transform: scale(0.8, 0.8);
+      display: inline-block !important;
+      animation: blink-animation 2s steps(5, start) infinite;
+      -webkit-animation: blink-animation 2s steps(5, start) infinite; }
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden; } }
+
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden; } }
 
 #indexBlurb, #indexInfo, #indexCredits {
   font-size: 2.4vw;
@@ -48,15 +92,28 @@
     width: 30%;
     float: left; }
     #indexPadList .targetPadWrapper .padActions .padActionRead, #indexPadList .targetPadWrapper .padActions .padActionWrite {
-      width: 50%;
-      padding: 0vw 1vw 0.2vw 1vw;
+      width: calc(50% - 1vw);
+      padding: 0.5vw;
+      padding-top: 0.75vw;
+      padding-bottom: 0.75vw;
+      margin: 0.5vw;
+      margin-top: -0.75vw;
       border-radius: 1vw;
-      cursor: pointer; }
+      cursor: pointer;
+      text-align: center; }
     #indexPadList .targetPadWrapper .padActions .padActionRead {
-      margin-right: 20px;
       border: 0.25vw solid #ff0000;
       color: #ff0000; }
+      #indexPadList .targetPadWrapper .padActions .padActionRead:after {
+        content: 'Read'; }
     #indexPadList .targetPadWrapper .padActions .padActionWrite {
       border: 0.25vw solid #3bdc7b;
       background: #3bdc7b;
       color: #fff3f3; }
+      #indexPadList .targetPadWrapper .padActions .padActionWrite:after {
+        content: 'Write'; }
+      #indexPadList .targetPadWrapper .padActions .padActionWrite.locked {
+        background: #e2e2f3;
+        border: 0.25vw solid #e2e2f3; }
+        #indexPadList .targetPadWrapper .padActions .padActionWrite.locked:hover:after {
+          content: 'Locked'; }

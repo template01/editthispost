@@ -33,7 +33,6 @@ var mainRoute = (function() {
                     }
 
                     mainIndex.gohide()
-
                     mainHeader.goshow()
 
 
@@ -41,6 +40,11 @@ var mainRoute = (function() {
                 '*': function() {
                     if (!ranIndex) {
                         // alert('hey')
+                        if($('#singlePad').length===0){
+                          
+                          mainIndex.playSplash()
+
+                        }
                         mainIndex.initIndex()
 
                         ranIndex = true

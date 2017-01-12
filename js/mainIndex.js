@@ -18,12 +18,27 @@ var mainIndex = (function() {
         $(app).append('<div id="indexSplash"><span id="indexSplashInner"><span></div>')
 
 
-        $('#indexSplashInner').t('<del class="animatedBorderBlack">edit<ins>2</ins></del><del class="animatedBorderBlack">this<ins>2</ins></del><span class="animatedBorderBlack">post</span>', {
+        // $('#indexSplashInner').t('<span class="animatedBorderBlack extraTight">post<ins>1.5</ins></span>', {
+        $('#indexSplashInner').t('<del class="noneBack animatedBorderBlack normalTight">edit<ins>1.5</ins></del><del class="noneBack animatedBorderBlack normalTight">this<ins>1.5</ins></del><del class="redBack shiftCaret extraTight">post<ins>1.5</ins></del>', {
+
 
             speed: 200,
             // speed_vary: true,
             mistype: 0,
-            blink: true
+            blink: true,
+
+            typing:function(elem,chars_total,chars_left,char){
+              console.log(char)
+              if(char.match('shiftCaret')){
+                // alert('hey')
+                $('#indexSplashInner').addClass('shiftCaretColor')
+              }
+            },
+
+            fin:function(){
+              $('#indexSplash').fadeOut(200)
+              setTimeout(function(){$('#indexSplash').remove()},200)
+            }
 
 
         });
@@ -60,42 +75,57 @@ var mainIndex = (function() {
         $('#indexPage').hide()
     }
 
-    var attachReadWriteActionsList = function() {
-        $('#indexPadList li').each(function() {
-            console.log(this)
-            $(this).addClass('targetPad').wrap('<div class="targetPadWrapper"></div>').parent().append('<div class="padActions"><span class="padActionRead">Read</span><span class="padActionWrite">Write</span></div>')
-        })
-    }
 
-    var formatIndexEvents = function() {
-        $('#indexPadList li').each(function() {
+        var attachReadWriteActionsList = function() {
+            $('#indexPadList li').each(function() {
+                $(this).addClass('targetPad').wrap('<div class="targetPadWrapper"></div>').parent().append('<div class="padActions"><span class="padActionRead hvr-float"></span><span class="padActionWrite hvr-float"></span></div>')
+                if ($(this).attr('data-status') === 'locked') {
+                    $(this).parents('.targetPadWrapper').find('.padActionWrite').addClass('locked')
+                }
+            })
+        }
 
-            var textInfo = $(this).text().split('|')
+        var formatIndexEvents = function() {
+            $('#indexPadList li').each(function() {
 
-            $(this).empty()
+                var textInfo = $(this).text().split('|')
 
-            savedThis = $(this)
+                $(this).empty()
 
-            textInfo.forEach(function(entry) {
-                console.log(entry);
-                savedThis.append('<span data-link="' + entry.trim() + '">' + entry.replace(/_/g, " ").trim() + '</span>')
-            });
-        })
-    }
+                savedThis = $(this)
+
+                textInfo.forEach(function(entry) {
+                    if (entry.trim() === 'unlocked') {
+                        savedThis.attr('data-status', 'unlocked')
+
+                    } else if (entry.trim() === 'locked') {
+                        savedThis.attr('data-status', 'locked')
+                    } else {
+                        savedThis.append('<span data-link="' + entry.trim() + '">' + entry.replace(/_/g, " ").trim() + '</span>')
+
+                    }
+
+                });
+            })
+        }
 
 
-    var padAction = function() {
-        $(document).on('click', '#indexPadList .padActionRead', function() {
-            target = $(this).parents('.targetPadWrapper').find('.targetPad span').first().attr('data-link')
-            mainRoute.router.navigate('/events/' + target + '/read');
-        })
+        var padAction = function() {
+            $(document).on('click', '#indexPadList .padActionRead', function() {
+                target = $(this).parents('.targetPadWrapper').find('.targetPad span').first().attr('data-link')
+                mainRoute.router.navigate('/events/' + target + '/read');
+            })
 
-        $(document).on('click', '#indexPadList .padActionWrite', function() {
-            target = $(this).parents('.targetPadWrapper').find('.targetPad span').first().attr('data-link')
-            mainRoute.router.navigate('/events/' + target + '/write');
-        })
+            $(document).on('click', '#indexPadList .padActionWrite', function() {
+                if (!$(this).hasClass('locked')) {
+                    target = $(this).parents('.targetPadWrapper').find('.targetPad span').first().attr('data-link')
+                    mainRoute.router.navigate('/events/' + target + '/write');
+                }
+            })
 
-    }
+        }
+
+
 
 
 
