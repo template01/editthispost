@@ -38,7 +38,7 @@ var mainSingle = (function() {
 
     var setSingleWriteHeight = function() {
         $('#singlePad iframe').css({
-            'height': $(window).height() - $('#appHeader').outerHeight() + 'px'
+            'height': $(window).height() - $('#appHeader').outerHeight() + ($(window).width()/100)/4+ 'px'
         })
     }
 
@@ -69,16 +69,27 @@ var mainSingle = (function() {
     var formatsinglePadReadMetadata = function(arrayParam, include) {
         arrayParam.forEach(function(entry) {
 
-            regex = new RegExp('^' + include + '$');
-            if (entry.split('|')[0].trim().match(regex)) {
+            if (entry.split('|').length === 1) {
 
-                var textInfo = entry.split('|')
+                eventHeader = entry
 
-                metadata = $('<div class="paddedBottom" id="singlePadReadMetadata"><p><span>' + textInfo[0].replace(/_/g, " ").trim() + '</span><span>' + textInfo[1].trim() + '</span><span>' + textInfo[2].trim() + '</span></p></div>')
+            } else {
 
-                $('#singlePadRead').prepend(metadata)
+                regex = new RegExp('^' + decodeURIComponent(include) + '$');
+
+                if (entry.split('|')[0].trim().replace(/ /g, "_").match(regex)) {
+
+                    var textInfo = entry.split('|')
+
+                    metadata = $('<div class="paddedBottom" id="singlePadReadMetadata"><h1><span class="metaPlace">' + textInfo[2].trim() + ',<br></span><span class="metaDate">' + textInfo[1].trim() + '</span></h1><h1 class="centerText" ><span class="metaTitle">' + textInfo[0].trim() + '</span></h1><h1><span class="metaEvent">' + eventHeader.replace(/_/g, " ").trim() + '</span></h1></div>')
+
+                    $('#singlePadRead').prepend(metadata)
+
+                }
 
             }
+
+
 
         });
         // })

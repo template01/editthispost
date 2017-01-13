@@ -22,8 +22,6 @@ var mainRoute = (function() {
                         mainHeader.initAnimateReadHeader()
                     }
                     if (params.action === 'write') {
-                        // mainSingle.initSingle()
-                        // alert('initWrite')
                         mainSingle.initSingleWrite(params.slug)
                         mainHeader.headerActiveAction('.padActionWrite')
                         mainHeader.initAnimateWriteHeader()
@@ -49,13 +47,11 @@ var mainRoute = (function() {
                 },
                 '*': function() {
                     if (!ranIndex) {
-                        // alert('hey')
-                        if($('#singlePad').length===0){
-
-                          // mainIndex.playSplash()
-
-                        }
                         mainIndex.initIndex()
+
+                        if($('#singlePad').length===0){
+                          mainIndex.playSplash()
+                        }
 
                         ranIndex = true
                     }
@@ -63,12 +59,6 @@ var mainRoute = (function() {
                     mainIndex.goshow()
                     mainSingle.gohide()
                     mainHeader.gohide()
-
-
-                    // mainLvlTransitions.goToLvl(1)
-                    // mainIndex.fixIndexImageSlider()
-                    // mainLvlTransitions.recallLvlScroll(mainLvlTransitions.indexScrollMemory)
-
                 }
             })
             .resolve();

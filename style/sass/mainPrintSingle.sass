@@ -1,0 +1,36 @@
+@import 'mainGlobalVariables'
+
+@media print
+
+  body
+    margin-top: 4cm !important
+    margin-bottom: 4cm !important
+    margin-left: 2cm !important
+    margin-right: 2cm !important
+
+
+  #appHeader
+    display: none !important
+
+  #singlePadRead
+    padding: 0 !important
+    width: 100% !important
+    font-size: 16pt !important
+    font-family: $globalTextFamMono !important
+    line-height: 16pt*1.1 !important
+    letter-spacing: -0.1vw !important
+
+
+    #singlePadReadMetadata
+
+      padding-bottom: 5pt !important
+
+      .metaPlace,.metaDate,.metaEvent,.metaTitle
+
+        font-size: 52pt !important
+        line-height: 52pt*1.1 !important
+        letter-spacing: -2.1pt !important
+
+      .metaTitle
+        padding-top: 52pt*1.5 !important
+        padding-bottom: 52pt !important

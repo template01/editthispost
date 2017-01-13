@@ -63,6 +63,11 @@
   line-height: 2.64vw;
   letter-spacing: -0.1vw;
   color: #ff0000; }
+  @media screen and (max-width: 1024px) {
+    #indexBlurb, #indexInfo, #indexCredits {
+      font-size: 3.6vw;
+      line-height: 3.96vw;
+      letter-spacing: -0.1vw; } }
   #indexBlurb p:first-of-type, #indexInfo p:first-of-type, #indexCredits p:first-of-type {
     margin-top: -0.5vw; }
 
@@ -72,48 +77,101 @@
   font-size: 2.4vw;
   font-family: TeXGyreHeros;
   line-height: 2.64vw;
-  letter-spacing: -0.1vw; }
+  letter-spacing: -0.1vw;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 50px; }
+  @media screen and (max-width: 1024px) {
+    #indexPadList {
+      font-size: 3.6vw;
+      line-height: 3.96vw;
+      letter-spacing: -0.1vw;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 16.66667px; } }
+  #indexPadList p {
+    color: #ff0000;
+    padding: 25px;
+    margin-bottom: 0; }
+    @media screen and (max-width: 1024px) {
+      #indexPadList p {
+        padding: 16.66667px; } }
   #indexPadList ul {
     padding: 0;
     margin: 0; }
-  #indexPadList .targetPadWrapper .targetPad {
-    color: #ff0000;
-    padding: 25px;
-    float: left;
-    width: 70%;
-    list-style: none; }
-    #indexPadList .targetPadWrapper .targetPad span:first-of-type {
-      font-weight: bold; }
-    #indexPadList .targetPadWrapper .targetPad span {
-      display: inline-block;
-      width: 33.333%; }
-  #indexPadList .targetPadWrapper .padActions {
-    padding: 25px;
-    width: 30%;
-    float: left; }
-    #indexPadList .targetPadWrapper .padActions .padActionRead, #indexPadList .targetPadWrapper .padActions .padActionWrite {
-      width: calc(50% - 1vw);
-      padding: 0.5vw;
-      padding-top: 0.75vw;
-      padding-bottom: 0.75vw;
-      margin: 0.5vw;
-      margin-top: -0.75vw;
-      border-radius: 1vw;
-      cursor: pointer;
-      text-align: center; }
-    #indexPadList .targetPadWrapper .padActions .padActionRead {
-      border: 0.25vw solid #ff0000;
-      color: #ff0000; }
-      #indexPadList .targetPadWrapper .padActions .padActionRead:after {
-        content: 'Read'; }
-    #indexPadList .targetPadWrapper .padActions .padActionWrite {
-      border: 0.25vw solid #3bdc7b;
-      background: #3bdc7b;
-      color: #fff3f3; }
-      #indexPadList .targetPadWrapper .padActions .padActionWrite:after {
-        content: 'Write'; }
-      #indexPadList .targetPadWrapper .padActions .padActionWrite.locked {
-        background: #e2e2f3;
-        border: 0.25vw solid #e2e2f3; }
-        #indexPadList .targetPadWrapper .padActions .padActionWrite.locked:hover:after {
-          content: 'Locked'; }
+  #indexPadList .targetPadWrapper {
+    display: inline-flex;
+    width: 100%;
+    border-top: 0.25vw solid #ff0000;
+    padding-top: 1.5vw; }
+    @media screen and (max-width: 1024px) {
+      #indexPadList .targetPadWrapper {
+        width: calc(100% - 33.33333px);
+        margin-left: 16.66667px;
+        margin-right: 16.66667px; } }
+    #indexPadList .targetPadWrapper:last-of-type {
+      border-bottom: 0.25vw solid #ff0000; }
+    #indexPadList .targetPadWrapper .targetPad {
+      color: #ff0000;
+      padding: 25px;
+      float: left;
+      width: 70%;
+      list-style: none; }
+      #indexPadList .targetPadWrapper .targetPad span:first-of-type {
+        font-weight: bold;
+        width: 50%; }
+      #indexPadList .targetPadWrapper .targetPad span {
+        vertical-align: top;
+        display: inline-block;
+        width: 25%;
+        cursor: pointer; }
+      @media screen and (max-width: 1024px) {
+        #indexPadList .targetPadWrapper .targetPad {
+          padding: 16.66667px;
+          padding-left: 0;
+          padding-right: 0;
+          width: 64%; }
+          #indexPadList .targetPadWrapper .targetPad span:first-of-type {
+            font-weight: bold;
+            width: 33.333%; }
+          #indexPadList .targetPadWrapper .targetPad span:nth-of-type(2), #indexPadList .targetPadWrapper .targetPad span:nth-of-type(3) {
+            padding-left: 10px; }
+          #indexPadList .targetPadWrapper .targetPad span {
+            vertical-align: top;
+            display: inline-block;
+            width: 33.333%; } }
+    #indexPadList .targetPadWrapper .padActions {
+      padding: 25px;
+      width: 30%;
+      float: left; }
+      @media screen and (max-width: 1024px) {
+        #indexPadList .targetPadWrapper .padActions {
+          padding: 16.66667px;
+          padding-right: 0;
+          width: 36%; } }
+      #indexPadList .targetPadWrapper .padActions .padActionRead, #indexPadList .targetPadWrapper .padActions .padActionWrite {
+        width: calc(50% - 1vw);
+        padding: 0.5vw;
+        padding-top: 0.75vw;
+        padding-bottom: 0.75vw;
+        margin: 0.5vw;
+        margin-top: -0.75vw;
+        border-radius: 1vw;
+        cursor: pointer;
+        text-align: center; }
+      #indexPadList .targetPadWrapper .padActions .padActionRead {
+        border: 0.25vw solid #ff0000;
+        color: #ff0000; }
+        #indexPadList .targetPadWrapper .padActions .padActionRead:after {
+          content: 'Read'; }
+      #indexPadList .targetPadWrapper .padActions .padActionWrite {
+        border: 0.25vw solid #3bdc7b;
+        background: #3bdc7b;
+        color: #fff3f3; }
+        #indexPadList .targetPadWrapper .padActions .padActionWrite:after {
+          content: 'Write'; }
+        #indexPadList .targetPadWrapper .padActions .padActionWrite.locked {
+          background: #e2e2f3;
+          border: 0.25vw solid #e2e2f3; }
+          #indexPadList .targetPadWrapper .padActions .padActionWrite.locked:hover:after {
+            content: 'Locked'; }

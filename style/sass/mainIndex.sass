@@ -91,8 +91,18 @@
   letter-spacing: -0.1vw
   color: $globalRed
 
+  @media screen and (max-width: $globalBreakLarge)
+    font-size: $globalTextSizeSmall
+    line-height: $globalTextSizeSmall * 1.1
+    letter-spacing: -0.1vw
+
+
+
   p:first-of-type
     margin-top: -0.5vw
+
+
+
 
 #indexPadList
   padding-left: $globalPadding * 2
@@ -101,12 +111,52 @@
   font-family: $globalTextFam
   line-height: $globalTextSize * 1.1
   letter-spacing: -0.1vw
+  display: inline-block
+  width: 100%
+  padding-bottom: $globalPadding
+
+  @media screen and (max-width: $globalBreakLarge)
+      font-size: $globalTextSizeSmall
+      line-height: $globalTextSizeSmall * 1.1
+      letter-spacing: -0.1vw
+      padding-left: 0
+      padding-right: 0
+      padding-bottom: $globalPaddingSmall
+
+
+  p
+    color: $globalRed
+    padding: $globalPadding / 2
+    margin-bottom: 0
+    @media screen and (max-width: $globalBreakLarge)
+      padding: $globalPaddingSmall
+
+
+
 
   ul
     padding: 0
     margin: 0
 
   .targetPadWrapper
+
+    display: inline-flex
+    width: 100%
+    border-top: 0.25vw solid $globalRed
+    // margin-top: 0.75vw
+    padding-top: 0.75vw*2
+
+    @media screen and (max-width: $globalBreakLarge)
+      width: calc(100% - #{$globalPaddingSmall*2})
+      margin-left: $globalPaddingSmall
+      margin-right: $globalPaddingSmall
+
+
+    &:last-of-type
+      // padding-top: 0.75vw
+      border-bottom: 0.25vw solid $globalRed
+
+
     .targetPad
       color: $globalRed
       padding: $globalPadding / 2
@@ -116,15 +166,46 @@
 
       span:first-of-type
         font-weight: bold
+        width: 50%
 
       span
+        vertical-align: top
         display: inline-block
-        width: 33.333%
+        width: 25%
+        cursor: pointer
+
+      @media screen and (max-width: $globalBreakLarge)
+        padding: $globalPaddingSmall
+        padding-left: 0
+        padding-right: 0
+        width: 64%
+
+        span:first-of-type
+          font-weight: bold
+          width: 33.333%
+
+        span:nth-of-type(2),span:nth-of-type(3)
+          // background: green
+          padding-left: 10px
+
+        span
+          vertical-align: top
+          display: inline-block
+          width: 33.333%
 
     .padActions
       padding: $globalPadding / 2
       width: 30%
       float: left
+
+      @media screen and (max-width: $globalBreakLarge)
+        padding: $globalPaddingSmall
+        padding-right: 0
+        width: 36%
+
+
+
+
 
       .padActionRead, .padActionWrite
         width: calc(50% - 1vw)

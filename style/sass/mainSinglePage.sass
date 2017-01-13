@@ -10,6 +10,8 @@
     overflow-x: hidden
     border: 0
     background: white
+    border-top: 0.25vw solid $globalRed
+    margin-top: -0.25vw
 
   #singlePadRead
     padding: $globalPadding
@@ -18,24 +20,47 @@
     line-height: $globalTextSize*1.1
     letter-spacing: -0.1vw
     color: $globalBlack
-
     width: 75%
+    @media screen and (max-width: $globalBreakLarge)
+      padding: $globalPaddingSmall
+      font-size: $globalTextSizeSmall
+      line-height: $globalTextSizeSmall*1.1
+      width: 100%
+
+    a
+      text-decoration: none
+      border-bottom: 0.125vw solid $globalBlack
+      color: $globalBlack
 
     & > *
       margin-top: 0
 
     #singlePadReadMetadata
-      font-weight: bold
+      // font-weight: bold
+      display: inline-block
+      width: 100%
 
-      span
-        float: right
+      .metaPlace,.metaDate,.metaEvent,.metaTitle
 
-      span:first-of-type
-        float: left
+        font-size: $globalTextSize*1.5
+        // font-size: $globalTextSize
+        font-family: $globalTextFam
+        line-height: $globalTextSize*1.1
+        letter-spacing: -0.1vw
+        font-weight: normal
 
-      span:nth-last-of-type(1)
-        padding-right: 40px
-      // display: -webkit-flex
-      // -webkit-justify-content: space-around
-      // display: flex
-      // justify-content: space-around
+      .metaTitle
+        padding: $globalPadding
+        display: inline-block
+        font-weight: bold
+
+      @media screen and (max-width: $globalBreakLarge)
+
+        .metaPlace,.metaDate,.metaEvent,.metaTitle
+
+          font-size: $globalTextSizeSmall*2
+          line-height: $globalTextSizeSmall*1.8
+          letter-spacing: -0.1vw
+
+        .metaTitle
+          padding: $globalPaddingSmall

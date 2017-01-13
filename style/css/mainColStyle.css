@@ -1,11 +1,28 @@
+.hiddenElem {
+  visibility: hidden; }
+
+.centerText {
+  text-align: center; }
+
+.capitalizeText .targetPad span {
+  font-weight: normal !important;
+  width: 100% !important;
+  text-transform: uppercase; }
+
 .padded {
   padding: 50px; }
+  @media screen and (max-width: 1024px) {
+    .padded {
+      padding: 16.66667px; } }
 
 .paddedNotBottom {
   padding-bottom: 0 !important; }
 
 .paddedBottom {
   padding-bottom: 50px; }
+  @media screen and (max-width: 1024px) {
+    .paddedBottom {
+      padding-bottom: 16.66667px; } }
 
 .colFull {
   width: 100%;
@@ -16,3 +33,6 @@
   width: 50%;
   display: inline-block;
   float: left; }
+  @media screen and (max-width: 1024px) {
+    .colHalf {
+      width: 100%; } }

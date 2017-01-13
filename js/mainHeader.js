@@ -3,10 +3,10 @@ var mainHeader = (function() {
     var headerTemplate = `<div id="appHeader">
       <p>
         <a id="appIndex" href="/" data-navigo><span id="animateTitle"></span></a>
-        <span id="padTitle"></span>
         <span class="padActions">
+          <span id="padTitle" class="padTitle"></span>
           <span class="padActionRead">Read</span>
-          <span class="padActionWrite">Write</span>
+          <span class="padActionWrite"></span>
           <span class="padActionPrint">Print</span>
         </span>
       </p>
@@ -25,7 +25,10 @@ var mainHeader = (function() {
     var updateHeaderSingle = function(slug) {
         $('#appHeader #padTitle')
             .attr("data-link", slug)
-            .empty().append(slug.replace(/_/g, " "))
+            .empty().append(decodeURIComponent(slug).replace(/_/g, " "))
+        mainHeader.headerCheckLockedInit(slug)
+
+            // console.log(decodeURIComponent(slug))
     }
 
     var padAction = function() {
@@ -34,12 +37,88 @@ var mainHeader = (function() {
             mainRoute.router.navigate('/events/' + target + '/read');
         })
 
-        $(document).on('click', '#appHeader .padActionWrite', function() {
+        $(document).on('click', '#appHeader .padActionWrite:not(.locked)', function() {
             target = $('#padTitle').attr('data-link')
             mainRoute.router.navigate('/events/' + target + '/write');
         })
 
+        $(document).on('click', '#appHeader .padActionPrint', function() {
+            target = $('#padTitle').attr('data-link')
+            if (window.location.pathname.split("/").pop() === 'write') {
+                mainRoute.router.navigate('/events/' + target + '/read');
+                window.setTimeout(function() {
+                    window.print()
+                }, 600)
+            } else {
+                window.print()
+            }
+
+        })
     }
+
+
+    var headerCheckLockedInit = function(target) {
+        mainAjaxGetters.getParts('http://editthispost.com:9001/p/' + 'index' + '/export/html')
+            .success(function(data) {
+                console.log('success')
+                mainAjaxGetters.getParts(indexJsonSource)
+                    .success(function(data) {
+                        console.log(data)
+                        console.log('success')
+                        indexItems = data.data.text.split('\n').slice(0, -1)
+                        mainHeader.headerCheckLocked(indexItems, target)
+
+                    })
+                    .error(function() {
+                        console.log('error')
+                    });
+
+            })
+            .error(function() {
+                console.log('error')
+            });
+
+    }
+
+    var headerCheckLocked = function(arrayParam, include) {
+        arrayParam.forEach(function(entry) {
+
+            if (entry.split('|').length === 1) {
+
+                eventHeader = entry
+
+            } else {
+
+                regex = new RegExp('^' + decodeURIComponent(include) + '$');
+
+                if (entry.split('|')[0].trim().replace(/ /g, "_").match(regex)) {
+
+                    var textInfo = entry.split('|')
+
+                    if(textInfo[textInfo.length-1].trim() === 'locked'){
+
+                      $('#appHeader').find('.padActionWrite').addClass('locked')
+
+                    }else{
+                      $('#appHeader').find('.padActionWrite').removeClass('locked')
+
+                    }
+
+                    // metadata = $('<div class="paddedBottom" id="singlePadReadMetadata"><h1><span class="metaPlace">' + textInfo[2].trim() + ',<br></span><span class="metaDate">' + textInfo[1].trim() + '</span></h1><h1 class="centerText" ><span class="metaTitle">' + textInfo[0].trim() + '</span></h1><h1><span class="metaEvent">' + eventHeader.replace(/_/g, " ").trim() + '</span></h1></div>')
+
+                    // $('#singlePadRead').prepend(metadata)
+
+                }
+
+            }
+
+
+
+        });
+        // })
+    }
+
+
 
     var headerActiveAction = function(activeTarget) {
         $('#appHeader')
@@ -134,6 +213,8 @@ var mainHeader = (function() {
         test: test,
         gohide: gohide,
         goshow: goshow,
+        headerCheckLockedInit: headerCheckLockedInit,
+        headerCheckLocked: headerCheckLocked,
         updateHeaderSingle: updateHeaderSingle,
         headerActiveAction: headerActiveAction,
         initAnimateReadHeader: initAnimateReadHeader,

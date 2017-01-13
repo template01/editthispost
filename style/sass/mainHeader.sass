@@ -1,23 +1,55 @@
 @import mainGlobalVariables
 
 #appHeader
-  padding: $globalPadding
+  padding-top: $globalPadding
+  margin-left: $globalPadding
+  margin-right: $globalPadding
+  padding-bottom: $globalPadding
+
   font-size: $globalTextSize
   font-family: $globalTextFam
   line-height: $globalTextSize*1.1
   letter-spacing: -0.1vw
-  color: $globalBlack
-  border-bottom: 0.28vw solid $globalBlack
+  color: $globalRed
+  border-bottom: 0.25vw solid $globalRed
+
+  @media screen and (max-width: $globalBreakMid)
+    padding-top: $globalPaddingSmall
+    font-size: $globalTextSizeSmall
+    margin-left: $globalPaddingSmall
+    margin-right: $globalPaddingSmall
+    padding-bottom: $globalPaddingSmall
+
+    line-height: $globalTextSizeSmall*1.1
+
+  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+    font-size: $globalTextSizeSmall
+    padding-top: $globalPaddingSmall*2
+    margin-left: $globalPaddingSmall
+    margin-right: $globalPaddingSmall
+    padding-bottom: $globalPaddingSmall*2
+
+    line-height: $globalTextSizeSmall*1.1
+
+
 
   p:first-of-type
     margin-top: -0.5vw
     margin-bottom: 0
 
   #appIndex
-    width: 20vw
+    width: 28vw
     display: inline-block
     text-decoration: none
     color: inherit
+    font-weight: bold
+
+    @media screen and (max-width: $globalBreakMid)
+      width: 28vw
+    @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+      width: 30vw
+
+
 
     .t-caret
       padding-left: 0.2vw
@@ -29,39 +61,100 @@
     .animatedBorderBlack
       padding: 0vw 1vw 0.2vw 1vw
       border-radius: 1vw
-      border: 0.25vw solid $globalBlack
-      background: $globalBlack
+      border: 0.25vw solid $globalRed
+      background: $globalRed
       color: $globalRose
 
 
 
 
-  #padTitle
-    // float:
-    clear: none
-    margin-left: $globalPadding
-    padding: 0vw 1vw 0.2vw 1vw
-    border-radius: 1vw
-    // cursor: pointer
-    border: 0.25vw solid $globalBlack
+  // .padTitleOuter
+  //
+  //
+  //   @media screen and (max-width: $globalBreakLarge)
+  //     display: none
+  //     float: right
+
+  // #padTitle
+  //   // float:
+  //   clear: none
+  //   margin-left: $globalPadding
+  //   padding: 0vw 1vw 0.2vw 1vw
+  //   border-radius: 1vw
+  //   // cursor: pointer
+  //   border: 0.25vw solid $globalRed
+    //
+    // @media screen and (max-width: $globalBreakLarge)
+    //   margin-left: 0
+    //   font-size: $globalTextSizeSmall
+    //   line-height: $globalTextSizeSmall*1.1
+
+
 
   .padActions
     clear: none
     float: right
 
-    .padActionRead,.padActionWrite,.padActionPrint
-      width: 50%
+    .padActionRead,.padActionWrite,.padActionPrint,.padTitle
+      // width: 50%
       padding: 0vw 1vw 0.2vw 1vw
       border-radius: 1vw
       cursor: pointer
-      border: 0.25vw solid $globalBlack
-      background: $globalBlack
+      vertical-align: text-top
+
+
+    .padTitle
+      // max-width: 30vw
+      @media screen and (max-width: $globalBreakLarge)
+        max-width: 28vw
+        overflow: hidden
+        text-overflow: ellipsis
+        white-space: nowrap
+        display: inline-block
+        text-align: right
+
+      // vertical-align: text-top
+
+    .padActionRead
+      border: 0.25vw solid $globalRed
+      &:not(.activeAction)
+        background: $globalRed
+        color: $globalRose
+        &:hover
+          background: $globalRose
+          color: $globalRed
+
+    .padActionWrite
+      border: 0.25vw solid $globalGreen
+      background: $globalGreen
       color: $globalRose
 
+      &:after
+        content: 'Write'
+
+      &.locked
+        cursor: default !important
+        background: $globalGrey
+        border: 0.25vw solid $globalGrey
+
+        &:hover:after
+          content: 'Locked'
+          color: $globalRose
+          background: $globalGrey
+
+      &:not(.locked)
+        &:hover
+          background: $globalRose
+          color: $globalGreen
+
+        &.activeAction
+          background: $globalRose
+          color: $globalGreen
+
+    .padActionPrint
+      border: 0.25vw solid $globalRed
+      background: $globalRed
+      color: $globalRose
       &:hover
         background: none
-        color: $globalBlack
-
-    .activeAction
-      background: none
-      color: $globalBlack
+        color: $globalRed

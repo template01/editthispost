@@ -1,19 +1,45 @@
 #appHeader {
-  padding: 50px;
+  padding-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-bottom: 50px;
   font-size: 2.4vw;
   font-family: TeXGyreHeros;
   line-height: 2.64vw;
   letter-spacing: -0.1vw;
-  color: black;
-  border-bottom: 0.28vw solid black; }
+  color: #ff0000;
+  border-bottom: 0.25vw solid #ff0000; }
+  @media screen and (max-width: 600px) {
+    #appHeader {
+      padding-top: 16.66667px;
+      font-size: 3.6vw;
+      margin-left: 16.66667px;
+      margin-right: 16.66667px;
+      padding-bottom: 16.66667px;
+      line-height: 3.96vw; } }
+  @media screen and (max-width: 1024px) and (min-width: 600px) {
+    #appHeader {
+      font-size: 3.6vw;
+      padding-top: 33.33333px;
+      margin-left: 16.66667px;
+      margin-right: 16.66667px;
+      padding-bottom: 33.33333px;
+      line-height: 3.96vw; } }
   #appHeader p:first-of-type {
     margin-top: -0.5vw;
     margin-bottom: 0; }
   #appHeader #appIndex {
-    width: 20vw;
+    width: 28vw;
     display: inline-block;
     text-decoration: none;
-    color: inherit; }
+    color: inherit;
+    font-weight: bold; }
+    @media screen and (max-width: 600px) {
+      #appHeader #appIndex {
+        width: 28vw; } }
+    @media screen and (max-width: 1024px) and (min-width: 600px) {
+      #appHeader #appIndex {
+        width: 30vw; } }
     #appHeader #appIndex .t-caret {
       padding-left: 0.2vw; }
     #appHeader #appIndex del {
@@ -21,29 +47,57 @@
     #appHeader #appIndex .animatedBorderBlack {
       padding: 0vw 1vw 0.2vw 1vw;
       border-radius: 1vw;
-      border: 0.25vw solid black;
-      background: black;
+      border: 0.25vw solid #ff0000;
+      background: #ff0000;
       color: #fff3f3; }
-  #appHeader #padTitle {
-    clear: none;
-    margin-left: 50px;
-    padding: 0vw 1vw 0.2vw 1vw;
-    border-radius: 1vw;
-    border: 0.25vw solid black; }
   #appHeader .padActions {
     clear: none;
     float: right; }
-    #appHeader .padActions .padActionRead, #appHeader .padActions .padActionWrite, #appHeader .padActions .padActionPrint {
-      width: 50%;
+    #appHeader .padActions .padActionRead, #appHeader .padActions .padActionWrite, #appHeader .padActions .padActionPrint, #appHeader .padActions .padTitle {
       padding: 0vw 1vw 0.2vw 1vw;
       border-radius: 1vw;
       cursor: pointer;
-      border: 0.25vw solid black;
-      background: black;
+      vertical-align: text-top; }
+    @media screen and (max-width: 1024px) {
+      #appHeader .padActions .padTitle {
+        max-width: 28vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        text-align: right; } }
+    #appHeader .padActions .padActionRead {
+      border: 0.25vw solid #ff0000; }
+      #appHeader .padActions .padActionRead:not(.activeAction) {
+        background: #ff0000;
+        color: #fff3f3; }
+        #appHeader .padActions .padActionRead:not(.activeAction):hover {
+          background: #fff3f3;
+          color: #ff0000; }
+    #appHeader .padActions .padActionWrite {
+      border: 0.25vw solid #3bdc7b;
+      background: #3bdc7b;
       color: #fff3f3; }
-      #appHeader .padActions .padActionRead:hover, #appHeader .padActions .padActionWrite:hover, #appHeader .padActions .padActionPrint:hover {
+      #appHeader .padActions .padActionWrite:after {
+        content: 'Write'; }
+      #appHeader .padActions .padActionWrite.locked {
+        cursor: default !important;
+        background: #e2e2f3;
+        border: 0.25vw solid #e2e2f3; }
+        #appHeader .padActions .padActionWrite.locked:hover:after {
+          content: 'Locked';
+          color: #fff3f3;
+          background: #e2e2f3; }
+      #appHeader .padActions .padActionWrite:not(.locked):hover {
+        background: #fff3f3;
+        color: #3bdc7b; }
+      #appHeader .padActions .padActionWrite:not(.locked).activeAction {
+        background: #fff3f3;
+        color: #3bdc7b; }
+    #appHeader .padActions .padActionPrint {
+      border: 0.25vw solid #ff0000;
+      background: #ff0000;
+      color: #fff3f3; }
+      #appHeader .padActions .padActionPrint:hover {
         background: none;
-        color: black; }
-    #appHeader .padActions .activeAction {
-      background: none;
-      color: black; }
+        color: #ff0000; }

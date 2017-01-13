@@ -195,6 +195,15 @@ textarea {
     /* Style adjustments for viewports that meet the condition */
 }
 
+@page
+{
+    size: auto;   /* auto is the initial value */
+    /* this affects the margin in the printer settings */
+    margin: 0mm;
+}
+
+
+
 @media print,
        (-webkit-min-device-pixel-ratio: 1.25),
        (min-resolution: 1.25dppx),

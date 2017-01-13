@@ -1,10 +1,28 @@
 @import 'mainGlobalVariables'
 
+.hiddenElem
+  visibility: hidden
+
+.centerText
+  text-align: center
+  
+.capitalizeText
+  .targetPad
+    span
+      font-weight: normal !important
+      width: 100% !important
+      text-transform: uppercase
+
 .padded
   padding: $globalPadding
+  @media screen and (max-width: $globalBreakLarge)
+    padding: $globalPaddingSmall
 
 .paddedNotBottom
   padding-bottom:0 !important
 
 .paddedBottom
   padding-bottom: $globalPadding
+
+  @media screen and (max-width: $globalBreakLarge)
+    padding-bottom: $globalPaddingSmall

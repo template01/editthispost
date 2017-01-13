@@ -1,18 +1,37 @@
+.hiddenElem {
+  visibility: hidden; }
+
+.centerText {
+  text-align: center; }
+
+.capitalizeText .targetPad span {
+  font-weight: normal !important;
+  width: 100% !important;
+  text-transform: uppercase; }
+
 .padded {
   padding: 50px; }
+  @media screen and (max-width: 1024px) {
+    .padded {
+      padding: 16.66667px; } }
 
 .paddedNotBottom {
   padding-bottom: 0 !important; }
 
 .paddedBottom {
   padding-bottom: 50px; }
+  @media screen and (max-width: 1024px) {
+    .paddedBottom {
+      padding-bottom: 16.66667px; } }
 
 #singlePad iframe {
   width: 100%;
   height: 100vh;
   overflow-x: hidden;
   border: 0;
-  background: white; }
+  background: white;
+  border-top: 0.25vw solid #ff0000;
+  margin-top: -0.25vw; }
 
 #singlePad #singlePadRead {
   padding: 50px;
@@ -22,16 +41,38 @@
   letter-spacing: -0.1vw;
   color: black;
   width: 75%; }
+  @media screen and (max-width: 1024px) {
+    #singlePad #singlePadRead {
+      padding: 16.66667px;
+      font-size: 3.6vw;
+      line-height: 3.96vw;
+      width: 100%; } }
+  #singlePad #singlePadRead a {
+    text-decoration: none;
+    border-bottom: 0.125vw solid black;
+    color: black; }
   #singlePad #singlePadRead > * {
     margin-top: 0; }
   #singlePad #singlePadRead #singlePadReadMetadata {
-    font-weight: bold; }
-    #singlePad #singlePadRead #singlePadReadMetadata span {
-      float: right; }
-    #singlePad #singlePadRead #singlePadReadMetadata span:first-of-type {
-      float: left; }
-    #singlePad #singlePadRead #singlePadReadMetadata span:nth-last-of-type(1) {
-      padding-right: 40px; }
+    display: inline-block;
+    width: 100%; }
+    #singlePad #singlePadRead #singlePadReadMetadata .metaPlace, #singlePad #singlePadRead #singlePadReadMetadata .metaDate, #singlePad #singlePadRead #singlePadReadMetadata .metaEvent, #singlePad #singlePadRead #singlePadReadMetadata .metaTitle {
+      font-size: 3.6vw;
+      font-family: TeXGyreHeros;
+      line-height: 2.64vw;
+      letter-spacing: -0.1vw;
+      font-weight: normal; }
+    #singlePad #singlePadRead #singlePadReadMetadata .metaTitle {
+      padding: 50px;
+      display: inline-block;
+      font-weight: bold; }
+    @media screen and (max-width: 1024px) {
+      #singlePad #singlePadRead #singlePadReadMetadata .metaPlace, #singlePad #singlePadRead #singlePadReadMetadata .metaDate, #singlePad #singlePadRead #singlePadReadMetadata .metaEvent, #singlePad #singlePadRead #singlePadReadMetadata .metaTitle {
+        font-size: 7.2vw;
+        line-height: 6.48vw;
+        letter-spacing: -0.1vw; }
+      #singlePad #singlePadRead #singlePadReadMetadata .metaTitle {
+        padding: 16.66667px; } }
 
 #indexSplash {
   position: fixed;
@@ -98,6 +139,11 @@
   line-height: 2.64vw;
   letter-spacing: -0.1vw;
   color: #ff0000; }
+  @media screen and (max-width: 1024px) {
+    #indexBlurb, #indexInfo, #indexCredits {
+      font-size: 3.6vw;
+      line-height: 3.96vw;
+      letter-spacing: -0.1vw; } }
   #indexBlurb p:first-of-type, #indexInfo p:first-of-type, #indexCredits p:first-of-type {
     margin-top: -0.5vw; }
 
@@ -107,68 +153,147 @@
   font-size: 2.4vw;
   font-family: TeXGyreHeros;
   line-height: 2.64vw;
-  letter-spacing: -0.1vw; }
+  letter-spacing: -0.1vw;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 50px; }
+  @media screen and (max-width: 1024px) {
+    #indexPadList {
+      font-size: 3.6vw;
+      line-height: 3.96vw;
+      letter-spacing: -0.1vw;
+      padding-left: 0;
+      padding-right: 0;
+      padding-bottom: 16.66667px; } }
+  #indexPadList p {
+    color: #ff0000;
+    padding: 25px;
+    margin-bottom: 0; }
+    @media screen and (max-width: 1024px) {
+      #indexPadList p {
+        padding: 16.66667px; } }
   #indexPadList ul {
     padding: 0;
     margin: 0; }
-  #indexPadList .targetPadWrapper .targetPad {
-    color: #ff0000;
-    padding: 25px;
-    float: left;
-    width: 70%;
-    list-style: none; }
-    #indexPadList .targetPadWrapper .targetPad span:first-of-type {
-      font-weight: bold; }
-    #indexPadList .targetPadWrapper .targetPad span {
-      display: inline-block;
-      width: 33.333%; }
-  #indexPadList .targetPadWrapper .padActions {
-    padding: 25px;
-    width: 30%;
-    float: left; }
-    #indexPadList .targetPadWrapper .padActions .padActionRead, #indexPadList .targetPadWrapper .padActions .padActionWrite {
-      width: calc(50% - 1vw);
-      padding: 0.5vw;
-      padding-top: 0.75vw;
-      padding-bottom: 0.75vw;
-      margin: 0.5vw;
-      margin-top: -0.75vw;
-      border-radius: 1vw;
-      cursor: pointer;
-      text-align: center; }
-    #indexPadList .targetPadWrapper .padActions .padActionRead {
-      border: 0.25vw solid #ff0000;
-      color: #ff0000; }
-      #indexPadList .targetPadWrapper .padActions .padActionRead:after {
-        content: 'Read'; }
-    #indexPadList .targetPadWrapper .padActions .padActionWrite {
-      border: 0.25vw solid #3bdc7b;
-      background: #3bdc7b;
-      color: #fff3f3; }
-      #indexPadList .targetPadWrapper .padActions .padActionWrite:after {
-        content: 'Write'; }
-      #indexPadList .targetPadWrapper .padActions .padActionWrite.locked {
-        background: #e2e2f3;
-        border: 0.25vw solid #e2e2f3; }
-        #indexPadList .targetPadWrapper .padActions .padActionWrite.locked:hover:after {
-          content: 'Locked'; }
+  #indexPadList .targetPadWrapper {
+    display: inline-flex;
+    width: 100%;
+    border-top: 0.25vw solid #ff0000;
+    padding-top: 1.5vw; }
+    @media screen and (max-width: 1024px) {
+      #indexPadList .targetPadWrapper {
+        width: calc(100% - 33.33333px);
+        margin-left: 16.66667px;
+        margin-right: 16.66667px; } }
+    #indexPadList .targetPadWrapper:last-of-type {
+      border-bottom: 0.25vw solid #ff0000; }
+    #indexPadList .targetPadWrapper .targetPad {
+      color: #ff0000;
+      padding: 25px;
+      float: left;
+      width: 70%;
+      list-style: none; }
+      #indexPadList .targetPadWrapper .targetPad span:first-of-type {
+        font-weight: bold;
+        width: 50%; }
+      #indexPadList .targetPadWrapper .targetPad span {
+        vertical-align: top;
+        display: inline-block;
+        width: 25%;
+        cursor: pointer; }
+      @media screen and (max-width: 1024px) {
+        #indexPadList .targetPadWrapper .targetPad {
+          padding: 16.66667px;
+          padding-left: 0;
+          padding-right: 0;
+          width: 64%; }
+          #indexPadList .targetPadWrapper .targetPad span:first-of-type {
+            font-weight: bold;
+            width: 33.333%; }
+          #indexPadList .targetPadWrapper .targetPad span:nth-of-type(2), #indexPadList .targetPadWrapper .targetPad span:nth-of-type(3) {
+            padding-left: 10px; }
+          #indexPadList .targetPadWrapper .targetPad span {
+            vertical-align: top;
+            display: inline-block;
+            width: 33.333%; } }
+    #indexPadList .targetPadWrapper .padActions {
+      padding: 25px;
+      width: 30%;
+      float: left; }
+      @media screen and (max-width: 1024px) {
+        #indexPadList .targetPadWrapper .padActions {
+          padding: 16.66667px;
+          padding-right: 0;
+          width: 36%; } }
+      #indexPadList .targetPadWrapper .padActions .padActionRead, #indexPadList .targetPadWrapper .padActions .padActionWrite {
+        width: calc(50% - 1vw);
+        padding: 0.5vw;
+        padding-top: 0.75vw;
+        padding-bottom: 0.75vw;
+        margin: 0.5vw;
+        margin-top: -0.75vw;
+        border-radius: 1vw;
+        cursor: pointer;
+        text-align: center; }
+      #indexPadList .targetPadWrapper .padActions .padActionRead {
+        border: 0.25vw solid #ff0000;
+        color: #ff0000; }
+        #indexPadList .targetPadWrapper .padActions .padActionRead:after {
+          content: 'Read'; }
+      #indexPadList .targetPadWrapper .padActions .padActionWrite {
+        border: 0.25vw solid #3bdc7b;
+        background: #3bdc7b;
+        color: #fff3f3; }
+        #indexPadList .targetPadWrapper .padActions .padActionWrite:after {
+          content: 'Write'; }
+        #indexPadList .targetPadWrapper .padActions .padActionWrite.locked {
+          background: #e2e2f3;
+          border: 0.25vw solid #e2e2f3; }
+          #indexPadList .targetPadWrapper .padActions .padActionWrite.locked:hover:after {
+            content: 'Locked'; }
 
 #appHeader {
-  padding: 50px;
+  padding-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  padding-bottom: 50px;
   font-size: 2.4vw;
   font-family: TeXGyreHeros;
   line-height: 2.64vw;
   letter-spacing: -0.1vw;
-  color: black;
-  border-bottom: 0.28vw solid black; }
+  color: #ff0000;
+  border-bottom: 0.25vw solid #ff0000; }
+  @media screen and (max-width: 600px) {
+    #appHeader {
+      padding-top: 16.66667px;
+      font-size: 3.6vw;
+      margin-left: 16.66667px;
+      margin-right: 16.66667px;
+      padding-bottom: 16.66667px;
+      line-height: 3.96vw; } }
+  @media screen and (max-width: 1024px) and (min-width: 600px) {
+    #appHeader {
+      font-size: 3.6vw;
+      padding-top: 33.33333px;
+      margin-left: 16.66667px;
+      margin-right: 16.66667px;
+      padding-bottom: 33.33333px;
+      line-height: 3.96vw; } }
   #appHeader p:first-of-type {
     margin-top: -0.5vw;
     margin-bottom: 0; }
   #appHeader #appIndex {
-    width: 20vw;
+    width: 28vw;
     display: inline-block;
     text-decoration: none;
-    color: inherit; }
+    color: inherit;
+    font-weight: bold; }
+    @media screen and (max-width: 600px) {
+      #appHeader #appIndex {
+        width: 28vw; } }
+    @media screen and (max-width: 1024px) and (min-width: 600px) {
+      #appHeader #appIndex {
+        width: 30vw; } }
     #appHeader #appIndex .t-caret {
       padding-left: 0.2vw; }
     #appHeader #appIndex del {
@@ -176,32 +301,60 @@
     #appHeader #appIndex .animatedBorderBlack {
       padding: 0vw 1vw 0.2vw 1vw;
       border-radius: 1vw;
-      border: 0.25vw solid black;
-      background: black;
+      border: 0.25vw solid #ff0000;
+      background: #ff0000;
       color: #fff3f3; }
-  #appHeader #padTitle {
-    clear: none;
-    margin-left: 50px;
-    padding: 0vw 1vw 0.2vw 1vw;
-    border-radius: 1vw;
-    border: 0.25vw solid black; }
   #appHeader .padActions {
     clear: none;
     float: right; }
-    #appHeader .padActions .padActionRead, #appHeader .padActions .padActionWrite, #appHeader .padActions .padActionPrint {
-      width: 50%;
+    #appHeader .padActions .padActionRead, #appHeader .padActions .padActionWrite, #appHeader .padActions .padActionPrint, #appHeader .padActions .padTitle {
       padding: 0vw 1vw 0.2vw 1vw;
       border-radius: 1vw;
       cursor: pointer;
-      border: 0.25vw solid black;
-      background: black;
+      vertical-align: text-top; }
+    @media screen and (max-width: 1024px) {
+      #appHeader .padActions .padTitle {
+        max-width: 28vw;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        display: inline-block;
+        text-align: right; } }
+    #appHeader .padActions .padActionRead {
+      border: 0.25vw solid #ff0000; }
+      #appHeader .padActions .padActionRead:not(.activeAction) {
+        background: #ff0000;
+        color: #fff3f3; }
+        #appHeader .padActions .padActionRead:not(.activeAction):hover {
+          background: #fff3f3;
+          color: #ff0000; }
+    #appHeader .padActions .padActionWrite {
+      border: 0.25vw solid #3bdc7b;
+      background: #3bdc7b;
       color: #fff3f3; }
-      #appHeader .padActions .padActionRead:hover, #appHeader .padActions .padActionWrite:hover, #appHeader .padActions .padActionPrint:hover {
+      #appHeader .padActions .padActionWrite:after {
+        content: 'Write'; }
+      #appHeader .padActions .padActionWrite.locked {
+        cursor: default !important;
+        background: #e2e2f3;
+        border: 0.25vw solid #e2e2f3; }
+        #appHeader .padActions .padActionWrite.locked:hover:after {
+          content: 'Locked';
+          color: #fff3f3;
+          background: #e2e2f3; }
+      #appHeader .padActions .padActionWrite:not(.locked):hover {
+        background: #fff3f3;
+        color: #3bdc7b; }
+      #appHeader .padActions .padActionWrite:not(.locked).activeAction {
+        background: #fff3f3;
+        color: #3bdc7b; }
+    #appHeader .padActions .padActionPrint {
+      border: 0.25vw solid #ff0000;
+      background: #ff0000;
+      color: #fff3f3; }
+      #appHeader .padActions .padActionPrint:hover {
         background: none;
-        color: black; }
-    #appHeader .padActions .activeAction {
-      background: none;
-      color: black; }
+        color: #ff0000; }
 
 #adminIframe0 {
   border: 0;
@@ -219,14 +372,56 @@
   width: 50%;
   height: 100%; }
 
+@media print {
+  body {
+    margin-top: 4cm !important;
+    margin-bottom: 4cm !important;
+    margin-left: 2cm !important;
+    margin-right: 2cm !important; }
+  #appHeader {
+    display: none !important; }
+  #singlePadRead {
+    padding: 0 !important;
+    width: 100% !important;
+    font-size: 16pt !important;
+    font-family: TeXGyreCursor !important;
+    line-height: 17.6pt !important;
+    letter-spacing: -0.1vw !important; }
+    #singlePadRead #singlePadReadMetadata {
+      padding-bottom: 5pt !important; }
+      #singlePadRead #singlePadReadMetadata .metaPlace, #singlePadRead #singlePadReadMetadata .metaDate, #singlePadRead #singlePadReadMetadata .metaEvent, #singlePadRead #singlePadReadMetadata .metaTitle {
+        font-size: 52pt !important;
+        line-height: 57.2pt !important;
+        letter-spacing: -2.1pt !important; }
+      #singlePadRead #singlePadReadMetadata .metaTitle {
+        padding-top: 78pt !important;
+        padding-bottom: 52pt !important; } }
+
+.hiddenElem {
+  visibility: hidden; }
+
+.centerText {
+  text-align: center; }
+
+.capitalizeText .targetPad span {
+  font-weight: normal !important;
+  width: 100% !important;
+  text-transform: uppercase; }
+
 .padded {
   padding: 50px; }
+  @media screen and (max-width: 1024px) {
+    .padded {
+      padding: 16.66667px; } }
 
 .paddedNotBottom {
   padding-bottom: 0 !important; }
 
 .paddedBottom {
   padding-bottom: 50px; }
+  @media screen and (max-width: 1024px) {
+    .paddedBottom {
+      padding-bottom: 16.66667px; } }
 
 .colFull {
   width: 100%;
@@ -237,6 +432,9 @@
   width: 50%;
   display: inline-block;
   float: left; }
+  @media screen and (max-width: 1024px) {
+    .colHalf {
+      width: 100%; } }
 
 * {
   box-sizing: border-box; }

@@ -3,7 +3,9 @@
   height: 100vh;
   overflow-x: hidden;
   border: 0;
-  background: white; }
+  background: white;
+  border-top: 0.25vw solid #ff0000;
+  margin-top: -0.25vw; }
 
 #singlePad #singlePadRead {
   padding: 50px;
@@ -13,13 +15,35 @@
   letter-spacing: -0.1vw;
   color: black;
   width: 75%; }
+  @media screen and (max-width: 1024px) {
+    #singlePad #singlePadRead {
+      padding: 16.66667px;
+      font-size: 3.6vw;
+      line-height: 3.96vw;
+      width: 100%; } }
+  #singlePad #singlePadRead a {
+    text-decoration: none;
+    border-bottom: 0.125vw solid black;
+    color: black; }
   #singlePad #singlePadRead > * {
     margin-top: 0; }
   #singlePad #singlePadRead #singlePadReadMetadata {
-    font-weight: bold; }
-    #singlePad #singlePadRead #singlePadReadMetadata span {
-      float: right; }
-    #singlePad #singlePadRead #singlePadReadMetadata span:first-of-type {
-      float: left; }
-    #singlePad #singlePadRead #singlePadReadMetadata span:nth-last-of-type(1) {
-      padding-right: 40px; }
+    display: inline-block;
+    width: 100%; }
+    #singlePad #singlePadRead #singlePadReadMetadata .metaPlace, #singlePad #singlePadRead #singlePadReadMetadata .metaDate, #singlePad #singlePadRead #singlePadReadMetadata .metaEvent, #singlePad #singlePadRead #singlePadReadMetadata .metaTitle {
+      font-size: 3.6vw;
+      font-family: TeXGyreHeros;
+      line-height: 2.64vw;
+      letter-spacing: -0.1vw;
+      font-weight: normal; }
+    #singlePad #singlePadRead #singlePadReadMetadata .metaTitle {
+      padding: 50px;
+      display: inline-block;
+      font-weight: bold; }
+    @media screen and (max-width: 1024px) {
+      #singlePad #singlePadRead #singlePadReadMetadata .metaPlace, #singlePad #singlePadRead #singlePadReadMetadata .metaDate, #singlePad #singlePadRead #singlePadReadMetadata .metaEvent, #singlePad #singlePadRead #singlePadReadMetadata .metaTitle {
+        font-size: 7.2vw;
+        line-height: 6.48vw;
+        letter-spacing: -0.1vw; }
+      #singlePad #singlePadRead #singlePadReadMetadata .metaTitle {
+        padding: 16.66667px; } }
