@@ -64,7 +64,7 @@
     display: inherit; }
     @media screen and (max-width: 1024px) {
       #singlePad #singlePadRead code {
-        padding-left: 66.66667px; } }
+        padding-left: 100px; } }
   #singlePad #singlePadRead a {
     text-decoration: none;
     border-bottom: 0.125vw solid black;
