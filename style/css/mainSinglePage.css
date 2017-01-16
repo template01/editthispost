@@ -21,6 +21,24 @@
       font-size: 3.6vw;
       line-height: 3.96vw;
       width: 100%; } }
+  #singlePad #singlePadRead .number {
+    padding-left: 50px; }
+    @media screen and (max-width: 1024px) {
+      #singlePad #singlePadRead .number {
+        padding-left: 33.33333px; } }
+  #singlePad #singlePadRead .indent {
+    list-style: none;
+    padding-left: 50px; }
+    @media screen and (max-width: 1024px) {
+      #singlePad #singlePadRead .indent {
+        padding-left: 33.33333px; } }
+  #singlePad #singlePadRead code {
+    font-family: inherit !important;
+    padding-left: 200px;
+    display: inherit; }
+    @media screen and (max-width: 1024px) {
+      #singlePad #singlePadRead code {
+        padding-left: 66.66667px; } }
   #singlePad #singlePadRead a {
     text-decoration: none;
     border-bottom: 0.125vw solid black;

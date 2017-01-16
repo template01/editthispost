@@ -199,7 +199,9 @@ textarea {
 {
     size: auto;   /* auto is the initial value */
     /* this affects the margin in the printer settings */
-    margin: 0mm;
+    margin: 20mm;
+    margin-top: 40mm;
+    margin-bottom: 40mm;
 }
 
 

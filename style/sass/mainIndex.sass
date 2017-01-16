@@ -151,8 +151,26 @@
     display: inline-flex
     width: 100%
     border-top: 0.25vw solid $globalRed
+    background: $globalRose
     // margin-top: 0.75vw
     padding-top: 0.75vw*2
+
+
+    // ANIMATED LIST
+
+    // max-height: 0
+    // visibility: hidden
+    // transition: max-height 0.200s ease-out
+    // &.animated
+    //   visibility: visible
+    // &.expandHeight
+    //   max-height: 300px
+    // @media screen and (max-width: $globalBreakLarge)
+    //   &.expandHeight
+    //     max-height: 140px
+    
+    // ANIMATED LIST END
+
 
     @media screen and (max-width: $globalBreakLarge)
       width: calc(100% - #{$globalPaddingSmall*2})

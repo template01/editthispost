@@ -1,18 +1,19 @@
 @media print {
-  body {
-    margin-top: 4cm !important;
-    margin-bottom: 4cm !important;
-    margin-left: 2cm !important;
-    margin-right: 2cm !important; }
   #appHeader {
     display: none !important; }
   #singlePadRead {
     padding: 0 !important;
     width: 100% !important;
-    font-size: 16pt !important;
+    font-size: 12.5pt !important;
     font-family: TeXGyreCursor !important;
-    line-height: 17.6pt !important;
-    letter-spacing: -0.1vw !important; }
+    line-height: 20pt !important;
+    letter-spacing: -0.5pt !important; }
+    #singlePadRead code {
+      padding-left: 20mm !important; }
+    #singlePadRead .number {
+      padding-left: 10mm !important; }
+    #singlePadRead .indent {
+      padding-left: 10mm !important; }
     #singlePadRead #singlePadReadMetadata {
       padding-bottom: 5pt !important; }
       #singlePadRead #singlePadReadMetadata .metaPlace, #singlePadRead #singlePadReadMetadata .metaDate, #singlePadRead #singlePadReadMetadata .metaEvent, #singlePadRead #singlePadReadMetadata .metaTitle {

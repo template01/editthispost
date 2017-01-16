@@ -47,6 +47,24 @@
       font-size: 3.6vw;
       line-height: 3.96vw;
       width: 100%; } }
+  #singlePad #singlePadRead .number {
+    padding-left: 50px; }
+    @media screen and (max-width: 1024px) {
+      #singlePad #singlePadRead .number {
+        padding-left: 33.33333px; } }
+  #singlePad #singlePadRead .indent {
+    list-style: none;
+    padding-left: 50px; }
+    @media screen and (max-width: 1024px) {
+      #singlePad #singlePadRead .indent {
+        padding-left: 33.33333px; } }
+  #singlePad #singlePadRead code {
+    font-family: inherit !important;
+    padding-left: 200px;
+    display: inherit; }
+    @media screen and (max-width: 1024px) {
+      #singlePad #singlePadRead code {
+        padding-left: 66.66667px; } }
   #singlePad #singlePadRead a {
     text-decoration: none;
     border-bottom: 0.125vw solid black;
@@ -180,6 +198,7 @@
     display: inline-flex;
     width: 100%;
     border-top: 0.25vw solid #ff0000;
+    background: #fff3f3;
     padding-top: 1.5vw; }
     @media screen and (max-width: 1024px) {
       #indexPadList .targetPadWrapper {
@@ -374,20 +393,21 @@
   height: 100%; }
 
 @media print {
-  body {
-    margin-top: 4cm !important;
-    margin-bottom: 4cm !important;
-    margin-left: 2cm !important;
-    margin-right: 2cm !important; }
   #appHeader {
     display: none !important; }
   #singlePadRead {
     padding: 0 !important;
     width: 100% !important;
-    font-size: 16pt !important;
+    font-size: 12.5pt !important;
     font-family: TeXGyreCursor !important;
-    line-height: 17.6pt !important;
-    letter-spacing: -0.1vw !important; }
+    line-height: 20pt !important;
+    letter-spacing: -0.5pt !important; }
+    #singlePadRead code {
+      padding-left: 20mm !important; }
+    #singlePadRead .number {
+      padding-left: 10mm !important; }
+    #singlePadRead .indent {
+      padding-left: 10mm !important; }
     #singlePadRead #singlePadReadMetadata {
       padding-bottom: 5pt !important; }
       #singlePadRead #singlePadReadMetadata .metaPlace, #singlePadRead #singlePadReadMetadata .metaDate, #singlePadRead #singlePadReadMetadata .metaEvent, #singlePadRead #singlePadReadMetadata .metaTitle {

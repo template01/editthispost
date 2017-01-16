@@ -8,7 +8,7 @@ var mainIndex = (function() {
       <div id="indexPadList"><p>EVENTS</p></div>
     </div>
     <div class="colFull">
-      <div id="indexInfo" class="colHalf padded"><p>INFO<br><br>Tijdens events en workshops kan <b>edit this post</b> worden gebruikt om in real time verslag te doen. Iedereen werkt aan hetzelfde tekstbestand, als schrijver, vragensteller of redacteur. Alles mag. De tekst worst daarna automatisch vormgegeven en kan meteen geprint worden als publicatie.</p></div>
+      <div id="indexInfo" class="colHalf padded"><p>INFO<br><br>Tijdens events en workshops kan <b>edit this post</b> worden gebruikt om in real time verslag te doen. Iedereen werkt aan hetzelfde tekstbestand, als schrijver, vragensteller of redacteur. Alles mag. De tekst wordt daarna automatisch vormgegeven en kan meteen geprint worden als publicatie.</p></div>
       <div id="indexCredits" class="colHalf padded"><p>CREDITS<br><br>
 
       <b>edit this post</b> is een idee van <b><a href="http://www.template01.info/" target="_blank">Template</a></b> in samenwerking met <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> en <b><a href="http://networkcultures.org/" target="_blank">Institute for Network Cultures</a></b>. Voor meer informatie, <b><a href="mailto:contact@template01.info?Subject=Hoi%20Temolate" target="_top">stuur een e-mail naar Template</a></b>.
@@ -28,8 +28,8 @@ var mainIndex = (function() {
         $(app).append('<div id="indexSplash"><span id="indexSplashInner"><span></div>')
 
         $('#indexSplashInner').t('<del class="noneBack animatedBorderBlack normalTight">edit<ins>1.5</ins></del><del class="noneBack animatedBorderBlack normalTight">this<ins>1.5</ins></del><del class="redBack shiftCaret extraTight">post<ins>1.5</ins></del>', {
-        // $('#indexSplashInner').t('<span class="redBack shiftCaret extraTight">post<ins>1.5</ins></span>', {
-        // $('#indexSplashInner').t('<span class="noneBack animatedBorderBlack normalTight">post<ins>1.5</ins></span>', {
+            // $('#indexSplashInner').t('<span class="redBack shiftCaret extraTight">post<ins>1.5</ins></span>', {
+            // $('#indexSplashInner').t('<span class="noneBack animatedBorderBlack normalTight">post<ins>1.5</ins></span>', {
 
             speed: 200,
             mistype: 0,
@@ -52,6 +52,19 @@ var mainIndex = (function() {
 
         });
 
+    }
+
+    var animateList = function() {
+        $("#indexPadList .targetPadWrapper").each(function(index) {
+
+            var self = this
+            setTimeout(function() {
+                $(self).addClass('animated expandHeight')
+
+            }, index * 50);
+
+
+        })
     }
 
     var initIndex = function() {
@@ -87,18 +100,18 @@ var mainIndex = (function() {
 
 
 
-          if($(this).find('span').length>1){
+            if ($(this).find('span').length > 1) {
 
-            $(this).addClass('targetPad').parent().append('<div class="padActions"><span class="padActionRead hvr-float"></span><span class="padActionWrite hvr-float"></span></div>')
+                $(this).addClass('targetPad').parent().append('<div class="padActions"><span class="padActionRead hvr-float"></span><span class="padActionWrite hvr-float"></span></div>')
 
-            if ($(this).attr('data-status') === 'locked') {
-                $(this).parents('.targetPadWrapper').find('.padActionWrite').addClass('locked')
+                if ($(this).attr('data-status') === 'locked') {
+                    $(this).parents('.targetPadWrapper').find('.padActionWrite').addClass('locked')
+                }
+
+            } else {
+                $(this).addClass('targetPad').parent().append('<div class="padActions hiddenElem"><span class="padActionRead hvr-float "></span><span class="padActionWrite hvr-float"></span></div>')
+
             }
-
-          }else{
-            $(this).addClass('targetPad').parent().append('<div class="padActions hiddenElem"><span class="padActionRead hvr-float "></span><span class="padActionWrite hvr-float"></span></div>')
-
-          }
 
         })
     }
@@ -120,13 +133,13 @@ var mainIndex = (function() {
                     // savedThis.attr('data-status', 'locked')
                     listItem.find('li').attr('data-status', 'locked')
                 } else {
-                    listItem.find('li').append('<span data-link="' + entrySingle.trim().replace(/ /g,"_") + '">' + entrySingle.replace(/_/g, " ").trim() + '</span>')
+                    listItem.find('li').append('<span data-link="' + entrySingle.trim().replace(/ /g, "_") + '">' + entrySingle.replace(/_/g, " ").trim() + '</span>')
                 }
 
             });
 
-            if(textInfo.length<=1){
-              listItem.addClass('capitalizeText')
+            if (textInfo.length <= 1) {
+                listItem.addClass('capitalizeText')
             }
 
             $('#indexPadList').append(listItem)
@@ -164,10 +177,10 @@ var mainIndex = (function() {
 
     var padAction = function() {
 
-      $(document).on('click', '#indexPadList .targetPad span', function() {
-          target = $(this).parents('.targetPadWrapper').find('.targetPad span').first().attr('data-link')
-          mainRoute.router.navigate('/events/' + target + '/read');
-      })
+        $(document).on('click', '#indexPadList .targetPad span', function() {
+            target = $(this).parents('.targetPadWrapper').find('.targetPad span').first().attr('data-link')
+            mainRoute.router.navigate('/events/' + target + '/read');
+        })
 
         $(document).on('click', '#indexPadList .padActionRead', function() {
             target = $(this).parents('.targetPadWrapper').find('.targetPad span').first().attr('data-link')
@@ -190,6 +203,7 @@ var mainIndex = (function() {
     return {
         test: test,
         indexTemplate: indexTemplate,
+        animateList:animateList,
         attachReadWriteActionsList: attachReadWriteActionsList,
         formatIndexEvents: formatIndexEvents,
         initIndex: initIndex,

@@ -27,6 +27,27 @@
       line-height: $globalTextSizeSmall*1.1
       width: 100%
 
+    .number
+      padding-left: $globalPadding
+      @media screen and (max-width: $globalBreakLarge)
+        padding-left: $globalPaddingSmall*2
+
+    .indent
+      list-style: none
+      padding-left: $globalPadding
+      @media screen and (max-width: $globalBreakLarge)
+        padding-left: $globalPaddingSmall*2
+
+    code
+      font-family: inherit !important
+      padding-left: $globalPadding*4
+      display: inherit
+
+      @media screen and (max-width: $globalBreakLarge)
+        padding-left: $globalPaddingSmall*4
+
+
+
     a
       text-decoration: none
       border-bottom: 0.125vw solid $globalBlack

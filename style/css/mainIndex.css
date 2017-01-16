@@ -104,6 +104,7 @@
     display: inline-flex;
     width: 100%;
     border-top: 0.25vw solid #ff0000;
+    background: #fff3f3;
     padding-top: 1.5vw; }
     @media screen and (max-width: 1024px) {
       #indexPadList .targetPadWrapper {

@@ -2,12 +2,6 @@
 
 @media print
 
-  body
-    margin-top: 4cm !important
-    margin-bottom: 4cm !important
-    margin-left: 2cm !important
-    margin-right: 2cm !important
-
 
   #appHeader
     display: none !important
@@ -15,10 +9,23 @@
   #singlePadRead
     padding: 0 !important
     width: 100% !important
-    font-size: 16pt !important
+    font-size: 12.5pt !important
     font-family: $globalTextFamMono !important
-    line-height: 16pt*1.1 !important
-    letter-spacing: -0.1vw !important
+    line-height: 12.5pt*1.6 !important
+    letter-spacing: -0.5pt !important
+
+    code
+      padding-left: 20mm !important
+
+    .number
+      padding-left: 10mm !important
+      @media screen and (max-width: $globalBreakLarge)
+        padding-left: 10mm !important
+    .indent
+      padding-left: 10mm !important
+      @media screen and (max-width: $globalBreakLarge)
+        padding-left: 10mm !important
+
 
 
     #singlePadReadMetadata
