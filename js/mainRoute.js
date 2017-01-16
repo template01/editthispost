@@ -50,7 +50,7 @@ var mainRoute = (function() {
                         mainIndex.initIndex()
 
                         if($('#singlePad').length===0){
-                          mainIndex.playSplash()
+                            mainIndex.playSplash()
 
                         }
 

@@ -51,13 +51,13 @@
     padding-left: 50px; }
     @media screen and (max-width: 1024px) {
       #singlePad #singlePadRead .number {
-        padding-left: 33.33333px; } }
+        padding-left: 66.66667px; } }
   #singlePad #singlePadRead .indent {
     list-style: none;
     padding-left: 50px; }
     @media screen and (max-width: 1024px) {
       #singlePad #singlePadRead .indent {
-        padding-left: 33.33333px; } }
+        padding-left: 66.66667px; } }
   #singlePad #singlePadRead code {
     font-family: inherit !important;
     padding-left: 200px;
