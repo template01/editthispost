@@ -90,25 +90,23 @@
     display: inherit;
     color: #3bdc7b; }
     #indexSplash #indexSplashInner.shiftCaretColor {
-      color: #fff3f3; }
-    #indexSplash #indexSplashInner .normalTight {
-      margin-left: 11.5vw; }
-    #indexSplash #indexSplashInner .extraTight {
-      margin-left: 3.5vw; }
+      color: #fff3f3;
+      background: #ff0000; }
+      #indexSplash #indexSplashInner.shiftCaretColor .t-caret {
+        margin-left: -2vw; }
     #indexSplash #indexSplashInner .noneBack {
       background: #fff3f3;
       border-radius: 10vh;
-      padding-right: 15vw;
+      padding-left: 8.8vw;
       padding-top: 5vh;
       padding-bottom: 5vh;
       color: #3bdc7b; }
     #indexSplash #indexSplashInner .redBack {
       background: #ff0000;
       border-radius: 10vh;
-      padding-right: 15vw;
+      padding-left: 2.8vw !important;
       padding-top: 5vh;
       padding-bottom: 5vh;
-      padding-left: 1.5vw;
       color: #fff3f3; }
       #indexSplash #indexSplashInner .redBack .t-caret {
         color: #fff3f3; }
@@ -117,7 +115,6 @@
     #indexSplash #indexSplashInner del:empty {
       display: none; }
     #indexSplash #indexSplashInner .t-caret {
-      margin-left: -20vw;
       -ms-transform: scale(1, 0.5);
       -webkit-transform: scale(1, 0.5);
       transform: scale(0.8, 0.8);
