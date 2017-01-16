@@ -68,6 +68,10 @@
       font-size: 3.6vw;
       line-height: 3.96vw;
       letter-spacing: -0.1vw; } }
+  #indexBlurb a, #indexInfo a, #indexCredits a {
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit; }
   #indexBlurb p:first-of-type, #indexInfo p:first-of-type, #indexCredits p:first-of-type {
     margin-top: -0.5vw; }
 

@@ -2,14 +2,21 @@ var mainIndex = (function() {
     var test = "teeest"
     var indexTemplate = `<div id="indexPage">
     <div class="colFull">
-      <div id="indexBlurb" class="colHalf padded paddedNotBottom"><p>EDIT THIS POST<br><br><b>edit this post</b> is collaboratief schrijven in real time om ter plekke hybride publicaties te maken.</p></div>
+      <div id="indexBlurb" class="colHalf padded paddedNotBottom"><p>EDIT THIS POST<br><br><b>edit this post</b> is collaboratief schrijven in real time.</p></div>
     </div>
     <div class="colFull">
       <div id="indexPadList"><p>EVENTS</p></div>
     </div>
     <div class="colFull">
-      <div id="indexInfo" class="colHalf padded"><p>INFO<br><br>Tijdens events en workshops kan <b>edit this post</b> worden gebruikt om real time verslag te doen. Iedereen werkt in hetzelfde tekstbestand. Als schrijver, vragensteller, editor – alles mag. De tekst wordt automatisch vormgegeven en kan daarna meteen worden geprint als publicatie.</p></div>
-      <div id="indexCredits" class="colHalf padded"><p>CREDITS<br><br>edit this post maakt gebruik van de open source applicatie <b>Etherpad</b>.</p><p>Een project van <b>Template</b>. Voor meer informatie, <b>e-mail</b> Lasse en Marlon.</p></div>
+      <div id="indexInfo" class="colHalf padded"><p>INFO<br><br>Tijdens events en workshops kan <b>edit this post</b> worden gebruikt om in real time verslag te doen. Iedereen werkt aan hetzelfde tekstbestand, als schrijver, vragensteller of redacteur. Alles mag. De tekst worst daarna automatisch vormgegeven en kan meteen geprint worden als publicatie.</p></div>
+      <div id="indexCredits" class="colHalf padded"><p>CREDITS<br><br>
+
+      <b>edit this post</b> is een idee van <b><a href="http://www.template01.info/" target="_blank">Template</a></b> in samenwerking met <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> en <b><a href="http://networkcultures.org/" target="_blank">Institute for Network Cultures</a></b>. Voor meer informatie, <b><a href="mailto:contact@template01.info?Subject=Hoi%20Temolate" target="_top">stuur een e-mail naar Template</a></b>.
+      <br>
+      <br>
+      <b>edit this post</b> maakt gebruik van de open source applicatie Etherpad.
+
+      </p></div>
     </div>
   </div>`
 

@@ -24,10 +24,11 @@ var mainSingle = (function() {
 
     }
 
-
+    var initSingleWriteLocked = function(){
+      $('#singlePad').find('iframe').remove().end().append('<div id="singlePadRead"><h1>Sorry. No write options.  </h1></div>')
+    }
 
     var initSingleWrite = function(target) {
-        console.log('WRUTEEEEEE')
         mainSingle.remove()
         $(app).append(this.singleTemplate)
         $('#singlePad').append('<iframe src="http://editthispost.com:9001/p/' + target + '"></iframe>')
@@ -114,6 +115,7 @@ var mainSingle = (function() {
         singleTemplate: singleTemplate,
         initSingle: initSingle,
         initSingleWrite: initSingleWrite,
+        initSingleWriteLocked:initSingleWriteLocked,
         setSingleWriteHeight: setSingleWriteHeight,
         formatsinglePadReadMetadata: formatsinglePadReadMetadata,
         getMetaDataRead: getMetaDataRead,

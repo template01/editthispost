@@ -99,6 +99,9 @@ var mainHeader = (function() {
 
                       $('#appHeader').find('.padActionWrite').addClass('locked')
 
+                      if (window.location.pathname.split("/").pop() === 'write') {
+                        mainSingle.initSingleWriteLocked()
+                      }
                     }else{
                       $('#appHeader').find('.padActionWrite').removeClass('locked')
 
