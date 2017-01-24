@@ -27,11 +27,11 @@ var mainIndex = (function() {
 
         $(app).append('<div id="indexSplash"><span id="indexSplashInner"><span></div>')
 
-        $('#indexSplashInner').t('<del class="noneBack animatedBorderBlack normalTight">edit<ins>1.5</ins></del><del class="noneBack animatedBorderBlack normalTight">this<ins>1.5</ins></del><del class="redBack shiftCaret extraTight">post<ins>1.5</ins></del>', {
+        $('#indexSplashInner').t('<del class="noneBack animatedBorderBlack normalTight">edit<ins>0.75</ins></del><del class="noneBack animatedBorderBlack normalTight">this<ins>0.75</ins></del><del class="redBack shiftCaret extraTight">post<ins>0.75</ins></del>', {
             // $('#indexSplashInner').t('<span class="redBack shiftCaret extraTight">post<ins>1.5</ins></span>', {
             // $('#indexSplashInner').t('<span class="noneBack animatedBorderBlack normalTight">post<ins>1.5</ins></span>', {
 
-            speed: 200,
+            speed: 100,
             mistype: 0,
             blink: true,
 
@@ -133,7 +133,7 @@ var mainIndex = (function() {
                     // savedThis.attr('data-status', 'locked')
                     listItem.find('li').attr('data-status', 'locked')
                 } else {
-                    listItem.find('li').append('<span data-link="' + entrySingle.trim().replace(/ /g, "_") + '">' + entrySingle.replace(/_/g, " ").trim() + '</span>')
+                    listItem.find('li').append('<span data-link="' + encodeURI(entrySingle.trim().replace(/ /g, "_")) + '">' + entrySingle.replace(/_/g, " ").trim() + '</span>')
                 }
 
             });
