@@ -4,10 +4,12 @@
 .centerText {
   text-align: center; }
 
-.capitalizeText .targetPad span {
-  font-weight: normal !important;
-  width: 100% !important;
-  text-transform: uppercase; }
+.capitalizeText {
+  pointer-events: none; }
+  .capitalizeText .targetPad span {
+    font-weight: normal !important;
+    width: 100% !important;
+    text-transform: uppercase; }
 
 .padded {
   padding: 50px; }
