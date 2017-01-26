@@ -17,11 +17,15 @@ var mainRoute = (function() {
                     mainHeader.updateHeaderSingle(params.slug)
 
                     if (params.action === 'read') {
+                        mainHeader.hideExpand()
+
                         mainSingle.initSingle(params.slug)
                         mainHeader.headerActiveAction('.padActionRead')
                         mainHeader.initAnimateReadHeader()
                     }
                     if (params.action === 'write') {
+                        mainHeader.showExpand()
+
                         mainSingle.initSingleWrite(params.slug)
                         mainHeader.headerActiveAction('.padActionWrite')
                         mainHeader.initAnimateWriteHeader()

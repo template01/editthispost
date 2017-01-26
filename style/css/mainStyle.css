@@ -279,6 +279,7 @@
   margin-left: 50px;
   margin-right: 50px;
   padding-bottom: 50px;
+  display: block;
   font-size: 2.4vw;
   font-family: TeXGyreHeros;
   line-height: 2.64vw;
@@ -292,7 +293,8 @@
       margin-left: 16.66667px;
       margin-right: 16.66667px;
       padding-bottom: 16.66667px;
-      line-height: 3.96vw; } }
+      line-height: 3.96vw;
+      display: flex; } }
   @media screen and (max-width: 1024px) and (min-width: 600px) {
     #appHeader {
       font-size: 3.6vw;
@@ -312,7 +314,8 @@
     font-weight: bold; }
     @media screen and (max-width: 600px) {
       #appHeader #appIndex {
-        width: 28vw; } }
+        width: 100%;
+        clear: both; } }
     @media screen and (max-width: 1024px) and (min-width: 600px) {
       #appHeader #appIndex {
         width: 30vw; } }
@@ -329,7 +332,11 @@
   #appHeader .padActions {
     clear: none;
     float: right; }
-    #appHeader .padActions .padActionRead, #appHeader .padActions .padActionWrite, #appHeader .padActions .padActionPrint, #appHeader .padActions .padTitle {
+    @media screen and (max-width: 600px) {
+      #appHeader .padActions {
+        float: left;
+        margin-top: 3.96vw; } }
+    #appHeader .padActions .padActionRead, #appHeader .padActions .padActionWrite, #appHeader .padActions .padActionPrint, #appHeader .padActions .padActionExpand, #appHeader .padActions .padTitle {
       padding: 0vw 1vw 0.2vw 1vw;
       border-radius: 1vw;
       cursor: pointer;
@@ -342,6 +349,16 @@
         white-space: nowrap;
         display: inline-block;
         text-align: right; } }
+    #appHeader .padActions .padActionExpand {
+      border: 0.25vw solid #ff0000; }
+      #appHeader .padActions .padActionExpand img {
+        width: 1vw; }
+      #appHeader .padActions .padActionExpand:not(.activeAction) {
+        background: #ff0000;
+        color: #fff3f3; }
+        #appHeader .padActions .padActionExpand:not(.activeAction):hover {
+          background: #fff3f3;
+          color: #ff0000; }
     #appHeader .padActions .padActionRead {
       border: 0.25vw solid #ff0000; }
       #appHeader .padActions .padActionRead:not(.activeAction) {

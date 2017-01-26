@@ -7,6 +7,8 @@ var mainHeader = (function() {
           <span id="padTitle" class="padTitle"></span>
           <span class="padActionRead">Read</span>
           <span class="padActionWrite"></span>
+          <span class="padActionExpand"><i class="fa fa-expand"></i></span>
+
           <span class="padActionPrint">Print</span>
         </span>
       </p>
@@ -22,6 +24,16 @@ var mainHeader = (function() {
 
     }
 
+
+
+    var showExpand = function(){
+      $('.padActionExpand').show()
+    }
+
+    var hideExpand = function(){
+      $('.padActionExpand').hide()
+    }
+
     var updateHeaderSingle = function(slug) {
         $('#appHeader #padTitle')
             .attr("data-link", slug)
@@ -32,6 +44,11 @@ var mainHeader = (function() {
     }
 
     var padAction = function() {
+
+        $(document).on('click', '#appHeader .padActionExpand', function() {
+          $("html, body").animate({ scrollTop: $(document).height() }, "fast");
+        })
+
         $(document).on('click', '#appHeader .padActionRead', function() {
             target = $('#padTitle').attr('data-link')
             mainRoute.router.navigate('/events/' + target + '/read');
@@ -224,6 +241,8 @@ var mainHeader = (function() {
         initAnimateWriteHeader: initAnimateWriteHeader,
         headerTemplate: headerTemplate,
         initHeader: initHeader,
-        padAction: padAction
+        padAction: padAction,
+        showExpand:showExpand,
+        hideExpand:hideExpand
     };
 })();

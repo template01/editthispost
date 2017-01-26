@@ -5,7 +5,7 @@
   margin-left: $globalPadding
   margin-right: $globalPadding
   padding-bottom: $globalPadding
-
+  display: block
   font-size: $globalTextSize
   font-family: $globalTextFam
   line-height: $globalTextSize*1.1
@@ -21,6 +21,9 @@
     padding-bottom: $globalPaddingSmall
 
     line-height: $globalTextSizeSmall*1.1
+
+    display: flex
+
 
   @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
     font-size: $globalTextSizeSmall
@@ -45,7 +48,8 @@
     font-weight: bold
 
     @media screen and (max-width: $globalBreakMid)
-      width: 28vw
+      width: 100%
+      clear: both
     @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
       width: 30vw
 
@@ -95,7 +99,11 @@
     clear: none
     float: right
 
-    .padActionRead,.padActionWrite,.padActionPrint,.padTitle
+    @media screen and (max-width: $globalBreakMid)
+        float: left
+        margin-top: $globalTextSizeSmall*1.1
+
+    .padActionRead,.padActionWrite,.padActionPrint,.padActionExpand,.padTitle
       // width: 50%
       padding: 0vw 1vw 0.2vw 1vw
       border-radius: 1vw
@@ -114,6 +122,17 @@
         text-align: right
 
       // vertical-align: text-top
+
+    .padActionExpand
+      border: 0.25vw solid $globalRed
+      img
+        width: 1vw
+      &:not(.activeAction)
+        background: $globalRed
+        color: $globalRose
+        &:hover
+          background: $globalRose
+          color: $globalRed
 
     .padActionRead
       border: 0.25vw solid $globalRed

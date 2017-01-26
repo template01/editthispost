@@ -32,7 +32,7 @@ var mainSingle = (function() {
         mainSingle.remove()
         $(app).append(this.singleTemplate)
         $('#singlePad').append('<iframe src="http://editthispost.com:9001/p/' + target + '"></iframe>')
-        this.setSingleWriteHeight()
+        // this.setSingleWriteHeight()
             // mainGetPad.getPad('http://editthispost.com:9001/p/'+target+'/export/html','#singlePad')
     }
 
