@@ -96,7 +96,12 @@
   letter-spacing: -0.1vw
   color: $globalRed
 
-  @media screen and (max-width: $globalBreakLarge)
+  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+      font-size: $globalTextSizeMid
+      line-height: $globalTextSizeMid * 1.1
+      letter-spacing: -0.1vw
+
+  @media screen and (max-width: $globalBreakMid)
     font-size: $globalTextSizeSmall
     line-height: $globalTextSizeSmall * 1.1
     letter-spacing: -0.1vw
@@ -123,13 +128,25 @@
   width: 100%
   padding-bottom: $globalPadding
 
-  @media screen and (max-width: $globalBreakLarge)
+
+  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+      font-size: $globalTextSizeMid
+      line-height: $globalTextSizeMid * 1.1
+      letter-spacing: -0.1vw
+      padding-left: 0
+      padding-right: 0
+      padding-bottom: $globalPaddingMid
+
+
+  @media screen and (max-width: $globalBreakMid)
+
       font-size: $globalTextSizeSmall
       line-height: $globalTextSizeSmall * 1.1
       letter-spacing: -0.1vw
       padding-left: 0
       padding-right: 0
       padding-bottom: $globalPaddingSmall
+
 
 
   p
@@ -168,7 +185,7 @@
     // @media screen and (max-width: $globalBreakLarge)
     //   &.expandHeight
     //     max-height: 140px
-    
+
     // ANIMATED LIST END
 
 

@@ -14,6 +14,7 @@
     margin-top: -0.25vw
 
   #singlePadRead
+    position: relative
     padding: $globalPadding
     font-size: $globalTextSize/1.5
     font-family: $globalTextFamMono
@@ -21,10 +22,20 @@
     letter-spacing: -0.1vw
     color: $globalBlack
     width: 75%
-    @media screen and (max-width: $globalBreakLarge)
+
+    @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+      padding: $globalPaddingMid
+      font-size: $globalTextSizeMid
+      line-height: $globalTextSizeMid*1.1
+
+
+    @media screen and (max-width: $globalBreakMid)
+
       padding: $globalPaddingSmall
       font-size: $globalTextSizeSmall
       line-height: $globalTextSizeSmall*1.1
+
+    @media screen and (max-width: $globalBreakLarge)
       width: 100%
 
     .number
@@ -61,6 +72,24 @@
       display: inline-block
       width: 100%
 
+      #timeStamp
+        -webkit-transform: rotate(-90deg)
+        -moz-transform: rotate(-90deg)
+        -ms-transform: rotate(-90deg)
+        -o-transform: rotate(-90deg)
+        position: absolute
+        transform-origin: right
+        // padding-top: 10px
+        text-align: right
+        right: $globalTextSize*2
+
+        @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+          right: $globalTextSizeMid*2
+
+
+        @media screen and (max-width: $globalBreakMid)
+          right: $globalTextSizeSmall*2.3
+
       .metaPlace,.metaDate,.metaEvent,.metaTitle
 
         font-size: $globalTextSize*1.5
@@ -79,8 +108,8 @@
 
         .metaPlace,.metaDate,.metaEvent,.metaTitle
 
-          font-size: $globalTextSizeSmall*2
-          line-height: $globalTextSizeSmall*1.8
+          font-size: $globalTextSizeMid*2
+          line-height: $globalTextSizeMid*1.8
           letter-spacing: -0.1vw
 
         .metaTitle

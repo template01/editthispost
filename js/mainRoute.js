@@ -13,6 +13,7 @@ var mainRoute = (function() {
                 'events/:slug/:action': function(params, query) {
                     console.log(query)
                     console.log(params)
+                    window.scrollTo(0,0);
                     mainHeader.initHeader()
                     mainHeader.updateHeaderSingle(params.slug)
 

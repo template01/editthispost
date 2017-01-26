@@ -16,6 +16,9 @@
       padding-left: 10mm !important; }
     #singlePadRead #singlePadReadMetadata {
       padding-bottom: 5pt !important; }
+      #singlePadRead #singlePadReadMetadata #timeStamp {
+        right: 0cm !important;
+        letter-spacing: -0.5pt !important; }
       #singlePadRead #singlePadReadMetadata .metaPlace, #singlePadRead #singlePadReadMetadata .metaDate, #singlePadRead #singlePadReadMetadata .metaEvent, #singlePadRead #singlePadReadMetadata .metaTitle {
         font-size: 52pt !important;
         line-height: 57.2pt !important;

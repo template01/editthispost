@@ -13,26 +13,28 @@
   color: $globalRed
   border-bottom: 0.25vw solid $globalRed
 
-  @media screen and (max-width: $globalBreakMid)
-    padding-top: $globalPaddingSmall
-    font-size: $globalTextSizeSmall
-    margin-left: $globalPaddingSmall
-    margin-right: $globalPaddingSmall
-    padding-bottom: $globalPaddingSmall
 
-    line-height: $globalTextSizeSmall*1.1
+  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+
+    font-size: $globalTextSizeMid
+    padding-top: $globalPaddingMid
+    margin-left: $globalPaddingMid
+    margin-right: $globalPaddingMid
+    padding-bottom: $globalPaddingMid
+    line-height: $globalTextSizeMid*1.1
 
     display: flex
 
 
-  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+  @media screen and (max-width: $globalBreakMid)
     font-size: $globalTextSizeSmall
-    padding-top: $globalPaddingSmall*2
+    padding-top: $globalPaddingSmall
     margin-left: $globalPaddingSmall
     margin-right: $globalPaddingSmall
-    padding-bottom: $globalPaddingSmall*2
-
+    padding-bottom: $globalPaddingSmall
     line-height: $globalTextSizeSmall*1.1
+
+    display: flex
 
 
 
@@ -41,17 +43,18 @@
     margin-bottom: 0
 
   #appIndex
-    width: 28vw
+    width: 100%
+
     display: inline-block
     text-decoration: none
     color: inherit
     font-weight: bold
-
-    @media screen and (max-width: $globalBreakMid)
-      width: 100%
-      clear: both
-    @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+    //
+    // @media screen and (max-width: $globalBreakMid)
+    //   clear: both
+    @media screen and (min-width: $globalBreakLarge)
       width: 30vw
+
 
 
 
@@ -98,6 +101,12 @@
   .padActions
     clear: none
     float: right
+    @media screen and (max-width: $globalBreakLarge)
+      float: left
+      margin-top: $globalTextSizeSmall*1.1
+
+
+
 
     @media screen and (max-width: $globalBreakMid)
         float: left

@@ -82,7 +82,9 @@ var mainSingle = (function() {
 
                     var textInfo = entry.split('|')
 
-                    metadata = $('<div class="paddedBottom" id="singlePadReadMetadata"><h1><span class="metaPlace">' + textInfo[2].trim() + ',<br></span><span class="metaDate">' + textInfo[1].trim() + '</span></h1><h1 class="centerText" ><span class="metaTitle">' + textInfo[0].trim() + '</span></h1><h1><span class="metaEvent">' + eventHeader.replace(/_/g, " ").trim() + '</span></h1></div>')
+                    var timeStamp = new Date()
+
+                    metadata = $('<div class="paddedBottom" id="singlePadReadMetadata"><div id="timeStampOuter"><span id="timeStamp">TIMESTAMP</br>'+timeStamp.getHours()+':'+timeStamp.getMinutes()+':'+timeStamp.getSeconds()+' / '+timeStamp.getDate()+'.'+timeStamp.getMonth()+1+'.'+timeStamp.getFullYear().toString().slice(2)+'</span></div><h1><span class="metaPlace">' + textInfo[2].trim() + ',<br></span><span class="metaDate">' + textInfo[1].trim() + '</span></h1><h1 class="centerText" ><span class="metaTitle">' + textInfo[0].trim() + '</span></h1><h1><span class="metaEvent">' + eventHeader.replace(/_/g, " ").trim() + '</span></h1></div>')
 
                     $('#singlePadRead').prepend(metadata)
 
