@@ -2,6 +2,9 @@ var gulp        = require('gulp');
 var browserSync = require('browser-sync').create();
 var sass        = require('gulp-sass');
 var php		= require('gulp-connect-php');
+var babel 	= require("gulp-babel");
+var sourcemaps 	= require("gulp-sourcemaps");
+var concat 	= require("gulp-concat");
 
 
 function swallowError (error) {
@@ -35,6 +38,17 @@ gulp.task('sass', function() {
 	.on('error', swallowError)
         .pipe(browserSync.stream());
 });
+
+
+//gulp.task("babelCompile", function () {
+//  return gulp.src("js/*.js")
+//    .pipe(sourcemaps.init())
+//    .pipe(babel())
+//    .pipe(concat("mainAll.js"))
+//    .pipe(sourcemaps.write("."))
+//    .pipe(gulp.dest("dist"));
+//});
+
 
 gulp.task('php', function() {
     php.server({ base: './', port: 8001, keepalive: true});

@@ -1,19 +1,19 @@
-var mainGetPad = (function() {
+var mainGetPad = function () {
 
-    var appendContent = function(data, target) {
-        padContent = data.split(/(<body>|<\/body>)/ig)[2]
-        $(target).append(padContent)
-    }
+    var appendContent = function appendContent(data, target) {
+        padContent = data.split(/(<body>|<\/body>)/ig)[2];
+        $(target).append(padContent);
+    };
 
-    var appendContentIndexJson = function(data, target) {
+    var appendContentIndexJson = function appendContentIndexJson(data, target) {
 
-        padContent = data
-        $(target).append(padContent)
-    }
+        padContent = data;
+        $(target).append(padContent);
+    };
 
     return {
 
         appendContent: appendContent,
         appendContentIndexJson: appendContentIndexJson
     };
-})();
+}();

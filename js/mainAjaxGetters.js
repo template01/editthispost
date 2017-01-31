@@ -1,14 +1,13 @@
-var mainAjaxGetters = (function() {
+var mainAjaxGetters = function () {
 
-
-    var getParts = function(urlParam) {
+    var getParts = function getParts(urlParam) {
         return $.ajax({
             url: urlParam
         });
-    }
+    };
 
     return {
         // test: test
         getParts: getParts
     };
-})();
+}();
