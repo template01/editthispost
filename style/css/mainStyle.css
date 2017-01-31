@@ -387,7 +387,8 @@
       max-width: 28vw; }
       @media screen and (max-width: 1024px) {
         #appHeader .padActions .padTitle {
-          max-width: 28vw; } }
+          max-width: 28vw;
+          text-align: left; } }
     #appHeader .padActions .padActionExpand {
       border: 0.25vw solid #ff0000; }
       #appHeader .padActions .padActionExpand img {
