@@ -122,13 +122,15 @@
 
     .padTitle
       // max-width: 30vw
+      overflow: hidden
+      text-overflow: ellipsis
+      white-space: nowrap
+      display: inline-block
+      text-align: right
+      max-width: 28vw
+
       @media screen and (max-width: $globalBreakLarge)
         max-width: 28vw
-        overflow: hidden
-        text-overflow: ellipsis
-        white-space: nowrap
-        display: inline-block
-        text-align: right
 
       // vertical-align: text-top
 

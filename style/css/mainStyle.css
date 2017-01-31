@@ -378,14 +378,16 @@
       border-radius: 1vw;
       cursor: pointer;
       vertical-align: text-top; }
-    @media screen and (max-width: 1024px) {
-      #appHeader .padActions .padTitle {
-        max-width: 28vw;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        display: inline-block;
-        text-align: right; } }
+    #appHeader .padActions .padTitle {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      display: inline-block;
+      text-align: right;
+      max-width: 28vw; }
+      @media screen and (max-width: 1024px) {
+        #appHeader .padActions .padTitle {
+          max-width: 28vw; } }
     #appHeader .padActions .padActionExpand {
       border: 0.25vw solid #ff0000; }
       #appHeader .padActions .padActionExpand img {
