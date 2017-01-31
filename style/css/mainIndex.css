@@ -119,11 +119,15 @@
     border-top: 0.25vw solid #ff0000;
     background: #fff3f3;
     padding-top: 1.5vw; }
+    #indexPadList .targetPadWrapper.capitalizeText {
+      padding-top: 100px; }
     @media screen and (max-width: 1024px) {
       #indexPadList .targetPadWrapper {
         width: calc(100% - 33.33333px);
         margin-left: 16.66667px;
-        margin-right: 16.66667px; } }
+        margin-right: 16.66667px; }
+        #indexPadList .targetPadWrapper.capitalizeText {
+          padding-top: 33.33333px; } }
     #indexPadList .targetPadWrapper:last-of-type {
       border-bottom: 0.25vw solid #ff0000; }
     #indexPadList .targetPadWrapper .targetPad {

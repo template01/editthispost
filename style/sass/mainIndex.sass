@@ -149,6 +149,7 @@
 
 
 
+
   p
     color: $globalRed
     padding: $globalPadding / 2
@@ -172,27 +173,19 @@
     // margin-top: 0.75vw
     padding-top: 0.75vw*2
 
+    &.capitalizeText
+      padding-top: $globalPadding*2
 
-    // ANIMATED LIST
-
-    // max-height: 0
-    // visibility: hidden
-    // transition: max-height 0.200s ease-out
-    // &.animated
-    //   visibility: visible
-    // &.expandHeight
-    //   max-height: 300px
-    // @media screen and (max-width: $globalBreakLarge)
-    //   &.expandHeight
-    //     max-height: 140px
-
-    // ANIMATED LIST END
 
 
     @media screen and (max-width: $globalBreakLarge)
       width: calc(100% - #{$globalPaddingSmall*2})
       margin-left: $globalPaddingSmall
       margin-right: $globalPaddingSmall
+
+      &.capitalizeText
+        padding-top: $globalPaddingSmall*2
+
 
 
     &:last-of-type
