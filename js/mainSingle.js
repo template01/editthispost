@@ -38,10 +38,7 @@ var mainSingle = function () {
 
     var getMetaDataRead = function getMetaDataRead(target) {
         mainAjaxGetters.getParts('http://editthispost.com:9001/p/' + 'index' + '/export/html').success(function (data) {
-            console.log('success');
             mainAjaxGetters.getParts(indexJsonSource).success(function (data) {
-                console.log(data);
-                console.log('success');
                 indexItems = data.data.text.split('\n').slice(0, -1);
                 mainSingle.formatsinglePadReadMetadata(indexItems, target);
             }).error(function () {
@@ -60,11 +57,17 @@ var mainSingle = function () {
                 eventHeader = entry;
             } else {
 
-                regex = new RegExp('^' + decodeURIComponent(include) + '$');
+                regex = new RegExp('^' + decodeURIComponent(include).replace(/[-[\]{}()*+?.,\\^$|#\s]/g, "\\$&") + '$');
+
+                console.log(entry)
+                console.log(regex)
+                console.log(decodeURIComponent(include))
 
                 if (entry.split('|')[0].trim().replace(/ /g, "_").match(regex)) {
 
                     var textInfo = entry.split('|');
+                    console.log(textInfo)
+
 
                     var timeStamp = new Date();
 			month = timeStamp.getMonth()+1
