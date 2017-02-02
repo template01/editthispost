@@ -67,8 +67,9 @@ var mainSingle = function () {
                     var textInfo = entry.split('|');
 
                     var timeStamp = new Date();
+			month = timeStamp.getMonth()+1
 
-                    metadata = $('<div class="paddedBottom" id="singlePadReadMetadata"><div id="timeStampOuter"><span id="timeStamp">TIMESTAMP</br>' + timeStamp.getHours() + ':' + timeStamp.getMinutes() + ':' + timeStamp.getSeconds() + ' / ' + timeStamp.getDate() + '.' + timeStamp.getMonth() + 1 + '.' + timeStamp.getFullYear().toString().slice(2) + '</span></div><h1><span class="metaPlace">' + textInfo[2].trim() + ',<br></span><span class="metaDate">' + textInfo[1].trim() + '</span></h1><h1 class="centerText" ><span class="metaTitle">' + textInfo[0].trim() + '</span></h1><h1><span class="metaEvent">' + eventHeader.replace(/_/g, " ").trim() + '</span></h1></div>');
+                    metadata = $('<div class="paddedBottom" id="singlePadReadMetadata"><div id="timeStampOuter"><span id="timeStamp">TIMESTAMP</br>' + timeStamp.getHours() + ':' + timeStamp.getMinutes() + ':' + timeStamp.getSeconds() + ' / ' + timeStamp.getDate() + '.' + month + '.' + timeStamp.getFullYear().toString().slice(2) + '</span></div><h1><span class="metaPlace">' + textInfo[2].trim() + ',<br></span><span class="metaDate">' + textInfo[1].trim() + '</span></h1><h1 class="centerText" ><span class="metaTitle">' + textInfo[0].trim() + '</span></h1><h1><span class="metaEvent">' + eventHeader.replace(/_/g, " ").trim() + '</span></h1></div>');
 
                     $('#singlePadRead').prepend(metadata);
                 }
