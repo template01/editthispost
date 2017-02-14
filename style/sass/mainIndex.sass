@@ -88,7 +88,36 @@
         to
           visibility: hidden
 
-#indexBlurb, #indexInfo, #indexCredits, #indexHow
+#indexHow 
+  font-size: $globalTextSize/1.5
+  font-family: $globalTextFamMono
+  line-height: $globalTextSize/1.25
+  letter-spacing: -0.1vw
+  color: $globalRed
+
+  b
+    letter-spacing: -0.05vw
+
+  ol
+    margin-top: 0
+
+  li
+    margin-bottom: $globalPadding / 4
+
+  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+    font-size: $globalTextSizeMid
+    line-height: $globalTextSizeMid * 1.1
+    letter-spacing: -0.1vw
+
+  @media screen and (max-width: $globalBreakMid)
+    font-size: $globalTextSizeSmall
+    line-height: $globalTextSizeSmall * 1.1
+    letter-spacing: -0.1vw
+
+    ol
+      padding-left: inherit
+
+#indexBlurb, #indexInfo, #indexCredits
   font-size: $globalTextSize
   font-family: $globalTextFam
   line-height: $globalTextSize * 1.1
@@ -112,15 +141,6 @@
 
   p:first-of-type
     margin-top: -0.5vw
-
-
-#indexHow 
-  ol
-    padding-left: inherit
-    margin: 0
-  li
-    margin-bottom: $globalPadding / 4
-
 
 #indexPadList
   padding-left: $globalPadding * 2
@@ -152,16 +172,12 @@
       padding-right: 0
       padding-bottom: $globalPaddingSmall
 
-
   p
     color: $globalRed
     padding: $globalPadding / 2
     margin-bottom: 0
     @media screen and (max-width: $globalBreakLarge)
       padding: $globalPaddingSmall
-
-
-
 
   ul
     padding: 0

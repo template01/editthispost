@@ -16,6 +16,8 @@
   letter-spacing: -0.1vw;
   color: black;
   width: 75%; }
+  #singlePad #singlePadRead b, #singlePad #singlePadRead strong, #singlePad #singlePadRead bold {
+    letter-spacing: -0.05vw; }
   @media screen and (max-width: 1024px) and (min-width: 420px) {
     #singlePad #singlePadRead {
       padding: 16.66667px;

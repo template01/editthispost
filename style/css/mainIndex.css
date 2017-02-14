@@ -54,35 +54,53 @@
   to {
     visibility: hidden; } }
 
-#indexBlurb, #indexInfo, #indexCredits, #indexHow {
+#indexHow {
+  font-size: 22.66667px;
+  font-family: TeXGyreCursor;
+  line-height: 27.2px;
+  letter-spacing: -0.1vw;
+  color: #ff0000; }
+  #indexHow b {
+    letter-spacing: -0.05vw; }
+  #indexHow ol {
+    margin-top: 0; }
+  #indexHow li {
+    margin-bottom: 12.5px; }
+  @media screen and (max-width: 1024px) and (min-width: 420px) {
+    #indexHow {
+      font-size: 18.88889px;
+      line-height: 20.77778px;
+      letter-spacing: -0.1vw; } }
+  @media screen and (max-width: 420px) {
+    #indexHow {
+      font-size: 11.33333px;
+      line-height: 12.46667px;
+      letter-spacing: -0.1vw; }
+      #indexHow ol {
+        padding-left: inherit; } }
+
+#indexBlurb, #indexInfo, #indexCredits {
   font-size: 34px;
   font-family: TeXGyreHeros;
   line-height: 37.4px;
   letter-spacing: -0.1vw;
   color: #ff0000; }
   @media screen and (max-width: 1024px) and (min-width: 420px) {
-    #indexBlurb, #indexInfo, #indexCredits, #indexHow {
+    #indexBlurb, #indexInfo, #indexCredits {
       font-size: 18.88889px;
       line-height: 20.77778px;
       letter-spacing: -0.1vw; } }
   @media screen and (max-width: 420px) {
-    #indexBlurb, #indexInfo, #indexCredits, #indexHow {
+    #indexBlurb, #indexInfo, #indexCredits {
       font-size: 11.33333px;
       line-height: 12.46667px;
       letter-spacing: -0.1vw; } }
-  #indexBlurb a, #indexInfo a, #indexCredits a, #indexHow a {
+  #indexBlurb a, #indexInfo a, #indexCredits a {
     font-weight: bold;
     text-decoration: none;
     color: inherit; }
-  #indexBlurb p:first-of-type, #indexInfo p:first-of-type, #indexCredits p:first-of-type, #indexHow p:first-of-type {
+  #indexBlurb p:first-of-type, #indexInfo p:first-of-type, #indexCredits p:first-of-type {
     margin-top: -0.5vw; }
-
-#indexHow ol {
-  padding-left: inherit;
-  margin: 0; }
-
-#indexHow li {
-  margin-bottom: 12.5px; }
 
 #indexPadList {
   padding-left: 100px;
