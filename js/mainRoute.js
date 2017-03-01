@@ -51,7 +51,9 @@ var mainRoute = function () {
 
                     ranIndex = true;
                 }
-
+                mainIndex.readMoreIndex();
+                mainIndex.toggleEventList();
+                mainIndex.langSwab();
                 mainIndex.goshow();
                 mainSingle.gohide();
                 mainHeader.gohide();

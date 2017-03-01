@@ -6,13 +6,28 @@
   #appHeader
     display: none !important
 
+  #singlePadReadInner
+    -webkit-column-count: 2
+    -moz-column-count: 2
+    column-count: 2
+    -webkit-column-gap: 9mm
+    -moz-column-gap: 9mm
+    column-gap: 9mm
+
+    #appendAboutText
+      width: 100% !important
+
+
+
   #singlePadRead
     padding: 0 !important
     width: 100% !important
-    font-size: 12.5pt !important
+    font-size: 9.5pt !important
     font-family: $globalTextFamMono !important
-    line-height: 12.5pt*1.6 !important
+    line-height: 9.5pt*1.6 !important
     letter-spacing: -0.5pt !important
+
+
 
     code
       padding-left: 20mm !important
@@ -32,7 +47,7 @@
 
 
       #timeStamp
-        right: 12.5pt*2!important
+        right: 11.5pt !important
         letter-spacing: -0.5pt !important
 
 
@@ -48,3 +63,9 @@
       .metaTitle
         padding-top: 52pt*1.5+8mm !important
         padding-bottom: 52pt !important
+
+      .metaUrl
+        width: 50%
+        display: inline-block
+        padding-top: 9.5pt*2 !important
+        padding-bottom: 9.5pt*2 !important

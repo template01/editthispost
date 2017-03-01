@@ -1,12 +1,21 @@
 @media print {
   #appHeader {
     display: none !important; }
+  #singlePadReadInner {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+    -webkit-column-gap: 9mm;
+    -moz-column-gap: 9mm;
+    column-gap: 9mm; }
+    #singlePadReadInner #appendAboutText {
+      width: 100% !important; }
   #singlePadRead {
     padding: 0 !important;
     width: 100% !important;
-    font-size: 12.5pt !important;
+    font-size: 9.5pt !important;
     font-family: TeXGyreCursor !important;
-    line-height: 20pt !important;
+    line-height: 15.2pt !important;
     letter-spacing: -0.5pt !important; }
     #singlePadRead code {
       padding-left: 20mm !important; }
@@ -17,7 +26,7 @@
     #singlePadRead #singlePadReadMetadata {
       padding-bottom: 5pt !important; }
       #singlePadRead #singlePadReadMetadata #timeStamp {
-        right: 25pt !important;
+        right: 11.5pt !important;
         letter-spacing: -0.5pt !important; }
       #singlePadRead #singlePadReadMetadata .metaPlace, #singlePadRead #singlePadReadMetadata .metaDate, #singlePadRead #singlePadReadMetadata .metaEvent, #singlePadRead #singlePadReadMetadata .metaTitle {
         font-size: 52pt !important;
@@ -25,4 +34,9 @@
         letter-spacing: -2.1pt !important; }
       #singlePadRead #singlePadReadMetadata .metaTitle {
         padding-top: 100.67717pt !important;
-        padding-bottom: 52pt !important; } }
+        padding-bottom: 52pt !important; }
+      #singlePadRead #singlePadReadMetadata .metaUrl {
+        width: 50%;
+        display: inline-block;
+        padding-top: 19pt !important;
+        padding-bottom: 19pt !important; } }

@@ -1,5 +1,12 @@
 @import mainGlobalVariables
 
+.langENG
+  display: none
+
+.langNL
+  display: block
+
+
 #indexSplash
   position: fixed
   width: 100%
@@ -88,10 +95,29 @@
         to
           visibility: hidden
 
-#indexHow 
-  font-size: $globalTextSize/1.5
+#indexBlurb
+  .readMoreIndex
+    float: left
+    cursor: pointer
+    margin-top: -0.25vw
+    display: inline-block
+    border-bottom: 0.25vw solid $globalRed
+
+  #langSwab
+    float: right
+    cursor: pointer
+
+    .active
+      margin-top: -0.25vw
+      display: inline-block
+      border-bottom: 0.25vw solid $globalRed
+
+
+#indexHow
+  font-size: $globalTextSize/1.8
   font-family: $globalTextFamMono
-  line-height: $globalTextSize/1.25
+  // line-height: $globalTextSize/1.25
+  line-height: $globalTextSize*0.9
   letter-spacing: -0.1vw
   color: $globalRed
 
@@ -106,16 +132,16 @@
 
   @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
     font-size: $globalTextSizeMid
-    line-height: $globalTextSizeMid * 1.1
+    line-height: $globalTextSizeMid * 1.5
     letter-spacing: -0.1vw
 
   @media screen and (max-width: $globalBreakMid)
     font-size: $globalTextSizeSmall
-    line-height: $globalTextSizeSmall * 1.1
+    line-height: $globalTextSizeSmall * 1.5
     letter-spacing: -0.1vw
 
     ol
-      padding-left: inherit
+      padding-left: $globalPaddingSmall
 
 #indexBlurb, #indexInfo, #indexCredits
   font-size: $globalTextSize
@@ -153,6 +179,19 @@
   width: 100%
   padding-bottom: $globalPadding
 
+  .toggleEventList
+    cursor: pointer
+    padding-bottom: 0.75vw*2
+
+    .padActions
+      display: none
+    .targetPad
+      width: 100% !important
+      text-align: center
+
+
+  #toggleEventListText
+    text-transform: uppercase
 
   @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
       font-size: $globalTextSizeMid
@@ -182,6 +221,7 @@
   ul
     padding: 0
     margin: 0
+
 
   .targetPadWrapper
 
