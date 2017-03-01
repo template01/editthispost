@@ -13,15 +13,46 @@
     border-top: 0.25vw solid $globalRed
     margin-top: -0.25vw
 
+  .metaUrl
+    cursor: pointer
+    
+    a
+      clear: both
+      // display: table
+      // word-wrap: break-word
+      // width: 100%
+
+      /* These are technically the same, but use both */
+      overflow-wrap: break-word
+      word-wrap: break-word
+
+      -ms-word-break: break-all
+      /* This is the dangerous one in WebKit, as it breaks things wherever */
+      word-break: break-all
+      /* Instead use this non-standard one: */
+      word-break: break-word
+
+      /* Adds a hyphen where the word breaks, if supported (No Blink) */
+      -ms-hyphens: auto
+      -moz-hyphens: auto
+      -webkit-hyphens: auto
+      hyphens: auto
+
+
+
   #singlePadRead
     position: relative
     padding: $globalPadding
-    font-size: $globalTextSize/1.5
+    font-size: $globalTextSize/1.8
     font-family: $globalTextFamMono
-    line-height: $globalTextSize*1.1
+    line-height: $globalTextSize*0.9
     letter-spacing: -0.1vw
     color: $globalBlack
     width: 75%
+
+    #appendAboutText
+      width: 50%
+      float: right
 
     b, strong, bold
       letter-spacing: -0.05vw
@@ -29,14 +60,14 @@
     @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
       padding: $globalPaddingMid
       font-size: $globalTextSizeMid
-      line-height: $globalTextSizeMid*1.1
+      line-height: $globalTextSizeMid*1.5
 
 
     @media screen and (max-width: $globalBreakMid)
 
       padding: $globalPaddingSmall
       font-size: $globalTextSizeSmall
-      line-height: $globalTextSizeSmall*1.1
+      line-height: $globalTextSizeSmall*1.5
 
     @media screen and (max-width: $globalBreakLarge)
       width: 100%
@@ -100,6 +131,7 @@
         line-height: $globalTextSize*1.1
         letter-spacing: -0.1vw
         font-weight: normal
+
 
       .metaTitle
         padding: $globalPadding

@@ -1,3 +1,9 @@
+.langENG {
+  display: none; }
+
+.langNL {
+  display: block; }
+
 #indexSplash {
   position: fixed;
   width: 100%;
@@ -54,10 +60,25 @@
   to {
     visibility: hidden; } }
 
+#indexBlurb .readMoreIndex {
+  float: left;
+  cursor: pointer;
+  margin-top: -0.25vw;
+  display: inline-block;
+  border-bottom: 0.25vw solid #ff0000; }
+
+#indexBlurb #langSwab {
+  float: right;
+  cursor: pointer; }
+  #indexBlurb #langSwab .active {
+    margin-top: -0.25vw;
+    display: inline-block;
+    border-bottom: 0.25vw solid #ff0000; }
+
 #indexHow {
-  font-size: 22.66667px;
+  font-size: 18.88889px;
   font-family: TeXGyreCursor;
-  line-height: 27.2px;
+  line-height: 30.6px;
   letter-spacing: -0.1vw;
   color: #ff0000; }
   #indexHow b {
@@ -69,15 +90,15 @@
   @media screen and (max-width: 1024px) and (min-width: 420px) {
     #indexHow {
       font-size: 18.88889px;
-      line-height: 20.77778px;
+      line-height: 28.33333px;
       letter-spacing: -0.1vw; } }
   @media screen and (max-width: 420px) {
     #indexHow {
       font-size: 11.33333px;
-      line-height: 12.46667px;
+      line-height: 17px;
       letter-spacing: -0.1vw; }
       #indexHow ol {
-        padding-left: inherit; } }
+        padding-left: 16.66667px; } }
 
 #indexBlurb, #indexInfo, #indexCredits {
   font-size: 34px;
@@ -112,6 +133,16 @@
   display: inline-block;
   width: 100%;
   padding-bottom: 50px; }
+  #indexPadList .toggleEventList {
+    cursor: pointer;
+    padding-bottom: 1.5vw; }
+    #indexPadList .toggleEventList .padActions {
+      display: none; }
+    #indexPadList .toggleEventList .targetPad {
+      width: 100% !important;
+      text-align: center; }
+  #indexPadList #toggleEventListText {
+    text-transform: uppercase; }
   @media screen and (max-width: 1024px) and (min-width: 420px) {
     #indexPadList {
       font-size: 18.88889px;

@@ -46,12 +46,14 @@ var mainRoute = function () {
                     mainIndex.initIndex();
 
                     if ($('#singlePad').length === 0) {
-                        mainIndex.playSplash();
+                        // mainIndex.playSplash();
                     }
 
                     ranIndex = true;
                 }
-
+                mainIndex.readMoreIndex();
+                mainIndex.toggleEventList();
+                mainIndex.langSwab();
                 mainIndex.goshow();
                 mainSingle.gohide();
                 mainHeader.gohide();
