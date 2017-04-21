@@ -13,7 +13,7 @@ var mainSingle = function() {
             $('#singlePad').append('<div id="singlePadRead"><div id="singlePadReadInner"></div></div>');
             mainGetPad.appendContent(data, '#singlePadReadInner');
             mainSingle.getMetaDataRead(target);
-            mainSingle.appendAboutText()
+            // mainSingle.appendAboutText()
 
         }).error(function() {
             console.log('error');
