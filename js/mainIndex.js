@@ -3,9 +3,20 @@ var mainIndex = function() {
 
 
   var textStrings = {
+    langSwab:'<span id="langSwab"><span class="active" id="langSwabNL">NL</span> / <span id="langSwabENG">EN</span></span>',
+    navTop:{
+      about:{
+        en:'<b>About</b> + <b>Instructions</b>',
+        nl:'<b>Over</b> + <b>Instructies</b>'
+      }
+    },
+    introOneliner:{
+      en:'is collaborative writing in real time.',
+      nl:'is collaboratief schrijven in real time.'
+    },
     introBlurb: {
-      en: '<b>edit this post</b> is collaborative writing in real time. In this interactive after talk the audience jointly writes a reflection of the evening. Everyone can contribute! Afterwards, the end result can be read online and printed directly. Write it!<br><br><span class="readMoreIndex">Read more</span>',
-      nl: '<b>edit this post</b> is collaboratief schrijven in real time. In dit interactieve nagesprek schrijft publiek samen een kritiek van de avond. Iedereen mag bijdragen! Na afloop is het eindresultaat online terug te lezen en direct uit te printen. Schrijf mee!<br><br><span class="readMoreIndex">Lees meer</span>'
+      en: '<b>edit this post</b> is collaborative writing in real time. In this interactive after talk the audience jointly writes a reflection of the evening. Everyone can contribute! Afterwards, the end result can be read online and printed directly. Write it!',
+      nl: '<b>edit this post</b> is collaboratief schrijven in real time. In dit interactieve nagesprek schrijft publiek samen een kritiek van de avond. Iedereen mag bijdragen! Na afloop is het eindresultaat online terug te lezen en direct uit te printen. Schrijf mee!'
     },
     instructions:{
       en:'<ol><li><b>Select</b> the text you want to contribute to (search for the performance and date)</li><li><b>Click</b> on Write</li><li><b>Enter your name and chose a colour</b> select the symbol with three puppets in the right up corner. Your chosen colour shows your contribution.</li><li><b>Write!</b> React as much as possible to the already written text unless you really miss something. We strive for one jointly written text. You are allowed to shuffle someone else’s text, you are editor and writer. You are not allowed to delete someone else’s text, rather add a counterargument or nuance</li></ol>',
@@ -16,27 +27,55 @@ var mainIndex = function() {
       nl:'Het reizende dansfestival <a target="_blank" href="http://movingfutures.nl/">Moving Futures</a> presenteert de nieuwe generatie dansmakers. Avondvullende voorstellingen, work in progress, kijkjes in de keuken, installaties en films. Het publiek spreekt en schrijft erover met elkaar via <b>edit this post</b>.<br><br>Tijdens events en workshops kan <b>edit this post</b> worden gebruikt om in real time verslag te doen. Iedereen werkt aan hetzelfde tekstbestand, als schrijver, vragensteller of redacteur. Alles mag. De tekst wordt daarna automatisch vormgegeven en kan meteen geprint worden als publicatie.              '
     },
     infoCredits:{
-      en:'<b>edit this post</b> is a concept made by <b><a href="http://www.template01.info/" target="_blank">Template</a></b> in collaboration with <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> and <b><a href="http://networkcultures.org/" target="_blank">Institute of Network Cultures</a></b>. For more information, <b><a href="mailto:contact@template01.info?Subject=Hoi%20Template" target="_top">write Template</a></b>.<br><br><b>edit this post</b> makes use of the open source application <a href="http://etherpad.org/">Etherpad</a>.',
-      nl:'<b>edit this post</b> is een idee van <b><a href="http://www.template01.info/" target="_blank">Template</a></b> in samenwerking met <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> en <b><a href="http://networkcultures.org/" target="_blank">Institute of Network Cultures</a></b>. Voor meer informatie, <b><a href="mailto:contact@template01.info?Subject=Hoi%20Template" target="_top">stuur een e-mail naar Template</a></b>.<br><br><b>edit this post</b> maakt gebruik van de open source applicatie <a href="http://etherpad.org/">Etherpad</a>.      '
+      colA:{
+        en:'<b>edit this post</b> is a concept made by <b><a href="https://www.template-studio.nl" target="_blank">Template</a></b> in collaboration with <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> and <b><a href="http://networkcultures.org/" target="_blank">Institute of Network Cultures</a></b>.',
+        nl:'<b>edit this post</b> is een idee van <b><a href="https://www.template-studio.nl" target="_blank">Template</a></b> in samenwerking met <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> en <b><a href="http://networkcultures.org/" target="_blank">Institute of Network Cultures</a></b>.'
+      },
+      colB:{
+        en:'<b>edit this post</b> makes use of the open source application <a href="http://etherpad.org/">Etherpad</a>. For more information, <b><a href="mailto:hello@template-studio.nl?Subject=Hoi%20Template" target="_top">write Template</a></b>.',
+        nl:'<b>edit this post</b> maakt gebruik van de open source applicatie <a href="http://etherpad.org/">Etherpad</a>. Voor meer informatie, <b><a href="mailto:hello@template-studio.nl?Subject=Hoi%20Template" target="_top">stuur een e-mail naar Template</a></b>.'
+      }
+
     }
   }
 
 
   var indexTemplate = `
   <div id="indexPage">
+  <div id="instructionsOverlay">
+  <div class="colFull">
+      <div id="indexInfo" class="colHalf padded">
+          <p>
+
+          <span class="langNL">OVER</span>
+          <span class="langENG">ABOUT</span>
+          </br>
+          </br>
+          <span class="langNL">`+textStrings.infoText.nl+`</span>
+              <span class="langENG">`+textStrings.infoText.en+`</span>
+          </p>
+      </div>
+      <div id="indexCredits" class="colHalf padded">
+          <p>
+          <span class="langNL">INSTRUCTIES</span>
+          <span class="langENG">INSTRUCTIONS</span>
+          <span class="close-icon readLessInstructions"></span>
+              <br> <span class="langNL">`+textStrings.instructions.nl+`</span>
+              <span class="langENG">`+textStrings.instructions.en+`</span></p>
+      </div>
+  </div>
+  </div>
       <div class="colFull">
-          <div id="indexBlurb" class="colHalf padded paddedNotBottom">
-              <p>EDIT THIS POST <span id="langSwab"><span class="active" id="langSwabNL">NL</span> / <span id="langSwabENG">EN</span></span>
-                  <br>
-                  <br><span class="langNL">
-        `+textStrings.introBlurb.nl+`</span>
-                  <span class="langENG">`+textStrings.introBlurb.en+`</span> </p>
-          </div>
-          <div id="indexHow" class="colHalf padded paddedNotBottom">
-              <span class="langNL">`+textStrings.instructions.nl+`</span>
-              <span class="langENG">
-            `+textStrings.instructions.en+`
-          </span>
+          <div id="indexBlurb" class="colFull padded paddedNotBottom extraPaddingTop">
+              <p>
+                <span class="animatedBorderBlack">edit this post</span>
+                <span class="langNL">`+textStrings.introOneliner.nl+`</span>
+                <span class="langENG">`+textStrings.introOneliner.en+`</span>
+                <span id="indexNavTop">
+                  <span class="langNL"><span class="readMoreInstructions">`+textStrings.navTop.about.nl+`</span></span>
+                  <span class="langENG"><span class="readMoreInstructions">`+textStrings.navTop.about.en+`</span></span>
+                  &nbsp;`+textStrings.langSwab+`
+                </span>
               </p>
           </div>
       </div>
@@ -47,20 +86,17 @@ var mainIndex = function() {
       </div>
       <div class="colFull">
           <div id="indexInfo" class="colHalf padded">
-              <p>INFO
-                  <br>
-                  <br><span class="langNL">`+textStrings.infoText.nl+`</span>
-                  <span class="langENG">`+textStrings.infoText.en+`</span>
+              <p><span class="langNL">`+textStrings.infoCredits.colA.nl+`</span>
+                  <span class="langENG">`+textStrings.infoCredits.colA.en+`</span>
               </p>
           </div>
           <div id="indexCredits" class="colHalf padded">
-              <p>CREDITS
-                  <br>
-                  <br> <span class="langNL">`+textStrings.infoCredits.nl+`</span>
-                  <span class="langENG">`+textStrings.infoCredits.en+`</span></p>
+              <p><span class="langNL">`+textStrings.infoCredits.colB.nl+`</span>
+                  <span class="langENG">`+textStrings.infoCredits.colB.en+`</span></p>
           </div>
       </div>
   </div>
+
 `;
 
   var playSplash = function playSplash() {
@@ -139,6 +175,12 @@ var mainIndex = function() {
       }
     })
   };
+
+  var readMoreInstructions = function readMoreInstructions(){
+    $(document).on('click', '.readMoreInstructions,.readLessInstructions', function() {
+      $("#instructionsOverlay").toggle()
+    })
+  }
 
   var readMoreIndex = function readMoreIndex() {
     $(document).on('click', '.readMoreIndex', function() {
@@ -288,6 +330,7 @@ var mainIndex = function() {
     gohide: gohide,
     toggleEventList: toggleEventList,
     langSwab: langSwab,
+    readMoreInstructions: readMoreInstructions,
     readMoreIndex: readMoreIndex,
     playSplash: playSplash
   };

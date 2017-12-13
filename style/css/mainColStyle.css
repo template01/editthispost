@@ -11,8 +11,23 @@
     width: 100% !important;
     text-transform: uppercase; }
 
+.extraPaddingTop {
+  padding-top: 60px !important; }
+  @media screen and (max-width: 1400px) {
+    .extraPaddingTop {
+      padding-top: 40px !important; } }
+  @media screen and (max-width: 1024px) {
+    .extraPaddingTop {
+      padding-top: 30px !important; } }
+  @media screen and (max-width: 640px) {
+    .extraPaddingTop {
+      padding-top: 24px !important; } }
+
 .padded {
   padding: 50px; }
+  @media screen and (max-width: 1400px) {
+    .padded {
+      padding: 25px; } }
   @media screen and (max-width: 1024px) {
     .padded {
       padding: 16.66667px; } }

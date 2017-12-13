@@ -1,6 +1,6 @@
 var mainHeader = function () {
     var test = "teeest";
-    var headerTemplate = "<div id=\"appHeader\">\n      <p>\n        <a id=\"appIndex\" href=\"/\" data-navigo><span id=\"animateTitle\"></span></a>\n        <span class=\"padActions\">\n          <span id=\"padTitle\" class=\"padTitle\"></span>\n          <span class=\"padActionRead\">Read</span>\n          <span class=\"padActionWrite\"></span>\n          <span class=\"padActionExpand\"><i class=\"fa fa-expand\"></i></span>\n\n          <span class=\"padActionPrint\">Print</span>\n        </span>\n      </p>\n  </div>";
+    var headerTemplate = "<div class='extraPaddingTop' id=\"appHeader\">\n      <p>\n        <a id=\"appIndex\" href=\"/\" data-navigo><span id=\"animateTitle\"></span></a>\n        <span class=\"padActions\">\n          <span id=\"padTitle\" class=\"padTitle\"></span>\n          <span class=\"padActionRead\">Read</span>\n          <span class=\"padActionWrite\"></span>\n          <span class=\"padActionExpand\"><i class=\"fa fa-expand\"></i></span>\n\n          <span class=\"padActionPrint\">Print</span>\n        </span>\n      </p>\n  </div>";
 
     var initHeader = function initHeader(target) {
         if ($("#appHeader").length == 0) {

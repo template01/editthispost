@@ -15,7 +15,7 @@
 
   .metaUrl
     cursor: pointer
-    
+
     a
       clear: both
       // display: table
@@ -57,7 +57,13 @@
     b, strong, bold
       letter-spacing: -0.05vw
 
-    @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+    @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMidLarge)
+      padding: $globalPaddingMidLarge
+      font-size: $globalTextSizeMid
+      line-height: $globalTextSizeMid*1.5
+
+
+    @media screen and (max-width: $globalBreakMidLarge) and (min-width: $globalBreakMid)
       padding: $globalPaddingMid
       font-size: $globalTextSizeMid
       line-height: $globalTextSizeMid*1.5
@@ -69,18 +75,18 @@
       font-size: $globalTextSizeSmall
       line-height: $globalTextSizeSmall*1.5
 
-    @media screen and (max-width: $globalBreakLarge)
+    @media screen and (max-width: $globalBreakMidLarge)
       width: 100%
 
     .number
       padding-left: $globalPadding
-      @media screen and (max-width: $globalBreakLarge)
+      @media screen and (max-width: $globalBreakMidLarge)
         padding-left: $globalPaddingSmall*4
 
     .indent
       list-style: none
       padding-left: $globalPadding
-      @media screen and (max-width: $globalBreakLarge)
+      @media screen and (max-width: $globalBreakMidLarge)
         padding-left: $globalPaddingSmall*4
 
     code
@@ -88,7 +94,7 @@
       padding-left: $globalPadding*4
       display: inherit
 
-      @media screen and (max-width: $globalBreakLarge)
+      @media screen and (max-width: $globalBreakMidLarge)
         padding-left: $globalPaddingSmall*6
 
 
@@ -116,7 +122,7 @@
         text-align: right
         right: $globalTextSize*2
 
-        @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+        @media screen and (max-width: $globalBreakMidLarge) and (min-width: $globalBreakMid)
           right: $globalTextSizeMid*2
 
 

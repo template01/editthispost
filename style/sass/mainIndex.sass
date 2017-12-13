@@ -4,7 +4,7 @@
   display: none
 
 .langNL
-  display: block
+  display: initial
 
 
 #indexSplash
@@ -95,12 +95,56 @@
         to
           visibility: hidden
 
+#indexPage
+  #instructionsOverlay
+    display: none
+    position: fixed
+    top: 0
+    background: $globalRose
+    height: 100%
+    width: 100%
+    z-index: 9999
+    .close-icon
+      display: inline-block
+      float: right
+      box-sizing: border-box
+      width: 20px
+      height: 20px
+      margin-top: 6px
+      background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, red 46%,  red 56%,transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, red 46%,  red 56%,transparent 56%, transparent 100%)
+      cursor: pointer
+
+      @media screen and (max-width: $globalBreakMidLarge)
+        position: absolute
+        right: $globalPaddingMid
+        top: $globalPaddingMid
+
 #indexBlurb
+
+  #indexNavTop
+    float: right
+
+  .animatedBorderBlack
+    padding: 0vw 1vw 0.2vw 1vw
+    border-radius: 1vw
+    border: 0.25vw solid #ff0000
+    background: #ff0000
+    color: #fff3f3
+
+  .readMoreInstructions
+    float: left
+    cursor: pointer
+    margin-right: 20px
+    // margin-top: -0.25vw
+    // display: inline-block
+    border-bottom: 0.25vw solid $globalRed
+
   .readMoreIndex
     float: left
     cursor: pointer
-    margin-top: -0.25vw
-    display: inline-block
+    margin-right: 20px
+    // margin-top: -0.25vw
+    // display: inline-block
     border-bottom: 0.25vw solid $globalRed
 
   #langSwab
@@ -130,7 +174,7 @@
   li
     margin-bottom: $globalPadding / 4
 
-  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+  @media screen and (max-width: $globalBreakMidLarge) and (min-width: $globalBreakMid)
     font-size: $globalTextSizeMid
     line-height: $globalTextSizeMid * 1.5
     letter-spacing: -0.1vw
@@ -150,10 +194,17 @@
   letter-spacing: -0.1vw
   color: $globalRed
 
-  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
-      font-size: $globalTextSizeMid
-      line-height: $globalTextSizeMid * 1.1
-      letter-spacing: -0.1vw
+  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMidLarge)
+    font-size: $globalTextSizeMidLarge
+    line-height: $globalTextSizeMidLarge * 1.1
+    letter-spacing: -0.1vw
+
+
+
+  @media screen and (max-width: $globalBreakMidLarge) and (min-width: $globalBreakMid)
+    font-size: $globalTextSizeMid
+    line-height: $globalTextSizeMid * 1.1
+    letter-spacing: -0.1vw
 
   @media screen and (max-width: $globalBreakMid)
     font-size: $globalTextSizeSmall
@@ -193,13 +244,24 @@
   #toggleEventListText
     text-transform: uppercase
 
-  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
-      font-size: $globalTextSizeMid
-      line-height: $globalTextSizeMid * 1.1
-      letter-spacing: -0.1vw
-      padding-left: 0
-      padding-right: 0
-      padding-bottom: $globalPaddingMid
+
+
+
+  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMidLarge)
+    font-size: $globalTextSizeMidLarge
+    line-height: $globalTextSizeMidLarge * 1.1
+    letter-spacing: -0.1vw
+    padding-left: $globalPaddingMidLarge
+    padding-right: $globalPaddingMidLarge
+    padding-bottom: $globalTextSizeMidLarge
+
+  @media screen and (max-width: $globalBreakMidLarge) and (min-width: $globalBreakMid)
+    font-size: $globalTextSizeMid
+    line-height: $globalTextSizeMid * 1.1
+    letter-spacing: -0.1vw
+    padding-left: 0
+    padding-right: 0
+    padding-bottom: $globalPaddingMid
 
 
   @media screen and (max-width: $globalBreakMid)
@@ -215,8 +277,9 @@
     color: $globalRed
     padding: $globalPadding / 2
     margin-bottom: 0
-    @media screen and (max-width: $globalBreakLarge)
+    @media screen and (max-width: $globalBreakMidLarge)
       padding: $globalPaddingSmall
+
 
   ul
     padding: 0
@@ -236,8 +299,12 @@
       padding-top: $globalPadding*2
 
 
+    @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMidLarge)
+      &.capitalizeText
+        padding-top: $globalPaddingMidLarge*2
 
-    @media screen and (max-width: $globalBreakLarge)
+
+    @media screen and (max-width: $globalBreakMidLarge)
       width: calc(100% - #{$globalPaddingSmall*2})
       margin-left: $globalPaddingSmall
       margin-right: $globalPaddingSmall
@@ -276,11 +343,50 @@
         cursor: pointer
 
 
-      @media screen and (max-width: $globalBreakLarge)
+
+      @media screen  and (max-width: $globalBreakLarge) and (min-width: $globalBreakMidLarge)
+        padding: $globalPaddingSmall
+        width: 70%
+
+        span:first-of-type
+          font-weight: bold
+          width: 33.333%
+
+        span:nth-of-type(2),span:nth-of-type(3)
+          // background: green
+          padding-left: 10px
+
+        span
+          vertical-align: top
+          display: inline-block
+          width: 33.333%
+
+
+      @media screen and (max-width: $globalBreakMidLarge) and (min-width: $globalBreakMid)
         padding: $globalPaddingSmall
         padding-left: 0
         padding-right: 0
-        width: 64%
+        width: 70%
+
+        span:first-of-type
+          font-weight: bold
+          width: 33.333%
+
+        span:nth-of-type(2),span:nth-of-type(3)
+          // background: green
+          padding-left: 10px
+
+        span
+          vertical-align: top
+          display: inline-block
+          width: 33.333%
+
+
+      @media screen and (max-width: $globalBreakMid)
+        padding: 4px
+        padding-left: 0
+        padding-right: 0
+        width: 70%
 
         span:first-of-type
           font-weight: bold
@@ -300,11 +406,16 @@
       width: 30%
       float: left
 
-      @media screen and (max-width: $globalBreakLarge)
+      @media screen and (max-width: $globalBreakMidLarge) and (min-width: $globalBreakMid)
         padding: $globalPaddingSmall
         padding-right: 0
         width: 36%
 
+      @media screen  and (max-width: $globalBreakLarge) and (min-width: $globalBreakMidLarge)
+        padding: $globalPaddingSmall
+        // width: 36%
+      @media screen and (max-width: $globalBreakMid)
+        padding: 4px
 
 
 

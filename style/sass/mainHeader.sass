@@ -13,8 +13,15 @@
   color: $globalRed
   border-bottom: 0.25vw solid $globalRed
 
+  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMidLarge)
+    font-size: $globalTextSizeMidLarge
+    padding-top: $globalPaddingMidLarge
+    margin-left: $globalPaddingMidLarge
+    margin-right: $globalPaddingMidLarge
+    padding-bottom: $globalPaddingMidLarge
+    line-height: $globalTextSizeMidLarge*1.1
 
-  @media screen and (max-width: $globalBreakLarge) and (min-width: $globalBreakMid)
+  @media screen and (max-width: $globalBreakMidLarge) and (min-width: $globalBreakMid)
 
     font-size: $globalTextSizeMid
     padding-top: $globalPaddingMid
@@ -22,7 +29,6 @@
     margin-right: $globalPaddingMid
     padding-bottom: $globalPaddingMid
     line-height: $globalTextSizeMid*1.1
-
     display: flex
 
 
@@ -33,10 +39,7 @@
     margin-right: $globalPaddingSmall
     padding-bottom: $globalPaddingSmall
     line-height: $globalTextSizeSmall*1.1
-
     display: flex
-
-
 
   p:first-of-type
     margin-top: -0.5vw
@@ -49,18 +52,12 @@
     text-decoration: none
     color: inherit
     font-weight: bold
-    //
-    // @media screen and (max-width: $globalBreakMid)
-    //   clear: both
-    @media screen and (min-width: $globalBreakLarge)
+    @media screen and (min-width: $globalBreakMidLarge)
       width: 30vw
-
-
 
 
     .t-caret
       padding-left: 0.2vw
-      // font-weight: bold
 
     del
       text-decoration: none
@@ -78,7 +75,7 @@
   // .padTitleOuter
   //
   //
-  //   @media screen and (max-width: $globalBreakLarge)
+  //   @media screen and (max-width: $globalBreakMidLarge)
   //     display: none
   //     float: right
 
@@ -91,7 +88,7 @@
   //   // cursor: pointer
   //   border: 0.25vw solid $globalRed
     //
-    // @media screen and (max-width: $globalBreakLarge)
+    // @media screen and (max-width: $globalBreakMidLarge)
     //   margin-left: 0
     //   font-size: $globalTextSizeSmall
     //   line-height: $globalTextSizeSmall*1.1
@@ -101,7 +98,7 @@
   .padActions
     clear: none
     float: right
-    @media screen and (max-width: $globalBreakLarge)
+    @media screen and (max-width: $globalBreakMidLarge)
       float: left
       margin-top: $globalTextSizeSmall*1.1
 
@@ -129,7 +126,7 @@
       text-align: right
       max-width: 28vw
 
-      @media screen and (max-width: $globalBreakLarge)
+      @media screen and (max-width: $globalBreakMidLarge)
         max-width: 28vw
         text-align: left
 

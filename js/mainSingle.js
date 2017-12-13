@@ -75,19 +75,24 @@ var mainSingle = function() {
 
                     var eventUrl = ''
 
-                    if (new RegExp("([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?").test(textInfo[3].trim())) {
+
+                    if(textInfo[3]){
+                      if (new RegExp("([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?").test(textInfo[3].trim())) {
                         eventUrls = []
                         textInfo[3].trim().split(' ').forEach(function(link) {
-                            eventUrls.push(link)
+                          eventUrls.push(link)
                         })
                         if (eventUrls.length == 1) {
-                            eventUrl = ' <a target="_blank" href="' + eventUrls[0] + '">Event Link</a>'
+                          eventUrl = ' <a target="_blank" href="' + eventUrls[0] + '">Event Link</a>'
                         } else {
-                            eventUrl = 'Event links:'
-                            eventUrls.forEach(function(link, index) {
-                                eventUrl = eventUrl + ' <a target="_blank" href="' + link + '">' + (parseInt(index) + 1) + '</a>'
-                            })
+                          eventUrl = 'Event links:'
+                          eventUrls.forEach(function(link, index) {
+                            eventUrl = eventUrl + ' <a target="_blank" href="' + link + '">' + (parseInt(index) + 1) + '</a>'
+                          })
                         }
+                      }
+                    }else{
+                      eventUrl = ''
                     }
 
                     $('#singlePadReadInner').prepend('<span class="metaUrl">' + eventUrl + '</span><br><br>');

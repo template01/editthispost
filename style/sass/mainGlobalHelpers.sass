@@ -14,9 +14,25 @@
       width: 100% !important
       text-transform: uppercase
 
+.extraPaddingTop
+  padding-top: 60px !important
+
+  @media screen and (max-width: $globalBreakLarge)
+    padding-top: 40px !important
+
+  @media screen and (max-width: $globalBreakMidLarge)
+    padding-top: 30px !important
+
+  @media screen and (max-width: $globalBreakMid)
+    padding-top: 24px !important
+
+
 .padded
   padding: $globalPadding
   @media screen and (max-width: $globalBreakLarge)
+    padding: $globalPaddingMidLarge
+
+  @media screen and (max-width: $globalBreakMidLarge)
     padding: $globalPaddingSmall
 
 .paddedNotBottom
@@ -25,5 +41,5 @@
 .paddedBottom
   padding-bottom: $globalPadding
 
-  @media screen and (max-width: $globalBreakLarge)
+  @media screen and (max-width: $globalBreakMidLarge)
     padding-bottom: $globalPaddingSmall
