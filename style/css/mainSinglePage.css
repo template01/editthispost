@@ -4,8 +4,8 @@
   overflow-x: hidden;
   border: 0;
   background: white;
-  border-top: 0.25vw solid #ff0000;
-  margin-top: -0.25vw; }
+  border-top: 0.2vw solid #ff0000;
+  margin-top: -0.20vw; }
 
 #singlePad .metaUrl {
   cursor: pointer; }

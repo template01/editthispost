@@ -53,7 +53,8 @@ var mainRoute = function () {
                 }
                 mainIndex.readMoreIndex();
                 mainIndex.readMoreInstructions();
-                mainIndex.toggleEventList();
+                // mainIndex.toggleEventList();
+                mainIndex.toggleArchive();
                 mainIndex.langSwab();
                 mainIndex.goshow();
                 mainSingle.gohide();

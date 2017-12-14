@@ -3,37 +3,37 @@ var mainIndex = function() {
 
 
   var textStrings = {
-    langSwab:'<span id="langSwab"><span class="active" id="langSwabNL">NL</span> / <span id="langSwabENG">EN</span></span>',
-    navTop:{
-      about:{
-        en:'<b>About</b> + <b>Instructions</b>',
-        nl:'<b>Over</b> + <b>Instructies</b>'
+    langSwab: '<span id="langSwab"><span class="active" id="langSwabNL">NL</span> / <span id="langSwabENG">EN</span></span>',
+    navTop: {
+      about: {
+        en: '<b>About</b> + <b>Instructions</b>',
+        nl: '<b>Over</b> + <b>Instructies</b>'
       }
     },
-    introOneliner:{
-      en:'is collaborative writing in real time.',
-      nl:'is collaboratief schrijven in real time.'
+    introOneliner: {
+      en: 'is collaborative writing in real time.',
+      nl: 'is collaboratief schrijven in real time.'
     },
     introBlurb: {
       en: '<b>edit this post</b> is collaborative writing in real time. In this interactive after talk the audience jointly writes a reflection of the evening. Everyone can contribute! Afterwards, the end result can be read online and printed directly. Write it!',
       nl: '<b>edit this post</b> is collaboratief schrijven in real time. In dit interactieve nagesprek schrijft publiek samen een kritiek van de avond. Iedereen mag bijdragen! Na afloop is het eindresultaat online terug te lezen en direct uit te printen. Schrijf mee!'
     },
-    instructions:{
-      en:'<ol><li><b>Select</b> the text you want to contribute to (search for the performance and date)</li><li><b>Click</b> on Write</li><li><b>Enter your name and chose a colour</b> select the symbol with three puppets in the right up corner. Your chosen colour shows your contribution.</li><li><b>Write!</b> React as much as possible to the already written text unless you really miss something. We strive for one jointly written text. You are allowed to shuffle someone else’s text, you are editor and writer. You are not allowed to delete someone else’s text, rather add a counterargument or nuance</li></ol>',
-      nl:'<ol><li><b>Kies</b> aan welke tekst je wilt bijdragen (zoek de voorstelling en datum naar keuze)</li><li><b>Klik</b> op Write</li><li><b>Voer je naam in en kies een kleur</b> rechtsboven bij het symbool met drie poppetjes. Aan deze kleur kun je zien wat jouw bijdrage is.</li> <li><b>Schrijf mee!</b> Reageer zoveel mogelijk op de tekst of vragen die er al staan, tenzij je echt iets mist. We streven naar het gezamenlijk schrijven van één tekst. Schuiven met andermans tekst mag, je bent tegelijkertijd editor en auteur. Andermans tekst verwijderen mag niet, voeg liever een tegen argument of nuancering toe.</li></ol>'
+    instructions: {
+      en: '<ol><li><b>Select</b> the text you want to contribute to (search for the performance and date)</li><li><b>Click</b> on Write</li><li><b>Enter your name and chose a colour</b> select the symbol with three puppets in the right up corner. Your chosen colour shows your contribution.</li><li><b>Write!</b> React as much as possible to the already written text unless you really miss something. We strive for one jointly written text. You are allowed to shuffle someone else’s text, you are editor and writer. You are not allowed to delete someone else’s text, rather add a counterargument or nuance</li></ol>',
+      nl: '<ol><li><b>Kies</b> aan welke tekst je wilt bijdragen (zoek de voorstelling en datum naar keuze)</li><li><b>Klik</b> op Write</li><li><b>Voer je naam in en kies een kleur</b> rechtsboven bij het symbool met drie poppetjes. Aan deze kleur kun je zien wat jouw bijdrage is.</li> <li><b>Schrijf mee!</b> Reageer zoveel mogelijk op de tekst of vragen die er al staan, tenzij je echt iets mist. We streven naar het gezamenlijk schrijven van één tekst. Schuiven met andermans tekst mag, je bent tegelijkertijd editor en auteur. Andermans tekst verwijderen mag niet, voeg liever een tegen argument of nuancering toe.</li></ol>'
     },
-    infoText:{
-      en:' The traveling dance festival <a target="_blank" href="http://movingfutures.nl/">Moving Futures</a> presents the new generation dance makers. Evening long performances, work in progress, glances behind the scenes, installations and movies. The audience speaks and writes about it together on <b>edit this post</b>. <br><br> <b>edit this post</b> can be used during events and workshops to report in real time. All contributors work in the same text file, as writer, as questioner and as editor. Everything is possible. Afterwards the text is automatically formatted and can be printed as a publication.  ',
-      nl:'Het reizende dansfestival <a target="_blank" href="http://movingfutures.nl/">Moving Futures</a> presenteert de nieuwe generatie dansmakers. Avondvullende voorstellingen, work in progress, kijkjes in de keuken, installaties en films. Het publiek spreekt en schrijft erover met elkaar via <b>edit this post</b>.<br><br>Tijdens events en workshops kan <b>edit this post</b> worden gebruikt om in real time verslag te doen. Iedereen werkt aan hetzelfde tekstbestand, als schrijver, vragensteller of redacteur. Alles mag. De tekst wordt daarna automatisch vormgegeven en kan meteen geprint worden als publicatie.              '
+    infoText: {
+      en: ' The traveling dance festival <a target="_blank" href="http://movingfutures.nl/">Moving Futures</a> presents the new generation dance makers. Evening long performances, work in progress, glances behind the scenes, installations and movies. The audience speaks and writes about it together on <b>edit this post</b>. <br><br> <b>edit this post</b> can be used during events and workshops to report in real time. All contributors work in the same text file, as writer, as questioner and as editor. Everything is possible. Afterwards the text is automatically formatted and can be printed as a publication.  ',
+      nl: 'Het reizende dansfestival <a target="_blank" href="http://movingfutures.nl/">Moving Futures</a> presenteert de nieuwe generatie dansmakers. Avondvullende voorstellingen, work in progress, kijkjes in de keuken, installaties en films. Het publiek spreekt en schrijft erover met elkaar via <b>edit this post</b>.<br><br>Tijdens events en workshops kan <b>edit this post</b> worden gebruikt om in real time verslag te doen. Iedereen werkt aan hetzelfde tekstbestand, als schrijver, vragensteller of redacteur. Alles mag. De tekst wordt daarna automatisch vormgegeven en kan meteen geprint worden als publicatie.              '
     },
-    infoCredits:{
-      colA:{
-        en:'<b>edit this post</b> is a concept made by <b><a href="https://www.template-studio.nl" target="_blank">Template</a></b> in collaboration with <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> and <b><a href="http://networkcultures.org/" target="_blank">Institute of Network Cultures</a></b>.',
-        nl:'<b>edit this post</b> is een idee van <b><a href="https://www.template-studio.nl" target="_blank">Template</a></b> in samenwerking met <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> en <b><a href="http://networkcultures.org/" target="_blank">Institute of Network Cultures</a></b>.'
+    infoCredits: {
+      colA: {
+        en: '<b>edit this post</b> is a concept made by <b><a href="https://www.template-studio.nl" target="_blank">Template</a></b> in collaboration with <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> and <b><a href="http://networkcultures.org/" target="_blank">Institute of Network Cultures</a></b>.',
+        nl: '<b>edit this post</b> is een idee van <b><a href="https://www.template-studio.nl" target="_blank">Template</a></b> in samenwerking met <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> en <b><a href="http://networkcultures.org/" target="_blank">Institute of Network Cultures</a></b>.'
       },
-      colB:{
-        en:'<b>edit this post</b> makes use of the open source application <a href="http://etherpad.org/">Etherpad</a>. For more information, <b><a href="mailto:hello@template-studio.nl?Subject=Hoi%20Template" target="_top">write Template</a></b>.',
-        nl:'<b>edit this post</b> maakt gebruik van de open source applicatie <a href="http://etherpad.org/">Etherpad</a>. Voor meer informatie, <b><a href="mailto:hello@template-studio.nl?Subject=Hoi%20Template" target="_top">stuur een e-mail naar Template</a></b>.'
+      colB: {
+        en: '<b>edit this post</b> makes use of the open source application <a href="http://etherpad.org/">Etherpad</a>. For more information, <b><a href="mailto:hello@template-studio.nl?Subject=Hoi%20Template" target="_top">write Template</a></b>.',
+        nl: '<b>edit this post</b> maakt gebruik van de open source applicatie <a href="http://etherpad.org/">Etherpad</a>. Voor meer informatie, <b><a href="mailto:hello@template-studio.nl?Subject=Hoi%20Template" target="_top">stuur een e-mail naar Template</a></b>.'
       }
 
     }
@@ -51,8 +51,8 @@ var mainIndex = function() {
           <span class="langENG">ABOUT</span>
           </br>
           </br>
-          <span class="langNL">`+textStrings.infoText.nl+`</span>
-              <span class="langENG">`+textStrings.infoText.en+`</span>
+          <span class="langNL">` + textStrings.infoText.nl + `</span>
+              <span class="langENG">` + textStrings.infoText.en + `</span>
           </p>
       </div>
       <div id="indexCredits" class="colHalf padded">
@@ -60,8 +60,8 @@ var mainIndex = function() {
           <span class="langNL">INSTRUCTIES</span>
           <span class="langENG">INSTRUCTIONS</span>
           <span class="close-icon readLessInstructions"></span>
-              <br> <span class="langNL">`+textStrings.instructions.nl+`</span>
-              <span class="langENG">`+textStrings.instructions.en+`</span></p>
+              <br> <span class="langNL">` + textStrings.instructions.nl + `</span>
+              <span class="langENG">` + textStrings.instructions.en + `</span></p>
       </div>
   </div>
   </div>
@@ -69,12 +69,12 @@ var mainIndex = function() {
           <div id="indexBlurb" class="colFull padded paddedNotBottom extraPaddingTop">
               <p>
                 <span class="animatedBorderBlack">edit this post</span>
-                <span class="langNL">`+textStrings.introOneliner.nl+`</span>
-                <span class="langENG">`+textStrings.introOneliner.en+`</span>
+                <span class="langNL">` + textStrings.introOneliner.nl + `</span>
+                <span class="langENG">` + textStrings.introOneliner.en + `</span>
                 <span id="indexNavTop">
-                  <span class="langNL"><span class="readMoreInstructions">`+textStrings.navTop.about.nl+`</span></span>
-                  <span class="langENG"><span class="readMoreInstructions">`+textStrings.navTop.about.en+`</span></span>
-                  &nbsp;`+textStrings.langSwab+`
+                  <span class="langNL"><span class="readMoreInstructions">` + textStrings.navTop.about.nl + `</span></span>
+                  <span class="langENG"><span class="readMoreInstructions">` + textStrings.navTop.about.en + `</span></span>
+                  &nbsp;` + textStrings.langSwab + `
                 </span>
               </p>
           </div>
@@ -83,16 +83,20 @@ var mainIndex = function() {
           <div id="indexPadList">
               <p>EVENTS</p>
           </div>
+          <div id="indexPadArchive">
+              <p id="archiveToggler">ARCHIVE <span class="chevron bottom"></span></p>
+              <div id="indexPadArchiveInner"></div>
+          </div>
       </div>
       <div class="colFull">
           <div id="indexInfo" class="colHalf padded">
-              <p><span class="langNL">`+textStrings.infoCredits.colA.nl+`</span>
-                  <span class="langENG">`+textStrings.infoCredits.colA.en+`</span>
+              <p><span class="langNL">` + textStrings.infoCredits.colA.nl + `</span>
+                  <span class="langENG">` + textStrings.infoCredits.colA.en + `</span>
               </p>
           </div>
           <div id="indexCredits" class="colHalf padded">
-              <p><span class="langNL">`+textStrings.infoCredits.colB.nl+`</span>
-                  <span class="langENG">`+textStrings.infoCredits.colB.en+`</span></p>
+              <p><span class="langNL">` + textStrings.infoCredits.colB.nl + `</span>
+                  <span class="langENG">` + textStrings.infoCredits.colB.en + `</span></p>
           </div>
       </div>
   </div>
@@ -176,7 +180,7 @@ var mainIndex = function() {
     })
   };
 
-  var readMoreInstructions = function readMoreInstructions(){
+  var readMoreInstructions = function readMoreInstructions() {
     $(document).on('click', '.readMoreInstructions,.readLessInstructions', function() {
       $("#instructionsOverlay").toggle()
     })
@@ -212,6 +216,25 @@ var mainIndex = function() {
   };
 
 
+  var toggleArchive = function toggleArchive() {
+
+    var clicked = false
+    $(document).on('click', '#archiveToggler', function() {
+      if (clicked) {
+        $('#indexPadArchiveInner').hide()
+        $(this).removeClass('opened')
+        $(this).find('.chevron').removeClass('top').addClass('bottom')
+        clicked = false
+      } else {
+        $('#indexPadArchiveInner').show()
+        $(this).addClass('opened')
+        $(this).find('.chevron').removeClass('bottom').addClass('top')
+        clicked = true
+      }
+    })
+
+  };
+
 
   var goshow = function goshow() {
     $('#indexPage').show();
@@ -238,37 +261,77 @@ var mainIndex = function() {
   };
 
   var formatIndexEvents = function formatIndexEvents(arrayParam) {
+    var archive = false
     arrayParam.forEach(function(entry) {
       var textInfo = entry.split('|');
-      console.log(textInfo.length);
-      // $('#indexPadList').append('<li></li>')
-      listItem = $('<div class="targetPadWrapper"><li></li></div>');
+      var notempty = entry.length > 0 ? true : false
+      if (notempty) {
 
-      textInfo.forEach(function(entrySingle) {
-        if (entrySingle.trim() === 'unlocked') {
-          // savedThis
-          listItem.find('li').attr('data-status', 'unlocked');
-        } else if (entrySingle.trim() === 'locked') {
-          // savedThis.attr('data-status', 'locked')
-          listItem.find('li').attr('data-status', 'locked');
+        if (!archive) {
+
+          if (textInfo[0] === '===ARCHIVE===') {
+            archive = true
+          }else{
+            listItem = $('<div class="targetPadWrapper"><li></li></div>');
+
+            textInfo.forEach(function(entrySingle) {
+              if (entrySingle.trim() === 'unlocked') {
+                // savedThis
+                listItem.find('li').attr('data-status', 'unlocked');
+              } else if (entrySingle.trim() === 'locked') {
+                // savedThis.attr('data-status', 'locked')
+                listItem.find('li').attr('data-status', 'locked');
+              } else {
+
+                if (!new RegExp("([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?").test(entrySingle.trim())) {
+                  listItem.find('li').append('<span data-link="' + encodeURI(entrySingle.trim().replace(/ /g, "_")) + '">' + entrySingle.replace(/_/g, " ").trim() + '</span>');
+
+                }
+              }
+            });
+
+
+            if (textInfo.length <= 1) {
+              listItem.addClass('capitalizeText');
+            }
+
+            $('#indexPadList').append(listItem);
+          }
+
+
         } else {
 
-          if (!new RegExp("([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?").test(entrySingle.trim())) {
-            listItem.find('li').append('<span data-link="' + encodeURI(entrySingle.trim().replace(/ /g, "_")) + '">' + entrySingle.replace(/_/g, " ").trim() + '</span>');
+          listItem = $('<div class="targetPadWrapper"><li></li></div>');
 
+          textInfo.forEach(function(entrySingle) {
+            if (entrySingle.trim() === 'unlocked') {
+              // savedThis
+              listItem.find('li').attr('data-status', 'unlocked');
+            } else if (entrySingle.trim() === 'locked') {
+              // savedThis.attr('data-status', 'locked')
+              listItem.find('li').attr('data-status', 'locked');
+            } else {
+
+              if (!new RegExp("([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?").test(entrySingle.trim())) {
+                listItem.find('li').append('<span data-link="' + encodeURI(entrySingle.trim().replace(/ /g, "_")) + '">' + entrySingle.replace(/_/g, " ").trim() + '</span>');
+
+              }
+            }
+          });
+
+
+          if (textInfo.length <= 1) {
+            listItem.addClass('capitalizeText');
           }
+
+
+          $('#indexPadArchiveInner').append(listItem);
         }
-      });
-
-      if (textInfo.length <= 1) {
-        listItem.addClass('capitalizeText');
       }
-
-      $('#indexPadList').append(listItem);
     });
 
-    $('#indexPadList').append('<div class="targetPadWrapper toggleEventList"><li><div class="langENG" id="toggleEventListText">List all events</div><div class="langNL" id="toggleEventListText">Lijst alle events</div></li></div>');
-    $('.targetPadWrapper:gt(8)').not('.toggleEventList').hide()
+    // $('#indexPadList').append('<div class="targetPadWrapper toggleEventList"><li><div class="langENG" id="toggleEventListText">List all events</div><div class="langNL" id="toggleEventListText">Lijst alle events</div></li></div>');
+    // $('.targetPadWrapper:gt(8)').not('.toggleEventList').hide()
 
     // })
   };
@@ -300,6 +363,13 @@ var mainIndex = function() {
 
   var padAction = function padAction() {
 
+
+    $(document).on('click', '#indexPadArchiveInner li', function() {
+      target = $(this).find('span').first().attr('data-link');
+      mainRoute.router.navigate('/events/' + target + '/read');
+    });
+
+
     $(document).on('click', '#indexPadList .targetPad span', function() {
       target = $(this).parents('.targetPadWrapper').find('.targetPad span').first().attr('data-link');
       mainRoute.router.navigate('/events/' + target + '/read');
@@ -329,6 +399,7 @@ var mainIndex = function() {
     goshow: goshow,
     gohide: gohide,
     toggleEventList: toggleEventList,
+    toggleArchive: toggleArchive,
     langSwab: langSwab,
     readMoreInstructions: readMoreInstructions,
     readMoreIndex: readMoreIndex,

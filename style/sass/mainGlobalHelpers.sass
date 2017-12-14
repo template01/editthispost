@@ -43,3 +43,36 @@
 
   @media screen and (max-width: $globalBreakMidLarge)
     padding-bottom: $globalPaddingSmall
+
+.chevron
+  padding-left: $globalPaddingSmall/2
+
+.chevron::before
+	border-style: solid
+	border-width: 0.20vw 0.20vw 0 0
+	content: ''
+	display: inline-block
+	height: 0.45em
+	left: 0.15em
+	position: relative
+	top: 0.15em
+	transform: rotate(-45deg)
+	vertical-align: super
+	width: 0.45em
+
+.chevron.right:before
+	left: 15px
+	transform: rotate(45deg)
+
+
+.chevron.top:before
+	top: 0.45em
+
+.chevron.bottom:before
+	top: 0.15em
+	transform: rotate(135deg)
+
+
+.chevron.left:before
+	left: 0.25em
+	transform: rotate(-135deg)
