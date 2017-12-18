@@ -9,24 +9,32 @@
   line-height: 37.4px;
   letter-spacing: -0.1vw;
   color: #ff0000;
-  border-bottom: 0.25vw solid #ff0000; }
-  @media screen and (max-width: 1024px) and (min-width: 420px) {
+  border-bottom: 0.2vw solid #ff0000; }
+  @media screen and (max-width: 1400px) and (min-width: 1024px) {
     #appHeader {
-      font-size: 18.88889px;
+      font-size: 26px;
+      padding-top: 25px;
+      margin-left: 25px;
+      margin-right: 25px;
+      padding-bottom: 25px;
+      line-height: 28.6px; } }
+  @media screen and (max-width: 1024px) and (min-width: 640px) {
+    #appHeader {
+      font-size: 18px;
       padding-top: 16.66667px;
       margin-left: 16.66667px;
       margin-right: 16.66667px;
       padding-bottom: 16.66667px;
-      line-height: 20.77778px;
+      line-height: 19.8px;
       display: flex; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 640px) {
     #appHeader {
-      font-size: 11.33333px;
+      font-size: 12px;
       padding-top: 16.66667px;
       margin-left: 16.66667px;
       margin-right: 16.66667px;
       padding-bottom: 16.66667px;
-      line-height: 12.46667px;
+      line-height: 13.2px;
       display: flex; } }
   #appHeader p:first-of-type {
     margin-top: -0.5vw;
@@ -47,7 +55,7 @@
     #appHeader #appIndex .animatedBorderBlack {
       padding: 0vw 1vw 0.2vw 1vw;
       border-radius: 1vw;
-      border: 0.25vw solid #ff0000;
+      border: 0.2vw solid #ff0000;
       background: #ff0000;
       color: #fff3f3; }
   #appHeader .padActions {
@@ -56,11 +64,11 @@
     @media screen and (max-width: 1024px) {
       #appHeader .padActions {
         float: left;
-        margin-top: 12.46667px; } }
-    @media screen and (max-width: 420px) {
+        margin-top: 13.2px; } }
+    @media screen and (max-width: 640px) {
       #appHeader .padActions {
         float: left;
-        margin-top: 12.46667px; } }
+        margin-top: 13.2px; } }
     #appHeader .padActions .padActionRead, #appHeader .padActions .padActionWrite, #appHeader .padActions .padActionPrint, #appHeader .padActions .padActionExpand, #appHeader .padActions .padTitle {
       padding: 0vw 1vw 0.2vw 1vw;
       border-radius: 1vw;
@@ -78,7 +86,7 @@
           max-width: 28vw;
           text-align: left; } }
     #appHeader .padActions .padActionExpand {
-      border: 0.25vw solid #ff0000; }
+      border: 0.2vw solid #ff0000; }
       #appHeader .padActions .padActionExpand img {
         width: 1vw; }
       #appHeader .padActions .padActionExpand:not(.activeAction) {
@@ -88,7 +96,7 @@
           background: #fff3f3;
           color: #ff0000; }
     #appHeader .padActions .padActionRead {
-      border: 0.25vw solid #ff0000; }
+      border: 0.2vw solid #ff0000; }
       #appHeader .padActions .padActionRead:not(.activeAction) {
         background: #ff0000;
         color: #fff3f3; }
@@ -96,7 +104,7 @@
           background: #fff3f3;
           color: #ff0000; }
     #appHeader .padActions .padActionWrite {
-      border: 0.25vw solid #3bdc7b;
+      border: 0.2vw solid #3bdc7b;
       background: #3bdc7b;
       color: #fff3f3; }
       #appHeader .padActions .padActionWrite:after {
@@ -104,7 +112,7 @@
       #appHeader .padActions .padActionWrite.locked {
         cursor: default !important;
         background: #e2e2f3;
-        border: 0.25vw solid #e2e2f3; }
+        border: 0.2vw solid #e2e2f3; }
         #appHeader .padActions .padActionWrite.locked:hover:after {
           content: 'Locked';
           color: #fff3f3;
@@ -116,7 +124,7 @@
         background: #fff3f3;
         color: #3bdc7b; }
     #appHeader .padActions .padActionPrint {
-      border: 0.25vw solid #ff0000;
+      border: 0.2vw solid #ff0000;
       background: #ff0000;
       color: #fff3f3; }
       #appHeader .padActions .padActionPrint:hover {

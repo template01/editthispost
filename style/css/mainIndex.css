@@ -2,7 +2,7 @@
   display: none; }
 
 .langNL {
-  display: block; }
+  display: initial; }
 
 #indexSplash {
   position: fixed;
@@ -60,20 +60,58 @@
   to {
     visibility: hidden; } }
 
+#indexPage #instructionsOverlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  background: #fff3f3;
+  height: 100%;
+  width: 100%;
+  z-index: 9999; }
+  #indexPage #instructionsOverlay .close-icon {
+    display: inline-block;
+    float: right;
+    box-sizing: border-box;
+    width: 20px;
+    height: 20px;
+    margin-top: 6px;
+    background: -webkit-linear-gradient(-45deg, transparent 0%, transparent 46%, red 46%, red 56%, transparent 56%, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, transparent 46%, red 46%, red 56%, transparent 56%, transparent 100%);
+    cursor: pointer; }
+    @media screen and (max-width: 1024px) {
+      #indexPage #instructionsOverlay .close-icon {
+        position: absolute;
+        right: 16.66667px;
+        top: 16.66667px; } }
+
+#indexBlurb #indexNavTop {
+  float: right; }
+
+#indexBlurb .animatedBorderBlack {
+  padding: 0vw 1vw 0.2vw 1vw;
+  border-radius: 1vw;
+  border: 0.20vw solid #ff0000;
+  background: #ff0000;
+  color: #fff3f3; }
+
+#indexBlurb .readMoreInstructions {
+  float: left;
+  cursor: pointer;
+  margin-right: 20px;
+  border-bottom: 0.2vw solid #ff0000; }
+
 #indexBlurb .readMoreIndex {
   float: left;
   cursor: pointer;
-  margin-top: -0.25vw;
-  display: inline-block;
-  border-bottom: 0.25vw solid #ff0000; }
+  margin-right: 20px;
+  border-bottom: 0.2vw solid #ff0000; }
 
 #indexBlurb #langSwab {
   float: right;
   cursor: pointer; }
   #indexBlurb #langSwab .active {
-    margin-top: -0.25vw;
+    margin-top: -0.20vw;
     display: inline-block;
-    border-bottom: 0.25vw solid #ff0000; }
+    border-bottom: 0.2vw solid #ff0000; }
 
 #indexHow {
   font-size: 18.88889px;
@@ -87,15 +125,15 @@
     margin-top: 0; }
   #indexHow li {
     margin-bottom: 12.5px; }
-  @media screen and (max-width: 1024px) and (min-width: 420px) {
+  @media screen and (max-width: 1024px) and (min-width: 640px) {
     #indexHow {
-      font-size: 18.88889px;
-      line-height: 28.33333px;
+      font-size: 18px;
+      line-height: 27px;
       letter-spacing: -0.1vw; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 640px) {
     #indexHow {
-      font-size: 11.33333px;
-      line-height: 17px;
+      font-size: 12px;
+      line-height: 18px;
       letter-spacing: -0.1vw; }
       #indexHow ol {
         padding-left: 16.66667px; } }
@@ -106,15 +144,20 @@
   line-height: 37.4px;
   letter-spacing: -0.1vw;
   color: #ff0000; }
-  @media screen and (max-width: 1024px) and (min-width: 420px) {
+  @media screen and (max-width: 1400px) and (min-width: 1024px) {
     #indexBlurb, #indexInfo, #indexCredits {
-      font-size: 18.88889px;
-      line-height: 20.77778px;
+      font-size: 26px;
+      line-height: 28.6px;
       letter-spacing: -0.1vw; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 1024px) and (min-width: 640px) {
     #indexBlurb, #indexInfo, #indexCredits {
-      font-size: 11.33333px;
-      line-height: 12.46667px;
+      font-size: 18px;
+      line-height: 19.8px;
+      letter-spacing: -0.1vw; } }
+  @media screen and (max-width: 640px) {
+    #indexBlurb, #indexInfo, #indexCredits {
+      font-size: 12px;
+      line-height: 13.2px;
       letter-spacing: -0.1vw; } }
   #indexBlurb a, #indexInfo a, #indexCredits a {
     font-weight: bold;
@@ -122,6 +165,97 @@
     color: inherit; }
   #indexBlurb p:first-of-type, #indexInfo p:first-of-type, #indexCredits p:first-of-type {
     margin-top: -0.5vw; }
+
+#indexPadArchive {
+  color: #ff0000;
+  padding-left: 100px;
+  padding-right: 100px;
+  font-size: 34px;
+  font-family: TeXGyreHeros;
+  line-height: 30.90909px;
+  letter-spacing: -0.1vw;
+  display: inline-block;
+  width: 100%;
+  padding-bottom: 50px; }
+  @media screen and (max-width: 1400px) and (min-width: 1024px) {
+    #indexPadArchive {
+      font-size: 26px;
+      line-height: 31.2px;
+      letter-spacing: -0.1vw;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-bottom: 26px; } }
+  @media screen and (max-width: 1024px) and (min-width: 640px) {
+    #indexPadArchive {
+      font-size: 18px;
+      line-height: 21.6px;
+      letter-spacing: -0.1vw;
+      padding-left: 16.66667px;
+      padding-right: 16.66667px;
+      padding-bottom: 16.66667px; } }
+  @media screen and (max-width: 640px) {
+    #indexPadArchive {
+      padding-left: 16.66667px;
+      padding-right: 16.66667px; } }
+  #indexPadArchive #archiveToggler {
+    cursor: pointer;
+    padding: 25px; }
+    #indexPadArchive #archiveToggler:not(.opened) {
+      border-bottom: 0.2vw solid #ff0000; }
+    @media screen and (max-width: 1400px) and (min-width: 1024px) {
+      #indexPadArchive #archiveToggler {
+        padding: 16.66667px; } }
+    @media screen and (max-width: 1024px) {
+      #indexPadArchive #archiveToggler {
+        padding-left: 0px;
+        padding-right: 0px; } }
+    @media screen and (max-width: 640px) {
+      #indexPadArchive #archiveToggler {
+        font-size: 12px; } }
+  #indexPadArchive #indexPadArchiveInner {
+    display: none;
+    padding-top: 16.66667px;
+    font-size: 28.33333px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2; }
+    @media screen and (max-width: 1400px) and (min-width: 1024px) {
+      #indexPadArchive #indexPadArchiveInner {
+        font-size: 20px; } }
+    @media screen and (max-width: 1024px) {
+      #indexPadArchive #indexPadArchiveInner {
+        font-size: 18px;
+        -webkit-column-count: 1;
+        -moz-column-count: 1;
+        column-count: 1; } }
+    @media screen and (max-width: 640px) {
+      #indexPadArchive #indexPadArchiveInner {
+        font-size: 12px; } }
+    #indexPadArchive #indexPadArchiveInner .targetPadWrapper:not(.capitalizeText) {
+      border-top: 0.125vw solid #ff0000;
+      padding-bottom: 13.6px;
+      padding-top: 13.6px; }
+      @media screen and (max-width: 640px) {
+        #indexPadArchive #indexPadArchiveInner .targetPadWrapper:not(.capitalizeText) {
+          padding-bottom: 8.33333px;
+          padding-top: 8.33333px; } }
+    #indexPadArchive #indexPadArchiveInner .capitalizeText {
+      text-transform: uppercase;
+      padding-bottom: 25px; }
+      #indexPadArchive #indexPadArchiveInner .capitalizeText:not(:first-of-type) {
+        padding-top: 50px; }
+      @media screen and (max-width: 640px) {
+        #indexPadArchive #indexPadArchiveInner .capitalizeText {
+          padding-bottom: 8.33333px; } }
+    #indexPadArchive #indexPadArchiveInner li {
+      cursor: pointer;
+      list-style: none; }
+      #indexPadArchive #indexPadArchiveInner li span {
+        display: inline-block; }
+        #indexPadArchive #indexPadArchiveInner li span:nth-child(1) {
+          width: 60%; }
+        #indexPadArchive #indexPadArchiveInner li span:nth-child(n+2) {
+          width: 20%; }
 
 #indexPadList {
   padding-left: 100px;
@@ -143,18 +277,26 @@
       text-align: center; }
   #indexPadList #toggleEventListText {
     text-transform: uppercase; }
-  @media screen and (max-width: 1024px) and (min-width: 420px) {
+  @media screen and (max-width: 1400px) and (min-width: 1024px) {
     #indexPadList {
-      font-size: 18.88889px;
-      line-height: 20.77778px;
+      font-size: 26px;
+      line-height: 28.6px;
+      letter-spacing: -0.1vw;
+      padding-left: 25px;
+      padding-right: 25px;
+      padding-bottom: 26px; } }
+  @media screen and (max-width: 1024px) and (min-width: 640px) {
+    #indexPadList {
+      font-size: 18px;
+      line-height: 19.8px;
       letter-spacing: -0.1vw;
       padding-left: 0;
       padding-right: 0;
       padding-bottom: 16.66667px; } }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 640px) {
     #indexPadList {
-      font-size: 11.33333px;
-      line-height: 12.46667px;
+      font-size: 12px;
+      line-height: 13.2px;
       letter-spacing: -0.1vw;
       padding-left: 0;
       padding-right: 0;
@@ -172,11 +314,14 @@
   #indexPadList .targetPadWrapper {
     display: inline-flex;
     width: 100%;
-    border-top: 0.25vw solid #ff0000;
+    border-top: 0.2vw solid #ff0000;
     background: #fff3f3;
     padding-top: 1.5vw; }
     #indexPadList .targetPadWrapper.capitalizeText {
       padding-top: 100px; }
+    @media screen and (max-width: 1400px) and (min-width: 1024px) {
+      #indexPadList .targetPadWrapper.capitalizeText {
+        padding-top: 50px; } }
     @media screen and (max-width: 1024px) {
       #indexPadList .targetPadWrapper {
         width: calc(100% - 33.33333px);
@@ -185,7 +330,7 @@
         #indexPadList .targetPadWrapper.capitalizeText {
           padding-top: 33.33333px; } }
     #indexPadList .targetPadWrapper:last-of-type {
-      border-bottom: 0.25vw solid #ff0000; }
+      border-bottom: 0.2vw solid #ff0000; }
     #indexPadList .targetPadWrapper .targetPad {
       color: #ff0000;
       padding: 25px;
@@ -206,12 +351,40 @@
         display: inline-block;
         width: 25%;
         cursor: pointer; }
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 1400px) and (min-width: 1024px) {
+        #indexPadList .targetPadWrapper .targetPad {
+          padding: 16.66667px;
+          width: 70%; }
+          #indexPadList .targetPadWrapper .targetPad span:first-of-type {
+            font-weight: bold;
+            width: 33.333%; }
+          #indexPadList .targetPadWrapper .targetPad span:nth-of-type(2), #indexPadList .targetPadWrapper .targetPad span:nth-of-type(3) {
+            padding-left: 10px; }
+          #indexPadList .targetPadWrapper .targetPad span {
+            vertical-align: top;
+            display: inline-block;
+            width: 33.333%; } }
+      @media screen and (max-width: 1024px) and (min-width: 640px) {
         #indexPadList .targetPadWrapper .targetPad {
           padding: 16.66667px;
           padding-left: 0;
           padding-right: 0;
-          width: 64%; }
+          width: 70%; }
+          #indexPadList .targetPadWrapper .targetPad span:first-of-type {
+            font-weight: bold;
+            width: 33.333%; }
+          #indexPadList .targetPadWrapper .targetPad span:nth-of-type(2), #indexPadList .targetPadWrapper .targetPad span:nth-of-type(3) {
+            padding-left: 10px; }
+          #indexPadList .targetPadWrapper .targetPad span {
+            vertical-align: top;
+            display: inline-block;
+            width: 33.333%; } }
+      @media screen and (max-width: 640px) {
+        #indexPadList .targetPadWrapper .targetPad {
+          padding: 4px;
+          padding-left: 0;
+          padding-right: 0;
+          width: 70%; }
           #indexPadList .targetPadWrapper .targetPad span:first-of-type {
             font-weight: bold;
             width: 33.333%; }
@@ -225,11 +398,17 @@
       padding: 25px;
       width: 30%;
       float: left; }
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 1024px) and (min-width: 640px) {
         #indexPadList .targetPadWrapper .padActions {
           padding: 16.66667px;
           padding-right: 0;
           width: 36%; } }
+      @media screen and (max-width: 1400px) and (min-width: 1024px) {
+        #indexPadList .targetPadWrapper .padActions {
+          padding: 16.66667px; } }
+      @media screen and (max-width: 640px) {
+        #indexPadList .targetPadWrapper .padActions {
+          padding: 4px; } }
       #indexPadList .targetPadWrapper .padActions .padActionRead, #indexPadList .targetPadWrapper .padActions .padActionWrite {
         width: calc(50% - 1vw);
         padding: 0.5vw;
@@ -241,18 +420,18 @@
         cursor: pointer;
         text-align: center; }
       #indexPadList .targetPadWrapper .padActions .padActionRead {
-        border: 0.25vw solid #ff0000;
+        border: 0.2vw solid #ff0000;
         color: #ff0000; }
         #indexPadList .targetPadWrapper .padActions .padActionRead:after {
           content: 'Read'; }
       #indexPadList .targetPadWrapper .padActions .padActionWrite {
-        border: 0.25vw solid #3bdc7b;
+        border: 0.2vw solid #3bdc7b;
         background: #3bdc7b;
         color: #fff3f3; }
         #indexPadList .targetPadWrapper .padActions .padActionWrite:after {
           content: 'Write'; }
         #indexPadList .targetPadWrapper .padActions .padActionWrite.locked {
           background: #e2e2f3;
-          border: 0.25vw solid #e2e2f3; }
+          border: 0.2vw solid #e2e2f3; }
           #indexPadList .targetPadWrapper .padActions .padActionWrite.locked:hover:after {
             content: 'Locked'; }
