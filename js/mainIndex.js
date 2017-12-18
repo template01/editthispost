@@ -10,6 +10,10 @@ var mainIndex = function() {
         nl: '<b>Over</b> + <b>Instructies</b>'
       }
     },
+    introArchive:{
+      en: 'ARCHIVE',
+      nl: 'ARCHIEF'
+    },
     introOneliner: {
       en: 'is collaborative writing in real time.',
       nl: 'is collaboratief schrijven in real time.'
@@ -84,7 +88,11 @@ var mainIndex = function() {
               <p>EVENTS</p>
           </div>
           <div id="indexPadArchive">
-              <p id="archiveToggler">ARCHIVE <span class="chevron bottom"></span></p>
+              <p id="archiveToggler">
+                <span class="langNL">` + textStrings.introArchive.nl + `</span>
+                <span class="langENG">` + textStrings.introArchive.en + `</span>
+                <span class="chevron bottom"></span>
+              </p>
               <div id="indexPadArchiveInner"></div>
           </div>
       </div>
@@ -262,16 +270,61 @@ var mainIndex = function() {
 
   var formatIndexEvents = function formatIndexEvents(arrayParam) {
     var archive = false
-    arrayParam.forEach(function(entry) {
-      var textInfo = entry.split('|');
-      var notempty = entry.length > 0 ? true : false
-      if (notempty) {
 
-        if (!archive) {
 
-          if (textInfo[0] === '===ARCHIVE===') {
-            archive = true
-          }else{
+    var Tutorial = {};
+
+    try {
+      // [1, 2, 3].forEach(function(el) {
+      //   console.log(el);
+      //   if (el === 2) throw BreakException;
+      // });
+
+
+      arrayParam.forEach(function(entry) {
+        var textInfo = entry.split('|');
+        var notempty = entry.length > 0 ? true : false
+
+        if (textInfo[0] === '===TUTORIAL===') throw Tutorial;
+
+        if (notempty) {
+
+          if (!archive) {
+
+            if (textInfo[0] === '===EVENTS===') {
+              return
+            } else if (textInfo[0] === '===ARCHIVE===') {
+              archive = true
+            } else {
+              listItem = $('<div class="targetPadWrapper"><li></li></div>');
+
+              textInfo.forEach(function(entrySingle) {
+                if (entrySingle.trim() === 'unlocked') {
+                  // savedThis
+                  listItem.find('li').attr('data-status', 'unlocked');
+                } else if (entrySingle.trim() === 'locked') {
+                  // savedThis.attr('data-status', 'locked')
+                  listItem.find('li').attr('data-status', 'locked');
+                } else {
+
+                  if (!new RegExp("([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?").test(entrySingle.trim())) {
+                    listItem.find('li').append('<span data-link="' + encodeURI(entrySingle.trim().replace(/ /g, "_")) + '">' + entrySingle.replace(/_/g, " ").trim() + '</span>');
+
+                  }
+                }
+              });
+
+
+              if (textInfo.length <= 1) {
+                listItem.addClass('capitalizeText');
+              }
+
+              $('#indexPadList').append(listItem);
+            }
+
+
+          } else {
+
             listItem = $('<div class="targetPadWrapper"><li></li></div>');
 
             textInfo.forEach(function(entrySingle) {
@@ -295,71 +348,22 @@ var mainIndex = function() {
               listItem.addClass('capitalizeText');
             }
 
-            $('#indexPadList').append(listItem);
+
+            $('#indexPadArchiveInner').append(listItem);
           }
-
-
-        } else {
-
-          listItem = $('<div class="targetPadWrapper"><li></li></div>');
-
-          textInfo.forEach(function(entrySingle) {
-            if (entrySingle.trim() === 'unlocked') {
-              // savedThis
-              listItem.find('li').attr('data-status', 'unlocked');
-            } else if (entrySingle.trim() === 'locked') {
-              // savedThis.attr('data-status', 'locked')
-              listItem.find('li').attr('data-status', 'locked');
-            } else {
-
-              if (!new RegExp("([a-zA-Z0-9]+://)?([a-zA-Z0-9_]+:[a-zA-Z0-9_]+@)?([a-zA-Z0-9.-]+\\.[A-Za-z]{2,4})(:[0-9]+)?(/.*)?").test(entrySingle.trim())) {
-                listItem.find('li').append('<span data-link="' + encodeURI(entrySingle.trim().replace(/ /g, "_")) + '">' + entrySingle.replace(/_/g, " ").trim() + '</span>');
-
-              }
-            }
-          });
-
-
-          if (textInfo.length <= 1) {
-            listItem.addClass('capitalizeText');
-          }
-
-
-          $('#indexPadArchiveInner').append(listItem);
         }
-      }
-    });
+      });
 
-    // $('#indexPadList').append('<div class="targetPadWrapper toggleEventList"><li><div class="langENG" id="toggleEventListText">List all events</div><div class="langNL" id="toggleEventListText">Lijst alle events</div></li></div>');
-    // $('.targetPadWrapper:gt(8)').not('.toggleEventList').hide()
+    } catch (e) {
+      if (e !== Tutorial) throw e;
 
-    // })
+    }
+
+
+
+
+
   };
-
-  // var formatIndexEvents = function() {
-  //     $('#indexPadList li').each(function() {
-  //
-  //         var textInfo = $(this).text().split('|')
-  //
-  //         $(this).empty()
-  //
-  //         savedThis = $(this)
-  //
-  //         textInfo.forEach(function(entry) {
-  //             if (entry.trim() === 'unlocked') {
-  //                 savedThis.attr('data-status', 'unlocked')
-  //
-  //             } else if (entry.trim() === 'locked') {
-  //                 savedThis.attr('data-status', 'locked')
-  //             } else {
-  //                 savedThis.append('<span data-link="' + entry.trim() + '">' + entry.replace(/_/g, " ").trim() + '</span>')
-  //
-  //             }
-  //
-  //         });
-  //     })
-  // }
-
 
   var padAction = function padAction() {
 
