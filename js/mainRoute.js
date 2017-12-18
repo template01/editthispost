@@ -35,11 +35,10 @@ var mainRoute = function () {
             },
 
             'admin/': function admin() {
-                mainAdmin.init();
-
-                mainIndex.gohide();
-                mainHeader.gohide();
-                mainSingle.gohide();
+                //mainAdmin.init();
+                //mainIndex.gohide();
+                //mainHeader.gohide();
+                //mainSingle.gohide();
             },
             '*': function _() {
                 if (!ranIndex) {
