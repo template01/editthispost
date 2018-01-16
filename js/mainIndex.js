@@ -20,11 +20,11 @@ var mainIndex = function() {
     },
     introBlurb: {
       en: '<b>edit this post</b> is collaborative writing in real time. In this interactive after talk the audience jointly writes a reflection of the evening. Everyone can contribute! Afterwards, the end result can be read online and printed directly. Write it!',
-      nl: '<b>edit this post</b> is collaboratief schrijven in real time. In dit interactieve nagesprek schrijft publiek samen een kritiek van de avond. Iedereen mag bijdragen! Na afloop is het eindresultaat online terug te lezen en direct uit te printen. Schrijf mee!'
+      nl: '<b>edit this post</b> is collaboratief schrijven in real time. Bezoekers van een concert of expositie, een festival of voorstelling reflecteren samen en on the spot op wat zij beleefden. Iedereen werkt aan hetzelfde tekstbestand. Alles mag. De tekst wordt automatisch vormgegeven en kan meteen geprint worden. Het schrijfproces is in real time door anderen te volgen.'
     },
     instructions: {
       en: '<ol><li><b>Select</b> the text you want to contribute to (search for the performance and date)</li><li><b>Click</b> on Write</li><li><b>Enter your name and chose a colour</b> select the symbol with three puppets in the right up corner. Your chosen colour shows your contribution.</li><li><b>Write!</b> React as much as possible to the already written text unless you really miss something. We strive for one jointly written text. You are allowed to shuffle someone else’s text, you are editor and writer. You are not allowed to delete someone else’s text, rather add a counterargument or nuance</li></ol>',
-      nl: '<ol><li><b>Kies</b> aan welke tekst je wilt bijdragen (zoek de voorstelling en datum naar keuze)</li><li><b>Klik</b> op Write</li><li><b>Voer je naam in en kies een kleur</b> rechtsboven bij het symbool met drie poppetjes. Aan deze kleur kun je zien wat jouw bijdrage is.</li> <li><b>Schrijf mee!</b> Reageer zoveel mogelijk op de tekst of vragen die er al staan, tenzij je echt iets mist. We streven naar het gezamenlijk schrijven van één tekst. Schuiven met andermans tekst mag, je bent tegelijkertijd editor en auteur. Andermans tekst verwijderen mag niet, voeg liever een tegen argument of nuancering toe.</li></ol>'
+      nl: '<ol><li><b>Kies</b> aan welke tekst je wilt bijdragen (zoek het event en datum naar keuze)</li><li><b>Klik</b> op Write</li><li><b>Type</b></li> <li><b>Reageer</b> zoveel mogelijk op de tekst of vragen die er al staan, tenzij je echt iets mist. Doel is het schrijven van één tekst. Schuiven met andermans tekst mag. Andermans tekst verwijderen mag niet. Voeg liever een tegenargument of nuancering toe.</li></ol>'
     },
     infoText: {
       en: ' The traveling dance festival <a target="_blank" href="http://movingfutures.nl/">Moving Futures</a> presents the new generation dance makers. Evening long performances, work in progress, glances behind the scenes, installations and movies. The audience speaks and writes about it together on <b>edit this post</b>. <br><br> <b>edit this post</b> can be used during events and workshops to report in real time. All contributors work in the same text file, as writer, as questioner and as editor. Everything is possible. Afterwards the text is automatically formatted and can be printed as a publication.  ',
@@ -33,11 +33,11 @@ var mainIndex = function() {
     infoCredits: {
       colA: {
         en: '<b>edit this post</b> is a concept made by <b><a href="https://www.template-studio.nl" target="_blank">Template</a></b> in collaboration with <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> and <b><a href="http://networkcultures.org/" target="_blank">Institute of Network Cultures</a></b>.',
-        nl: '<b>edit this post</b> is een idee van <b><a href="https://www.template-studio.nl" target="_blank">Template</a></b> in samenwerking met <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> en <b><a href="http://networkcultures.org/" target="_blank">Institute of Network Cultures</a></b>.'
+        nl: '<b>edit this post</b> is een idee van <b><a href="https://www.template-studio.nl" target="_blank">Template Studio</a></b> in samenwerking met <b><a href="http://domeinvoorkunstkritiek.nl/" target="_blank">Domein voor Kunstkritiek</a></b> en <b><a href="http://networkcultures.org/" target="_blank">Institute of Network Cultures</a></b> en werd mede mogelijk gemaakt door <b><a href="http://movingfutures.nl/" target="_blank">Moving Futures</a></b>, <b><a href="https://www.mondriaanfonds.nl/" target="_blank">Mondriaan Fonds</a></b> en <b><a href="https://fondspodiumkunsten.nl/" target="_blank">Fonds Podiumkunsten</a></b>. Voor meer informatie, <b><a href="mailto:info@domeinvoorkunstkritiek.nl?Subject=Hoi" target="_top">stuur een e-mail</a></b> naar Domein voor Kunstkritiek.'
       },
       colB: {
         en: '<b>edit this post</b> makes use of the open source application <a href="http://etherpad.org/">Etherpad</a>. For more information, <b><a href="mailto:hello@template-studio.nl?Subject=Hoi%20Template" target="_top">write Template</a></b>.',
-        nl: '<b>edit this post</b> maakt gebruik van de open source applicatie <a href="http://etherpad.org/">Etherpad</a>. Voor meer informatie, <b><a href="mailto:hello@template-studio.nl?Subject=Hoi%20Template" target="_top">stuur een e-mail naar Template</a></b>.'
+        nl: '<b>edit this post</b> maakt gebruik van de open source applicatie <a href="http://etherpad.org/">Etherpad</a>.'
       }
 
     }
@@ -55,8 +55,8 @@ var mainIndex = function() {
           <span class="langENG">ABOUT</span>
           </br>
           </br>
-          <span class="langNL">` + textStrings.infoText.nl + `</span>
-              <span class="langENG">` + textStrings.infoText.en + `</span>
+          <span class="langNL">` + textStrings.introBlurb.nl + `</span>
+              <span class="langENG">` + textStrings.introBlurb.en + `</span>
           </p>
       </div>
       <div id="indexCredits" class="colHalf padded">
@@ -64,8 +64,9 @@ var mainIndex = function() {
           <span class="langNL">INSTRUCTIES</span>
           <span class="langENG">INSTRUCTIONS</span>
           <span class="close-icon readLessInstructions"></span>
-              <br> <span class="langNL">` + textStrings.instructions.nl + `</span>
-              <span class="langENG">` + textStrings.instructions.en + `</span></p>
+          <div class="langNL">` + textStrings.instructions.nl + `</div>
+          <div class="langENG">` + textStrings.instructions.en + `</div>
+
       </div>
   </div>
   </div>
