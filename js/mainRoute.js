@@ -1,6 +1,6 @@
 var mainRoute = function () {
 
-    var router = new Navigo(root = null, useHash = false);
+    var router = new Navigo(root = null, useHash = true);
 
     var ranIndex = false;
 
@@ -45,7 +45,7 @@ var mainRoute = function () {
                     mainIndex.initIndex();
 
                     if ($('#singlePad').length === 0) {
-                        // mainIndex.playSplash();
+                        mainIndex.playSplash();
                     }
 
                     ranIndex = true;
