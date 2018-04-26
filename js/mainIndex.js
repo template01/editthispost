@@ -73,9 +73,11 @@ var mainIndex = function() {
       <div class="colFull">
           <div id="indexBlurb" class="colFull padded paddedNotBottom extraPaddingTop">
               <p>
-                <span class="animatedBorderBlack">edit this post</span>
-                <span class="langNL">` + textStrings.introOneliner.nl + `</span>
-                <span class="langENG">` + textStrings.introOneliner.en + `</span>
+                <span id="indexLogoWrap">
+                  <span class="animatedBorderBlack">edit this post</span>
+                  <span class="langNL">` + textStrings.introOneliner.nl + `</span>
+                  <span class="langENG">` + textStrings.introOneliner.en + `</span>
+                </span>
                 <span id="indexNavTop">
                   <span class="langNL"><span class="readMoreInstructions">` + textStrings.navTop.about.nl + `</span></span>
                   <span class="langENG"><span class="readMoreInstructions">` + textStrings.navTop.about.en + `</span></span>
