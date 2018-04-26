@@ -29,9 +29,8 @@
   position: relative;
   padding: 50px;
   font-size: 18.88889px;
-  font-family: TeXGyreCursor;
+  font-family: "Anonymous Pro", monospace;
   line-height: 30.6px;
-  letter-spacing: -0.1vw;
   color: black;
   width: 75%; }
   #singlePad #singlePadRead #appendAboutText {

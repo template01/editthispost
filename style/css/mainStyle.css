@@ -103,9 +103,8 @@
   position: relative;
   padding: 50px;
   font-size: 18.88889px;
-  font-family: TeXGyreCursor;
+  font-family: "Anonymous Pro", monospace;
   line-height: 30.6px;
-  letter-spacing: -0.1vw;
   color: black;
   width: 75%; }
   #singlePad #singlePadRead #appendAboutText {
@@ -308,7 +307,7 @@
 
 #indexHow {
   font-size: 18.88889px;
-  font-family: TeXGyreCursor;
+  font-family: "Anonymous Pro", monospace;
   line-height: 30.6px;
   letter-spacing: -0.1vw;
   color: #ff0000; }
@@ -794,7 +793,7 @@
     padding: 0 !important;
     width: 100% !important;
     font-size: 9.5pt !important;
-    font-family: TeXGyreCursor !important;
+    font-family: "Anonymous Pro", monospace !important;
     line-height: 15.2pt !important;
     letter-spacing: -0.5pt !important; }
     #singlePadRead code {
