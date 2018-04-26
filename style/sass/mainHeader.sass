@@ -44,9 +44,10 @@
   p:first-of-type
     margin-top: -0.5vw
     margin-bottom: 0
+    width: 100%
 
   #appIndex
-    width: 100%
+    // width: 100%
 
     display: inline-block
     text-decoration: none
@@ -99,15 +100,20 @@
     clear: none
     float: right
     @media screen and (max-width: $globalBreakMidLarge)
-      float: left
-      margin-top: $globalTextSizeSmall*1.1
 
+      // float: left
+      // margin-top: $globalTextSizeSmall*1.1
 
 
 
     @media screen and (max-width: $globalBreakMid)
-        float: left
-        margin-top: $globalTextSizeSmall*1.1
+      .padTitle
+        display: none !important
+
+
+    @media screen and (max-width: $globalBreakMid)
+        // float: left
+        // margin-top: $globalTextSizeSmall*1.1
 
     .padActionRead,.padActionWrite,.padActionPrint,.padActionExpand,.padTitle
       // width: 50%
@@ -119,10 +125,10 @@
 
     .padTitle
       // max-width: 30vw
+      display: inline-block
       overflow: hidden
       text-overflow: ellipsis
       white-space: nowrap
-      display: inline-block
       text-align: right
       max-width: 28vw
 

@@ -38,9 +38,9 @@
       display: flex; } }
   #appHeader p:first-of-type {
     margin-top: -0.5vw;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    width: 100%; }
   #appHeader #appIndex {
-    width: 100%;
     display: inline-block;
     text-decoration: none;
     color: inherit;
@@ -61,24 +61,19 @@
   #appHeader .padActions {
     clear: none;
     float: right; }
-    @media screen and (max-width: 1024px) {
-      #appHeader .padActions {
-        float: left;
-        margin-top: 13.2px; } }
     @media screen and (max-width: 640px) {
-      #appHeader .padActions {
-        float: left;
-        margin-top: 13.2px; } }
+      #appHeader .padActions .padTitle {
+        display: none !important; } }
     #appHeader .padActions .padActionRead, #appHeader .padActions .padActionWrite, #appHeader .padActions .padActionPrint, #appHeader .padActions .padActionExpand, #appHeader .padActions .padTitle {
       padding: 0vw 1vw 0.2vw 1vw;
       border-radius: 1vw;
       cursor: pointer;
       vertical-align: text-top; }
     #appHeader .padActions .padTitle {
+      display: inline-block;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
-      display: inline-block;
       text-align: right;
       max-width: 28vw; }
       @media screen and (max-width: 1024px) {

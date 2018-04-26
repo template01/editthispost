@@ -83,6 +83,11 @@
         right: 16.66667px;
         top: 16.66667px; } }
 
+@media screen and (max-width: 640px) {
+  #indexBlurb #indexNavTop {
+    float: left !important;
+    margin-top: 10px; } }
+
 #indexBlurb #indexNavTop {
   float: right; }
 
